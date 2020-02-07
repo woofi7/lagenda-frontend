@@ -29,6 +29,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.s3 =  {
+
+    }
   }
 
   if (environment === 'test') {
@@ -44,7 +48,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV['elastic-beanstalk'] = {
+      bucket: 'elasticbeanstalk-us-east-2-793497163088'
+    }
   }
 
   return ENV;

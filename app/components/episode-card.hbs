@@ -1,0 +1,17 @@
+<div class="col-3 px-0 mx-2">
+  {{#link-to "balados.category.episode" @episode.category @episode.id class="nav-item nav-link p-0"}}
+    <div class="balados-thumbnail">
+      <img src={{if @episode.thumbnailUrl @episode.thumbnailUrl "../images/placeholder.jpg"}} class="img-fluid" alt="Image">
+      <div class="hover d-table">
+        <div class="d-table-cell align-middle text-center text-white">
+          <div class="h5">
+            Épisode {{@episode.id}}
+          </div>
+          <div class="h6 text-uppercase ">
+            {{@episode.title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/link-to}}
+</div>
