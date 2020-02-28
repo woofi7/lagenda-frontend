@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    {{#each this.articles as |article|}}
+      <ArticleCard @article={{article}}/>
+    {{/each}}
+  </div>
+</div>

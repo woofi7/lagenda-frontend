@@ -12,19 +12,21 @@ export default Route.extend({
       balados: [
         {
           id: 1,
-          title: 'Title 1',
-          postDatetime: '2019-02-01',
-          updateDatetime: '2019-02-01',
+          title: 'Courses à la chefferies',
+          postDatetime: '02-29-2019',
+          updateDatetime: '02-29-2019',
           desc: 'Une description',
           thumbnailUrl: '../images/bg-1.jpg',
-          appleLink: '',
+          appleLink: 'http://localhost:4200/balados/1/1',
           googlePlayLink: '',
-          spotifyLink: '',
-          category: 1
+          spotifyLink: 'http://localhost:4200/balados/1/1',
+          soundcloudLink: 'http://localhost:4200/balados/1/1',
+          category: 1,
+          episodeNumber: 1
         },
         {
           id: 2,
-          title: 'Title 2',
+          title: 'Titre de balado',
           postDatetime: '2019-02-01',
           updateDatetime: '2019-02-01',
           desc: 'Une description 2',
@@ -32,7 +34,8 @@ export default Route.extend({
           appleLink: '',
           googlePlayLink: '',
           spotifyLink: '',
-          category: 1
+          category: 1,
+          episodeNumber: 2
         },
         {
           id: 3,
@@ -44,7 +47,8 @@ export default Route.extend({
           appleLink: '',
           googlePlayLink: '',
           spotifyLink: '',
-          category: 1
+          category: 1,
+          episodeNumber: 3
         }
       ]
     },
@@ -61,7 +65,8 @@ export default Route.extend({
         appleLink: '',
         googlePlayLink: '',
         spotifyLink: '',
-        category: 2
+        category: 2,
+        episodeNumber: 1
       }]
     },
     {
@@ -77,14 +82,15 @@ export default Route.extend({
         appleLink: '',
         googlePlayLink: '',
         spotifyLink: '',
-        category: 3
+        category: 3,
+        episodeNumber: 1
       }]
     },
     {
       id: 4,
       name: 'Héritage',
       balados: [{
-        id: 6,
+        id: 7,
         title: 'Title 6',
         postDatetime: '2019-02-01',
         updateDatetime: '2019-02-01',
@@ -93,7 +99,8 @@ export default Route.extend({
         appleLink: '',
         googlePlayLink: '',
         spotifyLink: '',
-        category: 4
+        category: 4,
+        episodeNumber: 1
       }]
     }];
   }

@@ -1,5 +1,7 @@
-<Navbar />
+<div id="la-tribune">
+  <SideMenu @categories={{model}} />
 
-{{outlet}}
-
-<Footer />
+  <div class="container-fluid my-4 content">
+    {{outlet}}
+  </div>
+</div>

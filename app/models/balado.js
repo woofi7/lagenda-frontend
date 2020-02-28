@@ -10,6 +10,8 @@ export default class BaladoModel extends Model {
   @attr('string') appleLink;
   @attr('string') googlePlayLink;
   @attr('string') spotifyLink;
+  @attr('string') soundcloudLink;
+  @attr('int') episodeNumber;
 
   @belongsTo('balado-category') category;
 }

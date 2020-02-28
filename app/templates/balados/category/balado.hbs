@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>{{balado.title}}</h2>
+  <small>{{moment balado.postDatetime 'dddd Do MMMM YYYY, h:mm:ss a'}}</small>
+  {{#if balado.updateDatetime}}
+    <small>Mise à jour: {{moment balado.updateDatetime 'MM-DD-YYYY'}}</small>
+  {{/if}}
+  <div class="row mb-3">
+    <div class="col-8">
+      <p>
+        {{{balado.desc}}}
+      </p>
+    </div>
+    <div class="col-4 px-0">
+      <h4 class="mb-2">Écouter l'épisode</h4>
+      <div>
+        {{#if balado.appleLink}}
+          <a href={{balado.appleLink}} class="mx-2"><img src="../../logo/apple-podcast.png" alt="Apple podcast" height="40px" width="40px"></a>
+        {{/if}}
+        {{#if balado.googlePlayLink}}
+          <a href={{balado.googlePlayLink}} class="mx-2"><img src="../../logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
+        {{/if}}
+        {{#if balado.spotifyLink}}
+          <a href={{balado.spotifyLink}} class="mx-2"><img src="../../logo/spotify.png" alt="Google play" height="40px" width="40px"></a>
+        {{/if}}
+        {{#if balado.soundcloudLink}}
+          <a href={{balado.soundcloudLink}} class="mx-2"><img src="https://w.soundcloud.com/icon/assets/images/orange_white_40-94fc761.png" alt="Soundcloud" height="40px" width="40px"></a>
+        {{/if}}
+      </div>
+      <img src="../../images/bg-1.jpg" class="img-fluid episode-image my-3" alt="Responsive image">
+    </div>
+  </div>
+  <h3>Nos autres épisodes</h3>
+  <div class="row">
+    <div class="col px-0 mx-2">
+      <a href="#">
+        <div class="balados-thumbnail">
+          <img src="../../images/bg-5.jpg" class="img-fluid" alt="Image">
+          <div class="hover d-table">
+            <div class="d-table-cell align-middle text-center text-white">
+              <div class="h5">
+                Épisode 42
+              </div>
+              <div class="h6 text-uppercase ">
+                Titre du balados
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col px-0 mx-2">
+      <a href="#">
+        <div class="balados-thumbnail">
+          <img src="../../images/bg-6.jpg" class="img-fluid" alt="Image">
+          <div class="hover d-table">
+            <div class="d-table-cell align-middle text-center text-white">
+              <div class="h5">
+                Épisode 42
+              </div>
+              <div class="h6 text-uppercase ">
+                Titre du balados
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col px-0 mx-2">
+      <a href="#">
+        <div class="balados-thumbnail">
+          <img src="../../images/bg-7.jpg" class="img-fluid" alt="Image">
+          <div class="hover d-table">
+            <div class="d-table-cell align-middle text-center text-white">
+              <div class="h5">
+                Épisode 42
+              </div>
+              <div class="h6 text-uppercase ">
+                Titre du balados
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

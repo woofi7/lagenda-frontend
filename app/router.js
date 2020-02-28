@@ -13,12 +13,19 @@ Router.map(function() {
     this.route('show', { path: ':category' });
     this.route('category', { path: ':category' }, function() {
       this.route('list', { path: '/' });
-      this.route('episode', { path: ':episode' });
+      this.route('balado', { path: ':balado' });
+    });
+  });
+  this.route('la-tribune', function() {
+    this.route('list', { path: '/' });
+    this.route('category', { path: ':category' }, function() {
+      this.route('list', { path: '/' });
+      this.route('article', { path: ':article' });
     });
   });
   this.route('faq');
-  this.route('la-tribune');
   this.route('contact');
   this.route('privacy-policy');
   this.route('terms-of-use');
+  this.route('about');
 });

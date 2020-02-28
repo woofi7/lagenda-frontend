@@ -14,13 +14,27 @@ module.exports = function(environment) {
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
-      }
+      },
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    cognito: {
+      poolId: 'us-east-1_xGIcpazVj',
+      clientId: '1voc9igkln094hkkk8dfm6r424'
+    },
+
+    api: {
+      invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
+    },
+
+    moment: {
+      includeLocales: ['fr-ca'],
+      allowEmpty: true,
+    },
   };
 
   if (environment === 'development') {

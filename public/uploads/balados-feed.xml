@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"? >
+<rss xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
+	<channel>
+		<title>L&#39;Agenda</title>
+		<link>https://lagenda.ca/balados</link>
+		<language>fr-ca</language>
+		<copyright>L&#39;Agenda Inc.</copyright>
+		<googleplay:author>Samuel Lamarche, Jonathan Carreiro-Beno&#238;t</googleplay:author>
+		<googleplay:description>Balado parlant de politique Québécoise et Canadienne, on tente d'explorer les idées en profondeur, d'informer les gens et qui sait, créer la politique de demain. </googleplay:description>
+		<description>Balado parlant de politique Québécoise et Canadienne, on tente d'explorer les idées en profondeur, d'informer les gens et qui sait, créer la politique de demain.</description>
+		<googleplay:email>samuel.lamarche24@gmail.com</googleplay:email>
+		<googleplay:image href="https://lagenda.ca/logo/lagenda-logo.png" />
+		<googleplay:category text="News and Politics"/>
+		<item>
+			<title>Balados - Courses à la chefferies</title>
+			<googleplay:author>Samuel Lamarche, Jonathan Carreiro-Beno&#238;t</googleplay:author>
+			<googleplay:description>Les courses à la chefferies se suivent, mais ne se ressemblent pas. On parle de la course du PQ, du PLQ et du Parti Conservateur. Trois courses, trois ambiances et surtout trois constats bien différents.</googleplay:description>
+			<googleplay:image href="https://lagenda.ca/logo/lagenda-logo.png" />
+			<enclosure url="https://lagenda.ca/uploads/balados-1.mp3" length="58311935" type="audio/x-mp3" />
+			<guid>https://lagenda.ca/uploads/balados-1.mp3</guid>
+		</item>
+	</channel>
+</rss>

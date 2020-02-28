@@ -1,0 +1,14 @@
+<nav class="side-menu text-white">
+  <ul class="list-unstyled">
+    <LinkTo @route="la-tribune" class="h3 text-white">
+      <li class="pl-2 my-2">Catégories</li>
+    </LinkTo>
+  {{#each @categories as |category index|}}
+    {{#if (eq index 0)}}
+      <SideMenuCategory @category={{category}}/>
+    {{else}}
+      <SideMenuCategory @category={{category}} @collapsed={{true}} />
+    {{/if}}
+  {{/each}}
+  </ul>
+</nav>
