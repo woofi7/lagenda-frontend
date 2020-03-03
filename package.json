@@ -49,6 +49,7 @@
     "ember-moment": "^8.0.0",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^7.0.0",
+    "ember-screen": "^1.0.0",
     "ember-source": "~3.15.0",
     "ember-truth-helpers": "^2.1.0",
     "eslint-plugin-ember": "^7.7.1",

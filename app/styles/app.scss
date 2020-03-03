@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 .bg-blue {
   background-color: #003da5 !important;
 }
@@ -13,10 +15,6 @@ a:hover {
 
 a.text-white:hover {
   color: lightgray !important;
-}
-
-body {
-  padding-bottom: 50px;
 }
 
 .carousel-item{
@@ -148,24 +146,52 @@ body {
   color: dimgrey;
 }
 
-#la-tribune {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
-}
 
 .side-menu {
   background-color: #003da5;
-  width: 300px;
-  min-height: 100vh;
 }
 
 .side-menu-articles {
   background-color: #0048a5;
 }
 
-.side-menu-articles>a>li:hover,
-.side-menu-articles>a.active li {
+.side-menu-articles > a > li:hover,
+.side-menu-articles > a.active li {
   background-color: #0131a5;
 }
 
+@include media-breakpoint-up(md) {
+  .side-menu {
+    width: 300px;
+    min-height: 87vh;
+  }
+
+  #la-tribune {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+@include media-breakpoint-up(md) {
+   #content-wrap {
+     padding-bottom: 3rem;
+   }
+ }
+
+@include media-breakpoint-down(sm) {
+  #content-wrap {
+    padding-bottom: 7rem;
+  }
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
