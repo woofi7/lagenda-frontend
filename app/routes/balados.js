@@ -13,95 +13,32 @@ export default Route.extend({
         {
           id: 1,
           title: 'Courses à la chefferies',
-          postDatetime: '02-29-2019',
-          updateDatetime: '02-29-2019',
-          desc: 'Une description',
+          postDatetime: '02-26-2020',
+          updateDatetime: '02-26-2020',
+          desc: 'Les courses à la chefferies se suivent, mais ne se ressemblent pas. On parle de la course du PQ, du PLQ et du Parti Conservateur. Trois courses, trois ambiances et surtout trois constats bien différents. ',
           thumbnailUrl: '../images/bg-1.jpg',
-          appleLink: 'http://localhost:4200/balados/1/1',
-          googlePlayLink: '',
-          spotifyLink: 'http://localhost:4200/balados/1/1',
-          soundcloudLink: 'http://localhost:4200/balados/1/1',
+          appleLink: 'https://podcasts.apple.com/ca/podcast/courses-%C3%A0-la-chefferies/id1500688101?i=1000466815260',
+          googlePlayLink: 'https://www.google.com/podcasts?feed=aHR0cHM6Ly9mZWVkcy5zaW1wbGVjYXN0LmNvbS9sTmFHMHNGUw%3D%3D',
+          spotifyLink: 'https://open.spotify.com/episode/1GQ5lXdLq88tB03IAJDYto',
           category: 1,
           episodeNumber: 1
         },
-        {
-          id: 2,
-          title: 'Titre de balado',
-          postDatetime: '2019-02-01',
-          updateDatetime: '2019-02-01',
-          desc: 'Une description 2',
-          thumbnailUrl: '',
-          appleLink: '',
-          googlePlayLink: '',
-          spotifyLink: '',
-          category: 1,
-          episodeNumber: 2
-        },
-        {
-          id: 3,
-          title: 'Title 3',
-          postDatetime: '2019-02-01',
-          updateDatetime: '2019-02-01',
-          desc: 'Une description 3',
-          thumbnailUrl: '',
-          appleLink: '',
-          googlePlayLink: '',
-          spotifyLink: '',
-          category: 1,
-          episodeNumber: 3
-        }
       ]
     },
     {
       id: 2,
       name: 'Débats',
-      balados: [{
-        id: 5,
-        title: 'Title 5',
-        postDatetime: '2019-02-01',
-        updateDatetime: '2019-02-01',
-        desc: 'Une description 5',
-        thumbnailUrl: '',
-        appleLink: '',
-        googlePlayLink: '',
-        spotifyLink: '',
-        category: 2,
-        episodeNumber: 1
-      }]
+      balados: []
     },
     {
       id: 3,
       name: 'Entrevues',
-      balados: [{
-        id: 6,
-        title: 'Title 6',
-        postDatetime: '2019-02-01',
-        updateDatetime: '2019-02-01',
-        desc: 'Une description 6',
-        thumbnailUrl: '',
-        appleLink: '',
-        googlePlayLink: '',
-        spotifyLink: '',
-        category: 3,
-        episodeNumber: 1
-      }]
+      balados: []
     },
     {
       id: 4,
       name: 'Héritage',
-      balados: [{
-        id: 7,
-        title: 'Title 6',
-        postDatetime: '2019-02-01',
-        updateDatetime: '2019-02-01',
-        desc: 'Une description 6',
-        thumbnailUrl: '',
-        appleLink: '',
-        googlePlayLink: '',
-        spotifyLink: '',
-        category: 4,
-        episodeNumber: 1
-      }]
+      balados: []
     }];
   }
 });
