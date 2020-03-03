@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-blue" id="menu">
-  {{#link-to "index" class="navbar-brand"}}
-    <img width="40" height="40" class="d-inline-block align-top" alt="Logo Lagenda" src="assets/logo/lagenda-logo.png">
+  <LinkTo @route="index" class="navbar-brand">
+    <img width="40" height="40" class="d-inline-block align-top" alt="Logo Lagenda" src="/assets/logo/lagenda-logo.png">
     <span class="align-middle">{{t 'title'}}</span>
-  {{/link-to}}
+  </LinkTo>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav mx-auto">
-      <LinkTo @route="index" class="nav-item nav-link">{{t 'home'}}</LinkTo>
-      <LinkTo @route="balados" class="nav-item nav-link">{{t 'balados'}}</LinkTo>
-      <LinkTo @route="la-tribune" class="nav-item nav-link">{{t 'la-tribune'}}</LinkTo>
+      <LinkTo @route="index" class="nav-item nav-link">{{t 'home.title'}}</LinkTo>
+      <LinkTo @route="balados" class="nav-item nav-link">{{t 'balados.title'}}</LinkTo>
+      <LinkTo @route="la-tribune" class="nav-item nav-link">{{t 'la-tribune.title'}}</LinkTo>
     </div>
     <a href="https://www.youtube.com/channel/UCG2JO6wHh-AGZ3mDrF6Um1g" class="fab fa-youtube h3 my-auto text-white"></a>
     <a href="https://www.facebook.com/LAgenda-108507207380600" class="fab fa-facebook h3 my-auto text-white mx-2"></a>

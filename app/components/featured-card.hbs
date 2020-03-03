@@ -2,7 +2,7 @@
   {{#if @model.thumbnail}}
     <img src={{@model.thumbnail.url}} class="card-img" alt={{@model.thumbnail.alt}}>
   {{else}}
-    <img src="assets/images/placeholder.jpg" class="card-img" alt={{t "placeholder.alt"}}>
+    <img src="/assets/images/placeholder.jpg" class="card-img" alt={{t "placeholder.alt"}}>
   {{/if}}
   <LinkTo @route={{this.route}} @models={{array @model.category @model.id}} class="nav-item nav-link">
     <div class="card-img-overlay">
