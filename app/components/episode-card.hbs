@@ -1,7 +1,7 @@
 <div class="col-12 col-sm-6 col-lg-3 p-0">
   {{#link-to "balados.category.balado" @episode.category @episode.id class="nav-item nav-link p-0 m-2"}}
     <div class="balados-thumbnail">
-      <img src={{if @episode.thumbnailUrl @episode.thumbnailUrl "../images/placeholder.jpg"}} class="img-fluid" alt="Image">
+      <img src={{if @episode.thumbnailUrl @episode.thumbnailUrl "assets/images/placeholder.jpg"}} class="img-fluid" alt="Image">
       <div class="hover d-table">
         <div class="d-table-cell align-middle text-center text-white">
           <div class="h5">

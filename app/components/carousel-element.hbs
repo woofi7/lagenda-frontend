@@ -1,0 +1,7 @@
+<div class={{concat "carousel-item" (if @first " active")}}>
+  <img src={{@element.image.url}} class="d-block w-100" alt={{@element.image.alt}}>
+  <div class="carousel-caption d-none d-block radial-ellipse-far">
+    <h5 class="text-capitalize"><LinkTo @route={{@element.route}} class="text-white">{{@element.title}}</LinkTo></h5>
+    <p>{{@element.desc}}</p>
+  </div>
+</div>

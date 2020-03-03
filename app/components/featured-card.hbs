@@ -1,0 +1,15 @@
+<div class="news-card col-xl-3 col-lg-4 col-sm-6 col-12 d-sm-flex p-2">
+  {{#if @model.thumbnail}}
+    <img src={{@model.thumbnail.url}} class="card-img" alt={{@model.thumbnail.alt}}>
+  {{else}}
+    <img src="assets/images/placeholder.jpg" class="card-img" alt={{t "placeholder.alt"}}>
+  {{/if}}
+  <LinkTo @route={{this.route}} @models={{array @model.category @model.id}} class="nav-item nav-link">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{@model.title}}</h5>
+      <p class="card-text">
+        {{@model.desc}}
+      </p>
+    </div>
+  </LinkTo>
+</div>

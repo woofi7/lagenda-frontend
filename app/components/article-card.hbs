@@ -1,6 +1,6 @@
 <div class="col-12 col-sm-6 col-lg-4 p-2 d-sm-flex">
   <div class="card mx-0">
-    <img class="card-img-top" src={{if @article.thumbnailUrl @article.thumbnailUrl "../../images/placeholder.jpg"}} alt="Card image cap">
+    <img class="card-img-top" src={{if @article.thumbnailUrl @article.thumbnailUrl "assets/images/placeholder.jpg"}} alt="Card image cap">
     <div class="card-body p-2 d-flex flex-column">
       <h5 class="card-title mb-1">{{if @article.title @article.title "No title"}}</h5>
       <p class="card-text small">{{if @article.desc @article.desc "No description."}}</p>

@@ -1,8 +1,17 @@
-title: L'agenda
+title: "L'Agenda"
 
-home: Accueil
-la-tribune: La Tribune
-balados: Balados
+placeholder:
+  alt: "Placeholder of featured element."
+
+home:
+  title: "Accueil"
+  featured: "En vedette"
+  carousel:
+    previous: "Précédent"
+    next: "Suivant"
+
+la-tribune: "La Tribune"
+balados: "Balados"
 faq: "FAQ"
 contact-us: "Contactez-nous"
 privacy-policy: "Politique de confidentialité"
