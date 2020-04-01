@@ -1,7 +1,8 @@
 <div class="container">
+  <h1>{{this.model.name}}</h1>
   <div class="row">
-  {{#each this.articles as |article|}}
-    <ArticleCard @article={{article}}/>
-  {{/each}}
+    {{#each this.model.articles as |article|}}
+      <ArticleCard @article={{article}}/>
+    {{/each}}
   </div>
 </div>

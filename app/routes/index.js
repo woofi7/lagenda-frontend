@@ -79,26 +79,25 @@ export default class IndexRoute extends Route {
           },
         },
         {
-          id: 7,
+          id: 9,
           type: 'article',
-          category: 2,
-          title: 'Vision d’un autre monde',
-          desc: 'L’épidémie de la COVID-19 aura permis à plusieurs d’entre nous de voir des situations pouvant' +
-            ' paraître d’un autre monde. ',
+          category: 4,
+          title: 'Le fédéralisme et le droit provincial en matière de traités internationaux',
+          desc: 'En 1965, le vice-premier ministre et ministre de l’Éducation, Paul Gérin-Lajoie, met sur pied une' +
+            ' doctrine révisant le rôle de la province du Québec sur la scène internationale.',
           thumbnail: {
-            url: '/assets/images/article7.jpg',
+            url: '/assets/images/article9.jpg',
             alt: 'Image description',
-            credits: 'RADIO-CANADA / THOMAS GERBET'
           },
         },
         {
-          id: 6,
+          id: 8,
           type: 'article',
           category: 2,
-          title: 'Il y a les leaders et les autres',
-          desc: 'La pandémie actuelle qui frappe de plein fouet le monde, mais aussi le Canada nous rappelle sauvagement notre fragilité et ...',
+          title: 'Un (pas si rare) moment d’unité',
+          desc: 'À force de lire les experts et les chroniqueurs être en extase devant les sondages d’approbation de François Legault ...',
           thumbnail: {
-            url: '/assets/images/article6.jpg',
+            url: '/assets/images/article8.jpg',
             alt: 'Image description'
           },
         },

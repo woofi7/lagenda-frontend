@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <li {{on "click" this.toggleItems}} class="py-2 pr-2 h5 mb-0 pl-3 clickable">
+    <li {{on "click" this.toggleItems}} class={{concat "py-2 pr-2 mb-0 pl-3 clickable " (if @subCategory "h6" "h5")}}>
       {{@category.name}}
       <i class={{concat "p-2 fas float-right " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
     </li>
@@ -8,10 +8,23 @@
 </div>
 <BsCollapse @collapsed={{collapsed}}>
   <ul class="list-unstyled side-menu-articles">
-    {{#each @category.articles as |article|}}
-      <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
-        <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
+    {{#if @category.subCategories}}
+      {{#each @category.subCategories as |subCategory index|}}
+        {{#if (eq index 0)}}
+          <SideMenuCategory @category={{subCategory}} @subCategory={{true}} />
+        {{else}}
+          <SideMenuCategory @category={{subCategory}} @collapsed={{true}} @subCategory={{true}} />
+        {{/if}}
+      {{/each}}
+    {{else}}
+      {{#each @category.articles as |article|}}
+        <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
+          <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
+        </LinkTo>
+      {{/each}}
+      <LinkTo @route="la-tribune.category" @models={{array @category.id}}>
+        <li class="py-2 pl-3 pr-2 mb-0 clickable font-italic">{{t "la-tribune.more"}}</li>
       </LinkTo>
-    {{/each}}
+    {{/if}}
   </ul>
 </BsCollapse>

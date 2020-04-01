@@ -14,6 +14,7 @@ home:
 la-tribune:
   title: "La Tribune"
   read-article: "Lire l'article"
+  more: "Plus d'acticles..."
 
 balados:
   title: "Balados"

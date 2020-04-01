@@ -168,7 +168,7 @@ export default Route.extend({
           postDatetime: '2020-03-25',
           updateDatetime: '2020-03-25',
           desc: 'L’épidémie de la COVID-19 aura permis à plusieurs d’entre nous de voir des situations pouvant paraître d’un autre monde. Quarantaine, rationnement, étagères vides et mesures de sécurité pour éviter les contaminations. Du jamais vu pour pratiquement tout le monde.',
-          content: '<p><b>L’épidémie de la COVID-19 aura permis à plusieurs d’entre nous de voir des situations pouvant paraître d’un autre monde. Quarantaine, rationnement, étagères vides et mesures de sécurité pour éviter les contaminations. Du jamais vu pour pratiquement tout le monde.</b></p>\n' +
+          content: '<p><b>L’épidémie de la COVID-19 aura permis à plusieurs d’entre nous de voir des situations pouvant paraître d’un autre monde. Quarantaine, rationnement, étagères vides et mesures de sécurité pour éviter les contaminations. Du jamais vu pour pratiquement tout le monde.</b></p>' +
             '<p>Lorsque je suis entré à l’épicerie près de chez moi quelques heures après l’annonce de la fermeture de tous les commerces non essentiels par François Legault. J’ai pu observer un spectacle digne d’un film de série B un peu exagéré. Une série de palettes de bois et du ruban jaune délimitaient une sorte de grand labyrinthe pour faire attendre les nombreux clients sans qu’ils n’entrent en contact ou ne s’approchent trop près. Un panneau indiquait ce qui était encore sur les étagères, mais rationné et ce qui était en rupture de stock. Pour moi, jeune homme de 22 ayant grandi au Québec et pour la plupart de mes compatriotes, c’est une vision d’un autre monde. Certes il n’est pas rare qu’un produit ne soit pas présent sur les étagères, car il est en rabais ou particulièrement en demande pendant la période. On n’aura qu’à penser aux fraises du Québec pendant l’été qui viennent parfois à manquer si l’on arrive trop tard, mais jamais des rangées complètes de denrées alimentaires ou un rationnement obligatoire. </p>' +
             '<p>Cette sécurité alimentaire omniprésente pour la grande majorité de notre province et qui nous semble être la chose la plus normale au monde est pourtant une anomalie historique. Très peu de pays et de citoyens dans le monde profitent d’une situation d’abondance comme nous profitions et avons profité pendant le dernier demi-siècle. Cette situation d’abondance nous apparaît pourtant comme étant normale et même comme étant dû. Nous en sommes venus à croire, il semblerait, que cette abondance était infinie et le Canada, comme la plupart des pays occidentaux, aura gaspillé plus de nourriture en 50 ans que certains empires ont pu produire toute leur vie durant. Heureusement, cette situation de pénurie est temporaire. Le système de distribution et de production alimentaire est solide et les étagères se remplissent déjà à nouveau à une vitesse folle. Bientôt les panneaux de rationnement et les files d’attente ne seront plus qu’un souvenir ou une scène étrange d’un documentaire sur l’épidémie et la crise économique subséquente. Un peu à l’image des scènes que l’on peut retrouver dans certains films des années 70 avec des files de centaines de voitures attendant leur maigre 5 gallons d’essence. </p>' +
             '<p>Ces images m’auront définitivement marquée, mais elles doivent aussi nous apprendre une leçon importante. L’histoire n’est pas une ligne de progression linéaire. Après Rome et ses grands travaux et progrès sociaux vint le moyen-âge et la peste noire. Nos ancêtres ont dû travailler d’arrache-pied pour coloniser le Québec pour en faire la nation opulente d’aujourd’hui. Des hommes et des femmes vivants 10 ou même 15 dans la même maison dans des conditions impossibles à imaginer pour nous. Ce confort que nous prenons pour acquis, ces libertés que nous chérissons ont un prix et ce prix est de rester vigilant et de ne pas abaisser notre garde. Nous ne pouvons pas nous permettre de nous croire invincibles et au-dessus des foudres de la vie. Nous devons reconnaître humblement notre vulnérabilité et faire tout notre possible pour léguer des outils pour réduire cette dernière à nos descendants. </p>' +
@@ -178,6 +178,39 @@ export default Route.extend({
             url: '/assets/images/article7.jpg',
             alt: 'Description image.',
             credits: 'RADIO-CANADA / THOMAS GERBET'
+          },
+          category: 2,
+          authors: [
+            {
+              id: 1,
+              firstName: 'Samuel',
+              lastName: 'Lamarche',
+              desc: 'Rédacteur en chef',
+              photo: {
+                url: '/assets/images/photoSamuel.jpg',
+                alt: 'Photo Samuel Lamarche.'
+              }
+            }
+          ]
+        },
+        {
+          id: 8,
+          title: 'Un (pas si rare) moment d’unité',
+          postDatetime: '2020-03-31',
+          updateDatetime: '2020-03-31',
+          desc: 'À force de lire les experts et les chroniqueurs être en extase devant les sondages d’approbation de François Legault, on aurait tendance à croire que nous vivons un rare moment d’unité dans une province éternellement divisée en deux depuis 50 ans. Pas si vite, devoir de mémoire oblige, retournons en arrière pour voir si c’est vraiment le cas.',
+          content: '<p><b>À force de lire les experts et les chroniqueurs être en extase devant les sondages d’approbation de François Legault, on aurait tendance à croire que nous vivons un rare moment d’unité dans une province éternellement divisée en deux depuis 50 ans. Pas si vite, devoir de mémoire oblige, retournons en arrière pour voir si c’est vraiment le cas.</b></p>' +
+            '<p>Retournons en arrière vers la plus grande catastrophe climatique que le Québec a pu subir de mémoire d’homme. Janvier 1998, c’est la crise du verglas, jusqu’à 100mm de verglas s’abat sur la province et écrase lentement, mais sûrement le réseau électrique du Québec. Les pylônes s’effondrent et les fils deviennent tellement lourds qu’ils s’abaissent dangereusement à quelques mètres du sol. Au sommet de la crise, 1,4 million d’abonnés seront privés d’électricité et une seule ligne achemine le courant à Montréal. La gravité de la situation est non négligeable, mais il est important de se souvenir que nous sommes passés à deux doigts de la catastrophe à Montréal, quand cette dernière ligne fût sauvée de justesse, par deux monteurs de lignes sautant d’un hélicoptère au-dessus du fleuve. S’ils avaient échoué, l’île aurait pu être évacuée. La gestion d’Hydro-Québec est heureusement très adéquate et combiné avec une intervention musclée de l’armée en rôle de soutien et une communication efficace de Lucien Bouchard et d’André Caillé avec leur point de presse quotidien qui ne sont pas sans rappeler ceux de François Legault. Trente personnes décèdent en raison de la crise soit d’hypothermie ou d’un empoisonnement au monoxyde de carbone ou même d’une chute en raison du verglas. Un bilan beaucoup plus léger que la crise actuelle, mais une crise d’un autre genre il faut l’admettre. </p>' +
+            '<h4>La réponse québécoise?</h4>' +
+            '<p>Quelle a donc été la réponse québécoise à cette catastrophe sans précédent? La solidarité. Devant l’adversité les Québécois auront décidé de faire preuve de solidarité, d’écouter leurs dirigeants et de mettre les bouchées doubles pour s’en sortir. Un sentiment de déjà vu m’envahit… Serait-ce donc dans l’ADN des Québécois de grandir dans l’adversité et de savoir surmonter les défis? De savoir se rallier derrière leurs dirigeants et leur gouvernement? Au plus fort de la crise, les hôpitaux tournent sur les génératrices, 140 000 personnes dorment dans 454 refuges spécifiquement ouverts pour la crise. Un cauchemar logistique entre la sécurité publique, les municipalités, Hydro-Québec, l’armée et le gouvernement du Québec. Lucien Bouchard, premier ministre à l’époque, comprend rapidement qu’il doit faire preuve de leadership et assumer les commandes. Sa décision et ses méthodes semblent d’ailleurs servir de modèle à François Legault 22 ans plus tard. Réduction de la bureaucratie, centralisation des pouvoirs et surtout une collaboration et un soutien de l’opposition qui comme aujourd’hui, comprend que le Québec a besoin de faire front commun face à la crise. Certains useront même de débrouillardise pour sortir leurs concitoyens de la noirceur et du froid. La mairesse de Boucherville, Francine Gadbois, décide de faire fonctionner une locomotive du CN près de l’hôtel de ville et de s’en servir comme génératrice. Pas bête!</p>' +
+            '<h4>Les leçons du verglas 22 ans plus tard.</h4>' +
+            '<p>S’il y a bien une leçon que François Legault a retenue de 1998 c’est la gestion de maître des communications de Lucien Bouchard et André Caillé avec son fameux col roulé. Chaque jour, ils délivraient l’information, répondaient aux questions et indiquaient la marche à suivre d’un ton rigide, mais calme. On sentait qu’ils comprenaient l’urgence, mais qu’ils n’étaient pas dépassés par l’ampleur de la crise. Un duo de choc s’est formé avec ce baptême de feu. Il est amusant de regarder les parallèles entre 1998 et 2020 lorsque l’on y prête attention. Conférence de presse quotidienne, un premier ministre qui agit en bon père de famille, qui rassure sa population, flanqué de ses adjoints. Le symbole de la crise en 1998 le fameux col roulé remplacé aujourd’hui par le fameux slogan du docteur Arruda « Ça va bien aller » la sincérité du gouvernement face à l’ampleur de la crise qui ne cache pas à la population que le pire est à venir. Il sera intéressant, lorsque la pandémie sera chose du passé, d’analyser à quel point François Legault aura puisé dans le livre de gestion de crise de monsieur Bouchard et à quel point la classe politique du Québec et le Québec tout entier auront réagi de manière similaire. L’influence est évidente et il y a fort à parier que la gestion de crise de la pandémie servira de cahier de gestion 2.0 avec l’arrivée des médias sociaux. Il sera intéressant de voir si les Québécois auront la même réaction à l’après-crise quand viendra le temps des élections en reportant François Legault au pouvoir de manière moins forte qu’anticipé. Comme si les sondages en temps de crises ne se limitaient qu’à ça et que les Québécois passaient à autre chose. Ingrat? Ou simplement au courant qu’une bonne gestion de crise n’est pas nécessairement garante d’une bonne gestion des affaires au quotidien.</p>' +
+            '<h4>Quelque chose comme un grand peuple.</h4>' +
+            '<p>Il n’est pas malhonnête selon moi de dire que le peuple québécois a prouvé à maintes reprises sa résilience face aux difficultés de la vie. L’adaptation de nos ancêtres aux rudes hivers, la capacité de nos citoyens à protéger leur culture et leur langue et un réflexe de solidarité et de coopération quand la situation le commande. Il serait peut-être temps de cesser de donner de la crédibilité aux gens qui dénigrent la capacité du Québec à se gouverner et qui traitent le Québec de république de bananes. Il serait temps de réaliser que le Québec, dans son état actuel, avec ses structures et ses citoyens, s’est montré amplement compétent et capable de réagir à tout ce que la nature et le monde peut nous envoyer et même mieux que le Canada comme nous avons pu le voir avec la COVID-19. Il serait temps de nous faire confiance à l’avenir et de cesser de douter de nos capacités dès que l’on parle de sortir de la politique fade de petits gestionnaires et de faire un projet de société ambitieux. Il serait donc, en quelque sorte, temps de reconnaître que le Québec est habité par quelque chose comme un grand peuple et que ces élans de solidarités et ce ralliement derrière notre gouvernement en temps de crise ne devraient pas être vus comme une exception, mais plutôt comme une preuve supplémentaire de l’intelligence et la valeur de nos citoyens. Un signe rassurant considérant les défis qui nous attendent et qui me donne confiance que nous passerons à travers de tous les obstacles si l’on s’en donne les moyens. </p>',
+          thumbnail: {
+            url: '/assets/images/article8.jpg',
+            alt: 'Description image.',
+            credits: 'RADIO-CANADA / SYLVAIN ROY ROUSSEL'
           },
           category: 2,
           authors: [
@@ -234,7 +267,204 @@ export default Route.extend({
           ]
         },
       ]
-    }];
+    },
+    {
+      id: 4,
+      name: 'Jonathan Carreiro-Benoît',
+      articles: [
+        {
+          id: 9,
+          title: 'Le fédéralisme et le droit provincial en matière de traités internationaux',
+          postDatetime: '2020-03-31',
+          updateDatetime: '2020-03-31',
+          desc: 'En 1965, le vice-premier ministre et ministre de l’Éducation, Paul Gérin-Lajoie, met sur pied une doctrine révisant le rôle de la province du Québec sur la scène internationale.',
+          content: '<p>En 1965, le vice-premier ministre et ministre de l’Éducation, Paul Gérin-Lajoie, met sur pied une doctrine révisant le rôle de la province du Québec sur la scène internationale. Cette dernière stipule qu’il est impératif, d’un point de vue identitaire, que le gouvernement québécois adopte une politique favorisant ses propres conceptions des traités internationaux concernant ses champs de compétences. Le tout s’inscrit alors dans un cadre licite d’action devant le fédéral.<sup><a href="#cite_note-1">1</a></sup>  Ainsi, la doctrine Gérin-Lajoie soulève la capacité juridique du Québec à se faire valoir constitutionnellement sur le plan global. De facto, les lois constitutionnelles ne sont aucunement représentatives des débats internationaux distinctifs aux exigences du Québec.<sup><a href="#cite_note-2">2</a></sup> La doctrine donne un élan pratique aux relations mondiales de la province tout en énonçant une conduite à l’assise légale des droits québécois. Elle reprend en compte l’entente sur l’éducation entre le Québec et la France, signée le 27 février 1965, et celle sur la coopération culturelle entre les deux gouvernements, signée le 24 novembre de la même année. </p>' +
+            '<p>Le premier accord à une valeur significative, car il projette le Québec et ses ambitions sur la scène internationale alors que le gouvernement fédéral conçoit au même moment la valeur conséquente du fait français au Canada. La deuxième entente à pour fin d’encadrer l’intervention du Québec auprès de la France et ainsi consolider une francophonie en effervescence. L’appareillage d’un <i>jus tractatum</i> en matière de langue, d’éducation et de culture soumet l’existence du Québec, donc de son pouvoir décisionnel. Le droit international s’inscrit pour le Québec dans ses différences les plus significatives avec le reste du Canada.<sup><a href="#cite_note-3">3</a></sup> Faisant référence à l’article sept de la <i>Loi sur l’exercice des droits fondamentaux et des prérogatives du peuple québécois et de l’État du Québec</i> stipulant que « [l]’État du Québec est libre de consentir à être lié par tout traité, convention ou entente internationale qui touche à sa compétence constitutionnelle »<sup><a href="#cite_note-4">4</a></sup>, Gérin-Lajoie sous-entend deux types de traités propres au Québec. D’une part, il y a ceux qui ne requièrent guère l’approbation de l’Assemblée nationale et qui, pour être en règle, doivent être signés par le ministre et entérinés par le gouvernement. D’autre part, c’est les ententes qui doivent faire l’objet d’un acquiescement de l’Assemblée nationale qui doivent être validées par le ministre et ratifiées par l’État. Paquin précise que, en 2005, 550 accords internationaux ont été confirmés par le gouvernement à titre de droit international dont approximativement 300 sont toujours en vigueurs.<sup><a href="#cite_note-5">5</a></sup></p>' +
+            '<p>Cette informalité pousse Ottawa à négocier les préceptes révisant et approuvant les cadres internationaux pouvant profiter au Québec sans pour autant le rendre souverain devant à la capitale fédérale. Ainsi, l’article 17 de la <i>Loi sur le ministère des Affaires intergouvernementales</i> de 1974 et l’article 17 de la <i>Loi sur le ministère des Relations internationales</i> de 1984 stipulent que « le ministère recommande au gouvernement la ratification des traités et accords internationaux dans les domaines ressortissants à la compétence constitutionnelle du Québec »<sup><a href="#cite_note-6">6</a></sup>. Gérin-Lajoie prévoit à cet effet une collaboration accrue du Québec dans les forums mondiaux. Néanmoins, cette participation doit être apolitique. L’action des délégués se veut gouvernementale sans pour autant prendre position en son nom comme indiqué dans l’article 34 de la <i>Loi sur le ministère des Relations internationales</i>. <sup><a href="#cite_note-7">7</a></sup> Le gouvernement canadien n’a d’autre choix que de développer des mécanismes afin de consulter les provinces sur leur champ de compétences. Néanmoins, les échanges sont souvent arbitraires et présentent un manque de participation provinciale considérable. Le truchement du gouvernement fédéral dans les affaires universelles des organisations extérieures ne peut alors passer par la simple gestion d’entités subétatiques.<sup><a href="#cite_note-8">8</a></sup> La politique étrangère québécoise peut être caractérisée en quelques énoncés. Il s’agit d’une action orientée. Outre la modernisation, il faut être en mesure de s’approprier le système international, donc de composer avec ce dernier. Lors d’un discours devant les Harvard Fellows à Montréal en 2000, Louise Beaudoin qualifie le Québec comme une société en quête de reconnaissance identitaire et politique. </p>' +
+            '<p>De plus, la mondialisation oblige l’État québécois à s’adapter aux mutations mondiales des acteurs et des interrelations étatiques. Cela dit, les gouvernements péquistes et libéraux doivent balancer selon leur intérêt commun pour la Nation. Bernard Landry caractérisait l’action « d’interdépendance accrue entre les économies »<sup><a href="#cite_note-9">9</a></sup>, alors que son homologue libéral de quelques années plus tard, John Ciaccia, cherchait à commander une stratégie réactionnaire afin de définir les priorités de la gouvernance.<sup><a href="#cite_note-10">10</a></sup>' +
+            '<ol>' +
+            '<li id="cite_note-1">Robert BERNIER, Les défis québécois, conjonctures et transitions, Québec, Presses de l’Université du Québec, 2014, p. 447-450. </li>' +
+            '<li id="cite_note-2">Guy LACHAPPELLE & Bruno MALTAIS, « Diversité culturelle et stratégies subétatiques : le cas du Québec », Revue internationale de politique comparée, volume 12, numéro 2, 2005, p. 151-152. </li>' +
+            '<li id="cite_note-3">Aurélien YANNIC, Le Québec en francophonie : de la Révolution tranquille au référendum de 1995, Saint-Denis, Éditions Publibook, 2016, p. 61-62. </li>' +
+            '<li id="cite_note-4">LÉGISQUÉBEC, « Loi sur l’exercice des droits fondamentaux et des prérogatives du peuple québécois et de l’État du Québec », Publications Québec, 2019, Consulté le 10 mars 2020,  http://legisquebec.gouv.qc.ca/fr/ShowDoc/cs/E-20.2</li>' +
+            '<li id="cite_note-5">Stéphane PAQUIN, Les relations internationales du Québec depuis la doctrine Gérin-Lajoie (1965-2005) : le prolongement externe des compétences internes, Québec, Presses Université Laval, 2006, p. 51-57. </li>' +
+            '<li id="cite_note-6">Ibid., p. 60. </li>' +
+            '<li id="cite_note-7">Ibid., p. 58-65. </li>' +
+            '<li id="cite_note-8">Kim Richard NOSSAL & al, Politique internationale et défense au Canada et au Québec, Montréal, Les Presses de l’Université de Montréal, 2007, p. 501-502. </li>' +
+            '<li id="cite_note-9">Nelson MICHAUD & Isabelle RAMET, « Québec Et Politique Étrangère: Contradiction Ou Réalité? », International Journal, Volume 59, numéro 2, 2004, p. 315. </li>' +
+            '<li id="cite_note-10">Ibid., p. 312-316. </li>' +
+            '</ol>',
+          thumbnail: {
+            url: '/assets/images/article9.jpg',
+            alt: 'Description image.',
+            credits: 'ARCHIVES LA PRESSE/RÉAL SAINT-JEAN'
+          },
+          category: 4,
+          authors: [
+            {
+              id: 4,
+              firstName: 'Jonathan',
+              lastName: 'Carreiro-Benoît',
+              desc: 'Co-animateur',
+              photo: {
+                url: '/assets/images/photoJonathan.jpg',
+                alt: 'Photo Jonathan Carreiro-Benoit.'
+              }
+            }
+          ]
+        },
+      ]
+    },
+    /*{
+      id: 4,
+      name: 'Cahiers de la rédaction',
+      subCategories: [
+        {
+          id: 1,
+          name: 'Ornithorynque volant',
+          articles: [
+            {
+              id: 11,
+              title: 'Test',
+              postDatetime: '2020-03-08',
+              updateDatetime: '2020-03-08',
+              desc: 'Depuis presque un mois, les blocus ferroviaires se multiplient partout au pays.',
+              content: 'Le tout s’inscrit alors dans un cadre licite d’action devant le fédéral.<a href= ""> </href> Ainsi, la doctrine',
+              thumbnail: {
+                url: '/assets/images/bg-1.jpg',
+                alt: 'Description image.'
+              },
+              category: 4,
+              subCategory: 1,
+              authors: [
+                {
+                  id: 3,
+                  firstName: 'Jordan',
+                  lastName: 'Larochelle',
+                  desc: 'Collaborateur',
+                  photo: {
+                    url: '/assets/images/photoJordan.jpg',
+                    alt: 'Photo Jordan Larochelle.'
+                  }
+                }
+              ]
+            },
+            {
+              id: 10,
+              title: 'Les autochtones et nous',
+              postDatetime: '2020-03-08',
+              updateDatetime: '2020-03-08',
+              desc: 'Depuis presque un mois, les blocus ferroviaires se multiplient partout au pays. ',
+              content: '',
+              thumbnail: {
+                url: '/assets/images/bg-1.jpg',
+                alt: 'Description image.'
+              },
+              category: 4,
+              subCategory: 1,
+              authors: [
+                {
+                  id: 3,
+                  firstName: 'Jordan',
+                  lastName: 'Larochelle',
+                  desc: 'Collaborateur',
+                  photo: {
+                    url: '/assets/images/photoJordan.jpg',
+                    alt: 'Photo Jordan Larochelle.'
+                  }
+                }
+              ]
+            },
+          ]
+        },
+        {
+          id: 2,
+          name: 'Horacio écrase la courbe',
+          articles: [
+            {
+              id: 9,
+              title: 'Les autochtones et nous',
+              postDatetime: '2020-03-08',
+              updateDatetime: '2020-03-08',
+              desc: 'Depuis presque un mois, les blocus ferroviaires se multiplient partout au pays. ',
+              content: '',
+              thumbnail: {
+                url: '/assets/images/bg-1.jpg',
+                alt: 'Description image.'
+              },
+              category: 4,
+              subCategory: 2,
+              authors: [
+                {
+                  id: 3,
+                  firstName: 'Jordan',
+                  lastName: 'Larochelle',
+                  desc: 'Collaborateur',
+                  photo: {
+                    url: '/assets/images/photoJordan.jpg',
+                    alt: 'Photo Jordan Larochelle.'
+                  }
+                }
+              ]
+            },
+            {
+              id: 10,
+              title: 'Les autochtones et nous',
+              postDatetime: '2020-03-08',
+              updateDatetime: '2020-03-08',
+              desc: 'Depuis presque un mois, les blocus ferroviaires se multiplient partout au pays. ',
+              content: '',
+              thumbnail: {
+                url: '/assets/images/bg-1.jpg',
+                alt: 'Description image.'
+              },
+              category: 4,
+              subCategory: 2,
+              authors: [
+                {
+                  id: 3,
+                  firstName: 'Jordan',
+                  lastName: 'Larochelle',
+                  desc: 'Collaborateur',
+                  photo: {
+                    url: '/assets/images/photoJordan.jpg',
+                    alt: 'Photo Jordan Larochelle.'
+                  }
+                }
+              ]
+            },
+          ]
+        }
+      ],
+      articles: [
+        {
+          id: 11,
+          title: 'Test',
+          postDatetime: '2020-03-08',
+          updateDatetime: '2020-03-08',
+          desc: 'Depuis presque un mois, les blocus ferroviaires se multiplient partout au pays.',
+          content: '',
+          thumbnail: {
+            url: '/assets/images/bg-1.jpg',
+            alt: 'Description image.'
+          },
+          category: 4,
+          subCategory: 1,
+          authors: [
+            {
+              id: 3,
+              firstName: 'Jordan',
+              lastName: 'Larochelle',
+              desc: 'Collaborateur',
+              photo: {
+                url: '/assets/images/photoJordan.jpg',
+                alt: 'Photo Jordan Larochelle.'
+              }
+            }
+          ]
+        },
+      ]
+    }*/];
   }
 });
 
