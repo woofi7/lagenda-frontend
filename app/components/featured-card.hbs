@@ -6,7 +6,8 @@
   {{/if}}
   <LinkTo @route={{this.route}} @models={{array @model.category @model.id}} class="nav-item nav-link">
     <div class="card-img-overlay">
-      <h5 class="card-title">{{@model.title}}</h5>
+      <i class="fas {{this.type}} float-right"></i>
+      <h5 class="card-title mr-3">{{@model.title}}</h5>
       <p class="card-text">
         {{@model.desc}}
       </p>

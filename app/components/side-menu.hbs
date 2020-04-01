@@ -1,11 +1,11 @@
-<nav class="side-menu text-white mx-md-0 mx-4 mt-4 mt-md-0">
+<nav class="side-menu mx-md-0 mx-4 mt-4 mt-md-0">
   <ul class="list-unstyled">
     <div class="row">
       <div class="col">
         <li class="p-1">
-          <LinkTo @route="la-tribune" class="h3 text-white">Articles</LinkTo>
+          <LinkTo @route="la-tribune" class="h3 mx-1 my-2">Articles</LinkTo>
           {{#if screen.isSmallAndDown}}
-            <i {{on "click" this.toggleItems}} class={{concat "m-2 fas float-right clickable " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
+            <i {{on "click" this.toggleItems}} class={{concat "m-2 fas float-right clickable h4 " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
           {{/if}}
         </li>
       </div>

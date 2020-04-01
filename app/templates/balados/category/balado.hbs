@@ -14,19 +14,25 @@
       <h4 class="mb-2">Écouter l'épisode</h4>
       <div>
         {{#if balado.appleLink}}
-          <a href={{balado.appleLink}} class="mx-2"><img src="../../logo/apple-podcast.png" alt="Apple podcast" height="40px" width="40px"></a>
+          <a href={{balado.appleLink}} class="mx-2"><img src="/assets/logo/apple-podcast.png" alt="Apple podcast" height="40px" width="40px"></a>
         {{/if}}
         {{#if balado.googlePlayLink}}
-          <a href={{balado.googlePlayLink}} class="mx-2"><img src="../../logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
+          <a href={{balado.googlePlayLink}} class="mx-2"><img src="/assets/logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
         {{/if}}
         {{#if balado.spotifyLink}}
-          <a href={{balado.spotifyLink}} class="mx-2"><img src="../../logo/spotify.png" alt="Google play" height="40px" width="40px"></a>
+          <a href={{balado.spotifyLink}} class="mx-2"><img src="/assets/logo/spotify.png" alt="Google play" height="40px" width="40px"></a>
         {{/if}}
         {{#if balado.soundcloudLink}}
           <a href={{balado.soundcloudLink}} class="mx-2"><img src="https://w.soundcloud.com/icon/assets/images/orange_white_40-94fc761.png" alt="Soundcloud" height="40px" width="40px"></a>
         {{/if}}
       </div>
-      <img src="../../images/bg-1.jpg" class="img-fluid episode-image my-3" alt="Responsive image">
+      <div class="balados-thumbnail">
+        {{#if balado.thumbnail}}
+          <img class="img-fluid my-3" src={{balado.thumbnail.url}} alt={{balado.thumbnail.alt}}>
+        {{else}}
+          <img class="img-fluid my-3" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+        {{/if}}
+      </div>
     </div>
   </div>
   <!--

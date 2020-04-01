@@ -55,15 +55,15 @@ export default class IndexRoute extends Route {
       ],
       featuredCards: [
         {
-          id: 1,
+          id: 3,
           type: 'balado',
           category: 1,
-          title: 'Courses à la chefferies',
-          desc: 'Les courses à la chefferies se suivent, mais ne se ressemblent pas. On parle de la course du PQ, du' +
-            ' PLQ et du Parti Conservateur. Trois courses, trois ambiances et surtout trois constats bien différents.',
+          title: 'Spécial Covid-19',
+          desc: 'On parle de la COVID-19 tout en gardant notre distance sécuritaire! La réponse du Québec, du Canada' +
+            ' et de l\'international à la pandémie mondiale qui frappe le monde de plein fouet.',
           thumbnail: {
-            url: '/assets/images/bg-7.jpg',
-            alt: 'Image description'
+            url: '/assets/images/balado3.jpg',
+            alt: 'Image description',
           },
         },
         {
@@ -79,26 +79,26 @@ export default class IndexRoute extends Route {
           },
         },
         {
-          id: 2,
+          id: 7,
           type: 'article',
           category: 2,
-          title: 'Les budgets Trudeau, vraiment progressistes?',
-          desc: 'Depuis 2015 maintenant, Justin Trudeau est premier ministre du Canada et plusieurs décisions de sa' +
-            ' part auront comme effet de lui tailler une place dans l’histoire politique canadienne.',
+          title: 'Vision d’un autre monde',
+          desc: 'L’épidémie de la COVID-19 aura permis à plusieurs d’entre nous de voir des situations pouvant' +
+            ' paraître d’un autre monde. ',
           thumbnail: {
-            url: '/assets/images/bg-8.jpg',
-            alt: 'Image description'
+            url: '/assets/images/article7.jpg',
+            alt: 'Image description',
+            credits: 'RADIO-CANADA / THOMAS GERBET'
           },
         },
         {
-          id: 1,
+          id: 6,
           type: 'article',
-          category: 3,
-          title: 'Pourquoi L’Agenda?',
-          desc: 'Quelles sont les motivations qui nous animent et qui nous poussent à passer plusieurs heures par jours' +
-            ' sur ce projet ambitieux?',
+          category: 2,
+          title: 'Il y a les leaders et les autres',
+          desc: 'La pandémie actuelle qui frappe de plein fouet le monde, mais aussi le Canada nous rappelle sauvagement notre fragilité et ...',
           thumbnail: {
-            url: '/assets/images/bg-9.jpg',
+            url: '/assets/images/article6.jpg',
             alt: 'Image description'
           },
         },

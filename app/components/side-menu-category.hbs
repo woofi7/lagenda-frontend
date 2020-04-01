@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col">
-    <li>
-      <LinkTo @route="la-tribune.category" @model={{@category.id}} class="h5 text-white pl-2">{{@category.name}}</LinkTo>
-      <i {{on "click" this.toggleItems}} class={{concat "m-2 fas float-right clickable " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
+    <li {{on "click" this.toggleItems}} class="py-2 pr-2 h5 mb-0 pl-3 clickable">
+      {{@category.name}}
+      <i class={{concat "p-2 fas float-right " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
     </li>
   </div>
 </div>
 <BsCollapse @collapsed={{collapsed}}>
   <ul class="list-unstyled side-menu-articles">
     {{#each @category.articles as |article|}}
-      <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}} class="h6 text-white">
-        <li class="p-1 pl-3">{{article.title}}</li>
+      <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
+        <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
       </LinkTo>
     {{/each}}
   </ul>
