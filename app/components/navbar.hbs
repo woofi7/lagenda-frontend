@@ -17,7 +17,7 @@
     <a href="https://www.facebook.com/LAgenda-108507207380600" class="fab fa-facebook h3 my-auto text-white mx-2"></a>
     <a href="#" class="fab fa-twitter h3 my-auto text-white"></a>
     {{#if session.isAuthenticated}}
-      Logged in as {{session.currentUser.displayName}}
+      Logged in as {{ session.data.authenticated.user.displayName }}
       <button {{action "logout"}}>Sign out</button>
       {{outlet}}
     {{else}}

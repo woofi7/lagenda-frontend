@@ -29,17 +29,18 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       },
       {
         type: 'meta',
-        tagId: 'article-type-meta-tag',
+        tagId: 'article-url-meta-tag',
         attrs: {
-          property: 'og:type',
-          content: 'article'
+          property: 'og:image',
+          content: 'https://lagenda.ca' + model.thumbnail.url
         }
       },
       {
         type: 'meta',
-        tagId: 'article-url-meta-tag',
+        tagId: 'article-type-meta-tag',
         attrs: {
-          property: 'og:url'
+          property: 'og:type',
+          content: 'article'
         }
       }
     ];
