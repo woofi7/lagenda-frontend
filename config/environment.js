@@ -22,18 +22,22 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    cognito: {
-      poolId: 'us-east-1_xGIcpazVj',
-      clientId: '1voc9igkln094hkkk8dfm6r424'
-    },
-
-    api: {
-      invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
-    },
-
     moment: {
       includeLocales: ['fr-ca'],
       allowEmpty: true,
+    },
+
+    firebase: {
+      ***REMOVED***
+      authDomain: "lagenda-backend.firebaseapp.com",
+      databaseURL: "https://lagenda-backend.firebaseio.com",
+      projectId: "lagenda-backend",
+      storageBucket: "lagenda-backend.appspot.com",
+      messagingSenderId: "160650039986"
+    },
+
+    torii: {
+      sessionServiceName: 'session'
     },
   };
 
@@ -43,10 +47,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-
-    ENV.s3 =  {
-
-    }
   }
 
   if (environment === 'test') {
@@ -59,12 +59,6 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-  }
-
-  if (environment === 'production') {
-    ENV['elastic-beanstalk'] = {
-      bucket: 'elasticbeanstalk-us-east-2-793497163088'
-    }
   }
 
   return ENV;

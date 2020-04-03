@@ -1,6 +1,6 @@
-import RESTAdapter from '@ember-data/adapter/rest';
+import FirestoreAdapter from 'emberfire/adapters/firestore';
 
-export default class ApplicationAdapter extends RESTAdapter {
-  namespace = 'api/v1';
-  host = 'https://api.example.com';
-}
+export default FirestoreAdapter.extend({
+    enablePersistence: true,
+    persistenceSettings: { synchronizeTabs: true }
+});
