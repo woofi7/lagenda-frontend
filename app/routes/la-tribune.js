@@ -315,6 +315,47 @@ export default Route.extend({
           },
         ]
       },
+      {
+        id: 5,
+        name: 'Textes du public',
+        articles: [
+          {
+            id: 10,
+            title: 'Le recul de la mondialisation',
+            postDatetime: '2020-04-03',
+            updateDatetime: '2020-04-03',
+            desc: 'En 2016, en Europe on parlait déjà de la fin de la mondialisation: plusieurs cargos en arrêt, une très grande quantité de compagnie de transport font faillites, l’union européen perd tranquillement de sa popularité allant jusqu’au Brexit et plusieurs critiquent les organismes internationaux se questionnant sur leur légitimité.',
+            content: '<h4>La fin de la mondialisation?</h4>' +
+              '<p>En 2016, en Europe on parlait déjà de la fin de la mondialisation: plusieurs cargos en arrêt, une très grande quantité de compagnie de transport font faillites, l’union européen perd tranquillement de sa popularité allant jusqu’au Brexit et plusieurs critiquent les organismes internationaux se questionnant sur leur légitimité. Deux années plus tard, en 2018, le président américain, monsieur Donald Trump, menace les nombreux traités de paix et de libre-échange établis un peu partout dans le monde nuisant alors à la stabilité de la mondialisation et à l’équilibre des forces économiques qui se sont basées sur ce modèle. Deux années après l’élection du Président américain, la crise sanitaire de la COVID-19 éclate et met un frein aux échanges internationaux, voyages à l\'étranger et au phénomène de l’immigration. Est-ce la fin de la mondialisation?</p>' +
+              '<h4>Les nombreuses vagues de la mondialisation</h4>' +
+              '<p>Pour comprendre la mondialisation, il faut comprendre ses hauts et ses bas. La mondialisation est présente depuis que l’homme peut produire plus et toujours plus. En effet, il y a eu lors de la première phase d’industrialisation une montée des échanges entre les nations avec des baisses très notables des tarifs douaniers et la hausse de la production partout dans le monde. L’Angleterre était le leader lors de cette première vague de mondialisation avec ses machines à vapeur et ses nombreuses usines. Le Canada-Uni avait lui aussi son traité de libre-échange avec les États-Unis (le traité de réciprocité) puisque les tarifs préférentiels (le protectionnisme) avaient été abolies pour favoriser un libre-commerce en Europe. La guerre de sécession mena à un non renouvellement du traité et donc le Canada-Uni décida de s’allier avec les colonies de l’Est pour fonder le dominion du Canada. La deuxième vague de mondialisation vient à la suite de la première guerre mondiale, pour se rapprocher et éviter une autre guerre les pays Européens décident avec les Américains d’ouvrir leurs frontières, mais vous comprendrez que le débouché n’est pas nécessairement le résultat escompté. Finalement, la dernière vague de mondialisation est celle qui suit la deuxième guerre mondiale. On va créer plusieurs organismes internationaux afin de faciliter les échanges culturels, économiques et politiques entre les diverses nations. La mondialisation que nous connaissons qui date de 1945 est celle qui a connue le plus de succès, cependant elle arrive à terme avec le retour pressé au protectionnisme des américains et désormais la crise sanitaire qui menace l’équilibre économique mondiale.</p>' +
+              '<h4>Nationalisme et protectionnisme</h4>' +
+              '<p>Les crises économiques de 2008 et de 2010, ont causé plusieurs retours au nationalisme et au protectionnisme. Partout dans le monde, la confiance que plusieurs avaient au modèle qu’est la mondialisation diminue. Plusieurs voient des failles dans l’ouverture des frontières que ce soit pour des motifs économiques ou sociaux. Donald Trump en est un exemple, il cherche à rompre plusieurs contrats qui date de la fin de la deuxième guerre mondiale qu’il a jugés désavantageux pour le commerce américain. Il est a noté qu’il y a eu, dans l’histoire plusieurs moment où les frontières furent fermés à la suite d’une longue période de libre-échange entre nations. La fermeture de ces frontières n’a que très rarement détruit la structure économique des pays.</p>' +
+              '<p>La crise de la COVID-19 a un lien direct avec la mondialisation. La situation de crise mettra à mal les institutions de la mondialisation pour valoriser des politiques économiques patriotiques. Le monde est assuré de changer suite au frein qu’a engendré cette crise. La mondialisation est en déclin et ce déclin sera accéléré par le phénomène de crise sanitaire que personne ne pouvait prévoir. Toutefois, considérant les moments de crise similaire il pourrait être à prévoir le total inverse avec des investissements massifs de la part de la Banque Mondiale et autres institutions mondiales qui ont été mises en place suite aux deux Guerres Mondiales. Ces institutions ont su sauver le système libéral et au long terme triompher de l’URSS dans l’après-guerre. Qu’en est-il de la résolution de la crise dans le moment présent? Est-ce que la crise de la COVID-19 sera la fin de cette mondialisation et le retour au nationalisme et au protectionnisme? Les questions restent en suspens pour moi.</p>' +
+              '<h4>L’Amérique essentielle à la mondialisation?</h4>' +
+              '<p>Plusieurs affirment que l\'hégémonie mondiale américaine est ce qui permet la mondialisation. En effet, le secrétaire général de l’ONU, monsieur Guterres, a décrit comment la stabilité mondiale et les modèles économiques basés sur la mondialisation n’étaient possible qu’avec la présence des américains un peu partout dans le monde. Imaginez l’ONU et les échanges sans le géant américain. Ça va de soit que le retrait de ce monstre du système pourrait entraîner l’effondrement de ce dernier.</p>' +
+              '<p>Peut-être que la mondialisation est à risque de changer, mais ses effets bénéfiques qu’ils soient culturels, sociaux ou encore politiques resteront bien marqués dans les sociétés occidentales. La mondialisation arrive à terme dans le début d’une nouvelle période économique et sociale qui marquera et a marqué l’histoire.</p>',
+            thumbnail: {
+              url: '/assets/images/article10.jpg',
+              alt: 'Description image.',
+              credits: 'Jesco Denzel/Associated press'
+            },
+            category: 5,
+            authors: [
+              {
+                id: 5,
+                firstName: 'Liam',
+                lastName: 'Buell',
+                desc: 'Lecteur',
+                photo: {
+                  url: '/assets/images/photoLiam.jpg',
+                  alt: 'Photo Jonathan Liam Buel.'
+                }
+              }
+            ]
+          },
+        ]
+      },
       /*{
         id: 4,
         name: 'Cahiers de la rédaction',

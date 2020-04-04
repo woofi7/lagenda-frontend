@@ -13,6 +13,10 @@ module.exports = function(defaults) {
       "expose": ["aws-amplify"]
     },
 
+    fingerprint: {
+      exclude: ['images']
+    },
+
     /*"prember": {
       "urls": [
         '/',
