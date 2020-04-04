@@ -67,14 +67,15 @@ export default class IndexRoute extends Route {
           },
         },
         {
-          id: 1,
+          id: 11,
           type: 'article',
-          category: 1,
-          title: 'Mot de la rédaction',
-          desc: 'Un petit mot pour vous expliquer qui nous sommes, nos buts et ce à quoi vous pouvez vous attendre de' +
-            ' la part de la Tribune de L’Agenda.',
+          category: 2,
+          title: 'Un plan Marshall du 21e siècle? Pourquoi pas une révolution tranquille 2.0',
+          desc: 'La plus récente proposition de Sylvain Gaudreault député de Jonquière et candidat à la chefferie du' +
+            ' PQ a su attirer ma curiosité en ces temps de crise. Un plan Marshall du 21e siècle dit-il. Je' +
+            ' répliquerai plutôt avec une révolution tranquille 2.0.',
           thumbnail: {
-            url: '/assets/images/bg-8.jpg',
+            url: '/assets/images/article11.jpg',
             alt: 'Image description'
           },
         },

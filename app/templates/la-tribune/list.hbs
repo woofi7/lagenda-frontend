@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    {{#each this.articles as |article|}}
-      <ArticleCard @article={{article}}/>
+    {{#each this.categories as |category|}}
+      {{#each category.articles as |article|}}
+        <ArticleCard @article={{article}}/>
+      {{/each}}
     {{/each}}
   </div>
 </div>

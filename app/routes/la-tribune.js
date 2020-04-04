@@ -226,6 +226,39 @@ export default Route.extend({
               }
             ]
           },
+          {
+            id: 11,
+            title: 'Un plan Marshall du 21e siècle? Pourquoi pas une révolution tranquille 2.0',
+            postDatetime: '2020-04-04',
+            updateDatetime: '2020-04-04',
+            desc: 'La plus récente proposition de Sylvain Gaudreault député de Jonquière et candidat à la chefferie du PQ a su attirer ma curiosité en ces temps de crise. Un plan Marshall du 21e siècle dit-il. Je répliquerai plutôt avec une révolution tranquille 2.0.',
+            content: '<p><b>La plus récente proposition de Sylvain Gaudreault député de Jonquière et candidat à la chefferie du PQ a su attirer ma curiosité en ces temps de crise. Un plan Marshall du 21e siècle dit-il. Je répliquerai plutôt avec une révolution tranquille 2.0.</b></p>' +
+              '<p>Il faut d’abord mettre les choses au clair. L’idée de monsieur Gaudreault est bonne et l’image du plan Marshall à l’avantage d’être ancrée dans l’imaginaire mondiale. Je pense toutefois qu’il devrait changer de cap et surtout de nom. Le plan Marshall était surtout un plan de reconstruction de l’Europe après la 2<sup>e</sup> guerre mondiale financé par les Américains. C’était donc un plan de sauvetage et surtout des sommes considérables provenant de l’étranger pour ramener les pays en bénéficiant où ils étaient avant la guerre. Il est de mon opinion que la crise actuelle et les idées qui devraient être débattues ne correspondent donc pas à ce fameux plan, mais plutôt à un événement d’ici : La Révolution tranquille. Je m’explique avant qu’on m’accuse d’être de mauvaise foi. Non seulement cet événement historique vient d’ici, il se rattache donc à notre histoire collective et aiderait les gens à y adhérer, mais c’est aussi une belle façon pour moi de prendre monsieur Gaudreault au mot lorsqu’il dit qu’il veut démasquer le nationalisme de façade du premier ministre. N’est-ce pas là une magnifique occasion de faire usage de ce nationalisme dans un contexte productif et sain? </p>' +
+              '<p>Deuxièmement, comme je disais plus tôt, le plan Marshall était un plan centré sur des investissements étrangés massifs ce qui ne sera certainement pas le cas du plan de relance que monsieur Gaudreault propose. Déjà à ce moment-là le parallèle devient plus boiteux, mais le coup de grâce vient, selon moi, que le plan Marshall ne visait pas à changer les méthodes de production et de consommation des pays européens. Il visait à les remettre sur les rails pour que les États-Unis puissent compter sur des alliés solides dans l’OTAN, mais aussi pour avoir des consommateurs suffisamment riches pour se payer les produits américains qu’ils soient matériels ou culturels avec Hollywood par exemple. Évidemment, le fait que ces pays se remettent plus rapidement que les pays du bloc de l’est était un but presque avoué pour faire mal paraître l’Union soviétique en pleine guerre froide. Bref, le plan Marshall ne correspond pas vraiment à ce que le Québec de monsieur Gaudreault ferait. </p>' +
+              '<h4>Une révolution tranquille 2.0.</h4>' +
+              '<p>Une des raisons qui m’incite à parler de révolution tranquille 2.0 est bien simple. Le Québec et le monde sont à un moment charnière. Face à la crise, les pays auront le choix de continuer sur le chemin emprunté avant la crise et d’espérer que la croissance reprenne et que l’on trouve en même temps une solution aux changements climatiques comme objectif secondaire. Ou, les pays et nations peuvent tenter de repenser le système, de faire une petite révolution économique, sociale et environnementale. Une révolution sans faire couler le sang et se faisant démocratiquement. À l’image de notre révolution tranquille qui jeta l’Église Catholique hors de l’état et de la vie des gens, la nouvelle révolution pourrait débarrasser le Québec de sa dépendance au pétrole et aux combustibles fossiles, étendre les capacités électriques pour assurer une électrification des transports et une autosuffisance alimentaire. Ces réformes pourraient aussi permettre l’avènement de grands projets de société comme une expansion drastique des transports en commun, construction de nouveaux barrages, une réduction de l’injustice fiscale et un réinvestissement majeur dans la santé et l’éducation autant en infrastructure qu’en effectifs. Il faudra aussi penser que cette crise risque d’ouvrir la porte à une nouvelle vague d’automatisation qui devra être prise en compte dans les plans de relances. Tout ça, c’est sans compter le retour du nationalisme économique qui semble pointer le bout de son nez. Des coups durs à venir pour nos entreprises, mais aussi des opportunités incroyables pour ceux capables de les saisir. Il sera primordial selon moi que la Caisse de dépôt et placement et qu’investissement Québec joue un rôle important dans la refonte économique québécoise et qu’ils mettent l’accent sur les PME et les entreprises locales innovantes. </p>' +
+              '<p>Tout cela n’est que l’aspect économique de la chose, comme la Révolution tranquille des années 60, des changements sociaux importants verront le jour. Impossible de prédire ce qu’ils amèneront ou même leur forme, mais nous sommes certains de voir des mouvements sociaux prendre de l’ampleur. Le mouvement nationaliste saura-t-il encore tirer son épingle du jeu? Ou la gauche progressiste parviendra-t-elle à rallier les masses avec ses propositions visant la réduction des inégalités? Difficile à dire, mais ce sera intéressant. </p>' +
+              '<h4>Saisir l’opportunité avant tout.</h4>' +
+              '<p>Soyons honnête, que le plan de monsieur Gaudreault ou de n’importe quel aspirant au pouvoir porte un nom peu inspirant ou un peu anachronique m’importe peu. Ce qui est important pour moi, mais aussi pour le Québec au complet, c’est que ce plan soit ambitieux, mais fonctionnel. Il faut un plan qui prend en compte la réalité géographique et démographique du Québec sans pour autant s’en servir comme excuse pour ne pas faire les changements qui s’imposent. Il faut saisir cette opportunité que le monde et la nature nous donnent. Il faut voir l’économie, non pas comme une fin, mais comme un outil pour arriver à quelque chose de plus grand. Qu’on ne me mette pas les mots dans la bouche, je prêche avant tout un capitalisme humain, réguler et créateur. La prise de décision par des agents économiques décentralisés reste selon moi la meilleure façon d’arriver à nos ambitions de qualités de vie pour le plus grand nombre. Il faudra résister à la tentation des populistes qui vont promettre mer et monde et blâmer des groupes en particulier pour leurs malheurs. Il faudra rester uni pour traverser cette crise et ce qui suivra et pour mener à bien notre deuxième révolution tranquille. </p>',
+            thumbnail: {
+              url: '/assets/images/article11.jpg',
+              alt: 'Description image.',
+              credits: 'La Presse canadienne / Jacques Boissinot'
+            },
+            category: 2,
+            authors: [
+              {
+                id: 1,
+                firstName: 'Samuel',
+                lastName: 'Lamarche',
+                desc: 'Rédacteur en chef',
+                photo: {
+                  url: '/assets/images/photoSamuel.jpg',
+                  alt: 'Photo Samuel Lamarche.'
+                }
+              }
+            ]
+          },
         ]
       },
       {
