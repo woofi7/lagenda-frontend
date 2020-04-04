@@ -24,16 +24,12 @@
           <div class="col logo-list">
             <h4>Partager l'article</h4>
             <div class="row">
-              <div class="fb-share-button mx-1 ml-3"
-                   data-href={{currentURL}}
-                   data-layout="button_count"
-                   size="large">
+              <div class="col">
+                <FacebookButton />
+                <TwitterButton @text={{concat "Nouvel article sur l'Agenda: " article.title}} />
+                <LinkedinButton @text={{concat "Nouvel article sur l'Agenda: " article.title}} @title={{article.title}} />
+                <EmailButton @title={{article.title}} />
               </div>
-              <a class="twitter-share-button mx-1"
-                 href={{concat "https://twitter.com/intent/tweet?text=" (concat "Nouvel article sur l'Agenda: " article.title)}}
-                 data-size="large">
-                Tweet
-              </a>
             </div>
           </div>
         </div>

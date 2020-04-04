@@ -35,6 +35,19 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col logo-list">
+      <h4>Partager le balado</h4>
+      <div class="row">
+        <div class="col">
+          <FacebookButton />
+          <TwitterButton @text={{concat "Nouveau balado sur l'Agenda: " balado.title}} />
+          <LinkedinButton @text={{concat "Nouveau balado sur l'Agenda: " balado.title}} @title={{balado.title}} />
+          <EmailButton @title={{balado.title}} />
+        </div>
+      </div>
+    </div>
+  </div>
   <!--
   <h3>Nos autres épisodes</h3>
   <div class="row">

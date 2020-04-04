@@ -27,3 +27,5 @@
 #amplify
 .idea/
 distTest/
+
+yarn.lock
