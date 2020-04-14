@@ -1,6 +1,6 @@
-import FirestoreAdapter from 'emberfire/adapters/firestore';
+import JSONAPIAdapter from '@ember-data/adapter/json-api';
 
-export default FirestoreAdapter.extend({
-  enablePersistence: true,
-  persistenceSettings: { synchronizeTabs: true }
-});
+export default class ApplicationAdapter extends JSONAPIAdapter {
+  host = 'http://localhost:3000';
+  namespace = 'api/v1';
+}

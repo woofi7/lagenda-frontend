@@ -61,44 +61,47 @@ export default class IndexRoute extends Route {
           title: 'Spécial Covid-19',
           desc: 'On parle de la COVID-19 tout en gardant notre distance sécuritaire! La réponse du Québec, du Canada' +
             ' et de l\'international à la pandémie mondiale qui frappe le monde de plein fouet.',
-          thumbnail: {
+          image: {
             url: '/assets/images/balado3.jpg',
             alt: 'Image description',
           },
         },
         {
-          id: 11,
+          id: 15,
           type: 'article',
-          category: 2,
-          title: 'Un plan Marshall du 21e siècle? Pourquoi pas une révolution tranquille 2.0',
-          desc: 'La plus récente proposition de Sylvain Gaudreault député de Jonquière et candidat à la chefferie du' +
-            ' PQ a su attirer ma curiosité en ces temps de crise. Un plan Marshall du 21e siècle dit-il. Je' +
-            ' répliquerai plutôt avec une révolution tranquille 2.0.',
-          thumbnail: {
-            url: '/assets/images/article11.jpg',
+          category: 4,
+          title: 'Les intérêts économiques, constitutionnels et politiques du gouvernement québécois',
+          desc: 'Ce texte est la suite de l’article : Le fédéralisme et le droit provincial en matière de traités' +
+            ' internationaux.',
+          image: {
+            url: '/assets/images/article15.jpg',
             alt: 'Image description'
           },
         },
         {
-          id: 9,
+          id: 18,
           type: 'article',
-          category: 4,
-          title: 'Le fédéralisme et le droit provincial en matière de traités internationaux',
-          desc: 'En 1965, le vice-premier ministre et ministre de l’Éducation, Paul Gérin-Lajoie, met sur pied une' +
-            ' doctrine révisant le rôle de la province du Québec sur la scène internationale.',
-          thumbnail: {
-            url: '/assets/images/article9.jpg',
+          category: 2,
+          title: 'La réhabilitation de l’État-nation',
+          desc: 'La récente épidémie du coronavirus aura révélé les limites et les faiblesses d’une mondialisation' +
+            ' galopante et de l’évaporation lente, mais certaine, du concept de frontière et d’état souverain. Devant' +
+            ' la crise, les citoyens ont vite réalisé l’utilité, la nécessité de maintenir un contrôle sur leurs' +
+            ' frontières et d’éviter une dépendance imprudente envers les autres pays.',
+          image: {
+            url: '/assets/images/article18.jpg',
             alt: 'Image description',
           },
         },
         {
-          id: 8,
+          id: 16,
           type: 'article',
           category: 2,
-          title: 'Un (pas si rare) moment d’unité',
-          desc: 'À force de lire les experts et les chroniqueurs être en extase devant les sondages d’approbation de François Legault ...',
-          thumbnail: {
-            url: '/assets/images/article8.jpg',
+          title: 'La transition forcée de l’Alberta',
+          desc: 'L’Alberta faisait, depuis plusieurs années, énormément de bruits pour forcer les provinces' +
+            ' environnantes à laisser passer des pipelines transportant son pétrole en utilisant la fameuse' +
+            ' péréquation et les mensonges populistes conservateurs pour attiser la hargne de leurs citoyens. ',
+          image: {
+            url: '/assets/images/article16.jpg',
             alt: 'Image description'
           },
         },

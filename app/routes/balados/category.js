@@ -4,8 +4,8 @@ import {get, set} from '@ember/object';
 export default Route.extend({
   breadCrumb: null,
 
-  async model(params) {
-    return this.modelFor('balados').findBy('id', Number(params.category));
+  async model(args) {
+    return this.store.findRecord('balado-category', args.category);
   },
 
   async afterModel(model) {

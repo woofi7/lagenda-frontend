@@ -1,0 +1,1 @@
+INSERT INTO lagenda_api.`__EFMigrationsHistory` (MigrationId, ProductVersion) VALUES ('20200414015056_InitialModels', '3.1.3');

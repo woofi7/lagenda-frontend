@@ -5,11 +5,13 @@ import { inject as service } from '@ember/service';
 export default class LaTribuneCategoryArticleRoute extends Route {
   @service router;
 
-  async model(params) {
-    return this.modelFor('la-tribune.category').articles.findBy('id', Number(params.article))
+  model(args) {
+    return this.store.findRecord('article', args.article, {
+      include: 'authors.image'
+    });
   }
 
-  afterModel(model) {
+  /*afterModel(model) {
     this.setHeadTags(model);
   }
 
@@ -74,5 +76,5 @@ export default class LaTribuneCategoryArticleRoute extends Route {
     ];
 
     this.set('headTags', headTags);
-  }
+  }*/
 }

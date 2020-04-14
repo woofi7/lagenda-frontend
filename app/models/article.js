@@ -5,9 +5,10 @@ export default class ArticleModel extends Model {
   @attr('date') postDatetime;
   @attr('date') updateDatetime;
   @attr('string') desc;
-  @attr('string') thumbnail;
   @attr('string') content;
 
+  @belongsTo('image') image;
   @belongsTo('article-category') category;
+
   @hasMany('author') authors;
 }

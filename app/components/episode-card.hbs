@@ -1,10 +1,10 @@
 <div class="col-12 col-sm-6 col-lg-3 p-0">
   <LinkTo @route="balados.category.balado"
-          @models={{array @episode.category @episode.id}}
+          @models={{array @episode.category.id @episode.id}}
           class="nav-item nav-link p-0 m-2">
     <div class="balados-thumbnail">
-      {{#if @episode.thumbnail}}
-        <img class="img-fluid" src={{@episode.thumbnail.url}} alt={{@episode.thumbnail.alt}}>
+      {{#if @episode.image}}
+        <img class="img-fluid" src={{@episode.image.url}} alt={{@episode.image.alt}}>
       {{else}}
         <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
       {{/if}}

@@ -1,6 +1,6 @@
 <div class="author-card p-1 mb-2">
-  {{#if @author.photo}}
-    <img class="img-fluid float-left pr-1" src={{@author.photo.url}} alt={{@author.photo.alt}} height="80" width="80"/>
+  {{#if @author.image}}
+    <img class="img-fluid float-left pr-1" src={{@author.image.url}} alt={{@author.image.alt}} height="80" width="80"/>
   {{else}}
     <img class="img-fluid float-left pr-1" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}} height="80" width="80"/>
   {{/if}}

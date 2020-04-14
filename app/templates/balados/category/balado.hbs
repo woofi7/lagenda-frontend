@@ -16,8 +16,8 @@
         {{#if balado.appleLink}}
           <a href={{balado.appleLink}} class="mx-2"><img src="/assets/logo/apple-podcast.png" alt="Apple podcast" height="40px" width="40px"></a>
         {{/if}}
-        {{#if balado.googlePlayLink}}
-          <a href={{balado.googlePlayLink}} class="mx-2"><img src="/assets/logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
+        {{#if balado.googleLink}}
+          <a href={{balado.googleLink}} class="mx-2"><img src="/assets/logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
         {{/if}}
         {{#if balado.spotifyLink}}
           <a href={{balado.spotifyLink}} class="mx-2"><img src="/assets/logo/spotify.png" alt="Google play" height="40px" width="40px"></a>
@@ -27,8 +27,8 @@
         {{/if}}
       </div>
       <div class="balados-thumbnail">
-        {{#if balado.thumbnail}}
-          <img class="img-fluid my-3" src={{balado.thumbnail.url}} alt={{balado.thumbnail.alt}}>
+        {{#if balado.image}}
+          <img class="img-fluid my-3" src={{balado.image.url}} alt={{balado.image.alt}}>
         {{else}}
           <img class="img-fluid my-3" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
         {{/if}}

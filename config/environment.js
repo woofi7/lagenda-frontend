@@ -36,7 +36,7 @@ module.exports = function(environment) {
       messagingSenderId: "160650039986",
       appId: "1:160650039986:web:495d203a070d27bafe6fab",
       measurementId: "G-JFNSV19LBJ"
-    }
+    },
   };
 
   if (environment === 'development') {

@@ -1,7 +1,7 @@
 <div class="col-12 col-sm-6 col-lg-4 p-2 d-sm-flex">
   <div class="card mx-0">
-    {{#if @article.thumbnail}}
-      <img class="card-img-top" src={{@article.thumbnail.url}} alt={{@article.thumbnail.alt}}>
+    {{#if @article.image}}
+      <img class="card-img-top" src={{@article.image.url}} alt={{@article.image.alt}}>
     {{else}}
       <img class="card-img-top" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
     {{/if}}
@@ -10,7 +10,7 @@
       <p class="card-text small">{{if @article.desc @article.desc (t "article-card.no-desc")}}</p>
       <div class="mt-auto">
         <LinkTo @route="la-tribune.category.article"
-                @models={{array @article.category @article.id}}
+                @models={{array @article.category.id @article.id}}
                 class="btn btn-primary btn-sm float-right">
           {{t "la-tribune.read-article"}}
         </LinkTo>
