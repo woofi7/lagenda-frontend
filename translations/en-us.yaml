@@ -36,3 +36,7 @@ author-card:
 
 episode-card:
   title: "Épisode {id}"
+
+# Translations
+lang.fr-ca: "French"
+lang.en-us: "English"

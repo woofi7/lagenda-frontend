@@ -1,6 +1,9 @@
 <footer id="footer">
   <nav class="navbar navbar-dark bg-blue small">
     <div class="row mx-auto">
+      <div class="mt-2">
+        <LangSelector />
+      </div>
       <a href="mailto:samuel.lamarche24@gmail.com" class="col-12 col-md text-center text-white my-1">{{t 'contact-us'}}</a>
       <LinkTo @route="about" class="col-12 col-md text-center text-white my-1">{{t 'about'}}</LinkTo>
       <LinkTo @route="privacy-policy" class="col-12 col-md text-center text-white my-1">{{t 'privacy-policy'}}</LinkTo>

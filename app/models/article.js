@@ -8,7 +8,7 @@ export default class ArticleModel extends Model {
   @attr('string') content;
 
   @belongsTo('image') image;
-  @belongsTo('article-category') category;
+  @belongsTo('article-category') articleCategory;
 
   @hasMany('author') authors;
 }

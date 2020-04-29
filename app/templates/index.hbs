@@ -26,8 +26,11 @@
 <div class="container-fluid my-4">
   <h3 class="mx-4 px-2 mb-0">{{t "home.featured"}}</h3>
   <div class="row mx-md-4 mb-4">
-    {{#each this.model.featuredCards as |card|}}
-      <FeaturedCard @model={{card}} />
+    {{#each this.model.balados as |balado|}}
+      <FeaturedCard @model={{balado}} @type="balado" />
+    {{/each}}
+    {{#each this.model.articles as |article|}}
+      <FeaturedCard @model={{article}} @type="article" />
     {{/each}}
   </div>
 </div>

@@ -1,22 +1,19 @@
 <div class="container-fluid mb-4">
   <div class="container">
-    <div class="row">
+    <div class="row mb-4">
       <div class="col">
         <h1 class="mb-0">{{article.title}}</h1>
-        <small>{{article.updateDatetime}}</small>
+        <small>Publié le {{moment-format article.updateDatetime 'D MMMM YYYY à hh[h]mm' 'MM-YYYY-DD'}}</small>
       </div>
     </div>
     <div class="row">
       <div class="col mb-3">
-        <div class="balados-thumbnail">
+        <p class="text-justify">
           {{#if article.image}}
-            <img class="img-fluid" src={{article.image.url}} alt={{article.image.alt}}>
+            <img class="img-fluid article-img float-xl-left pr-3 pb-3 mx-auto d-block" src={{article.image.url}} alt={{article.image.alt}}>
           {{else}}
-            <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+            <img class="img-fluid article-img" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
           {{/if}}
-        </div>
-        <small>{{article.image.credits}}</small>
-        <p>
           {{{article.content}}}
         </p>
 

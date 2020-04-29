@@ -11,6 +11,6 @@ export default class BaladoModel extends Model {
   @attr('string') spotifyLink;
   @attr('int') episodeNumber;
 
-  @belongsTo('balado-category') category;
+  @belongsTo('balado-category') baladoCategory;
   @belongsTo('image') image;
 }

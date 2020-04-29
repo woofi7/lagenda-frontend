@@ -1,11 +1,42 @@
+#General
 title: "L'Agenda"
+placeholder:
+  alt: "Placeholder of featured element."
 
-home: Accueil
-la-tribune: La Tribune
-balados: Balados
+#Pages
+home:
+  title: "Accueil"
+  featured: "En vedette"
+  carousel:
+    previous: "Précédent"
+    next: "Suivant"
+
+la-tribune:
+  title: "La Tribune"
+  read-article: "Lire l'article"
+  more: "Plus d'acticles..."
+
+balados:
+  title: "Balados"
+
 faq: "FAQ"
 contact-us: "Contactez-nous"
 privacy-policy: "Politique de confidentialité"
 terms-of-use: "Conditions d'utilisation"
 copyright: "© 2020 L'Agenda – Tous droits réservés."
 about: "À propos"
+
+#Components
+article-card:
+  no-desc: "No description."
+  no-title: "No title"
+
+author-card:
+  by: "Par {firstName} {lastName}"
+
+episode-card:
+  title: "Épisode {id}"
+
+# Translations
+lang.fr-ca: "Français"
+lang.en-us: "Anglais"
