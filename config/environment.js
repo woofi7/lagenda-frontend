@@ -18,37 +18,23 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
     },
 
     moment: {
       includeLocales: ['fr-ca'],
       allowEmpty: true,
     },
-
-    firebase: {
-      ***REMOVED***
-      authDomain: "lagenda-backend.firebaseapp.com",
-      databaseURL: "https://lagenda-backend.firebaseio.com",
-      projectId: "lagenda-backend",
-      storageBucket: "lagenda-backend.appspot.com",
-      messagingSenderId: "160650039986",
-      appId: "1:160650039986:web:495d203a070d27bafe6fab",
-      measurementId: "G-JFNSV19LBJ"
-    },
   };
 
+  if (environment === 'production') {
+    ENV.APP.API_HOST = 'https://lagenda.ca'
+  }
+
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'http://localhost:5000'
   }
 
   if (environment === 'test') {
-    // Testem prefers this...
     ENV.locationType = 'none';
 
     // keep test console output quieter

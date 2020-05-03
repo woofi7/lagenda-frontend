@@ -27,7 +27,6 @@ export default class LaTribuneCategoryArticleRoute extends Route {
 
   async setHeadTags(model, redirect) {
     let image = await model.image;
-
     let headTags = [
       {
         type: 'meta',
