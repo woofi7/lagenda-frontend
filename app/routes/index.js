@@ -11,6 +11,7 @@ export default class IndexRoute extends Route {
 
   async model() {
     let balados = await this.store.query('balado', {
+      include: 'balado-category',
       sort: '-post-datetime',
       page: {
         size: 1
@@ -18,6 +19,7 @@ export default class IndexRoute extends Route {
     });
 
     let articles = await this.store.query('article', {
+      include: 'article-category',
       sort: '-post-datetime',
       page: {
         size: 3

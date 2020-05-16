@@ -2,5 +2,5 @@ import Controller from '@ember/controller';
 import {alias} from '@ember/object/computed';
 
 export default class LaTribuneCategoryArticleController extends Controller {
-  @alias('article') model;
+  @alias('model.article') article;
 }

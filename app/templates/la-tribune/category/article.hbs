@@ -37,16 +37,17 @@
         {{/each}}
       </div>
     </div>
-    <!--
     <div class="row mt-5">
       <div class="col">
         <div class="card-deck">
-          <ArticleCard @article={{article}} />
-          <ArticleCard @article={{article}} />
-          <ArticleCard @article={{article}} />
+          {{#each this.model.featuredBalados as |featuredBalado|}}
+            <FeaturedCard @model={{featuredBalado}} @type="balado" />
+          {{/each}}
+          {{#each this.model.featuredArticles as |featuredArticle|}}
+            <FeaturedCard @model={{featuredArticle}} @type="article" />
+          {{/each}}
         </div>
       </div>
     </div>
-    -->
   </div>
 </div>

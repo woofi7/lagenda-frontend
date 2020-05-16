@@ -67,5 +67,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "ember-line-clamp": "^2.0.0"
   }
 }

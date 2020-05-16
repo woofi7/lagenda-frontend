@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 
 import { inject as service } from '@ember/service';
+import RSVP from "rsvp";
 
 export default class LaTribuneCategoryArticleRoute extends Route {
   @service router;
@@ -15,9 +16,39 @@ export default class LaTribuneCategoryArticleRoute extends Route {
     window.scrollTo(0,0);
   }
 
-  model(args) {
-    return this.store.findRecord('article', args.article, {
+  async model(args) {
+    let featuredBalados = await this.store.query('balado', {
+      include: 'balado-category',
+      sort: '-post-datetime',
+      page: {
+        size: 1
+      }
+    });
+
+    let featuredArticles = await this.store.query('article', {
+      include: 'article-category',
+      sort: '-post-datetime',
+      page: {
+        size: 3
+      }
+    }, args)
+    .then((articles) => {
+      return articles.filter((a) => { return a.id !== args.article; });
+    })
+    .then((articles) => {
+      return articles.slice(0, 2);
+    });
+
+    console.log(featuredArticles);
+
+    let article = this.store.findRecord('article', args.article, {
       include: 'authors.image'
+    });
+
+    return RSVP.hash({
+      featuredBalados,
+      featuredArticles,
+      article
     });
   }
 
@@ -26,14 +57,14 @@ export default class LaTribuneCategoryArticleRoute extends Route {
   }
 
   async setHeadTags(model, redirect) {
-    let image = await model.image;
+    let image = await model.article.image;
     let headTags = [
       {
         type: 'meta',
         tagId: 'article-url-meta-tag',
         attrs: {
           property: 'og:url',
-          content: 'https://lagenda.ca' + this.get('router').urlFor(this.fullRouteName, redirect.to.parent.params.category, model.id)
+          content: 'https://lagenda.ca' + this.get('router').urlFor(this.fullRouteName, redirect.to.parent.params.category, model.article.id)
         }
       },
       {
@@ -41,7 +72,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
         tagId: 'article-title-meta-tag',
         attrs: {
           property: 'og:title',
-          content: model.title
+          content: model.article.title
         }
       },
       {
@@ -49,7 +80,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
         tagId: 'article-description-meta-tag',
         attrs: {
           property: 'og:description',
-          content: model.desc
+          content: model.article.desc
         }
       },
       {

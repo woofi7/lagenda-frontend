@@ -9,7 +9,11 @@
       <i class="fas {{type}} float-right"></i>
       <h5 class="card-title mr-3">{{@model.title}} {{category.name}}</h5>
       <p class="card-text">
-        {{@model.desc}}
+        {{line-clamp
+            text=@model.desc
+            lines=7
+            interactive=false
+        }}
       </p>
     </div>
   </LinkTo>

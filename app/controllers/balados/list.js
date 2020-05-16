@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
-import {alias} from '@ember/object/computed';
+import {sort} from '@ember/object/computed';
 
 export default class BaladosListController extends Controller {
-  @alias('categories') model;
+  sortKey = ['episodeNumber:desc'];
+  @sort('model', 'sortKey') categories;
 }

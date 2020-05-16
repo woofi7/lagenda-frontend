@@ -1,11 +1,13 @@
-<div class="author-card p-1 mb-2">
-  {{#if @author.image}}
-    <img class="img-fluid float-left pr-1" src={{@author.image.url}} alt={{@author.image.alt}} height="80" width="80"/>
-  {{else}}
-    <img class="img-fluid float-left pr-1" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}} height="80" width="80"/>
-  {{/if}}
-  <h6 class="mb-0">{{t "author-card.by" firstName=@author.firstName lastName=@author.lastName}}</h6>
-  <p class="text-justify mb-0">
-    {{@author.desc}}
-  </p>
-</div>
+<LinkTo @route="about">
+  <div class="author-card p-1 mb-2">
+    {{#if @author.image}}
+      <img class="img-fluid float-left pr-1" src={{@author.image.url}} alt={{@author.image.alt}} height="80" width="80"/>
+    {{else}}
+      <img class="img-fluid float-left pr-1" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}} height="80" width="80"/>
+    {{/if}}
+    <h6 class="mb-0">{{t "author-card.by" firstName=@author.firstName lastName=@author.lastName}}</h6>
+    <p class="text-justify mb-0">
+      {{@author.title}}
+    </p>
+  </div>
+</LinkTo>
