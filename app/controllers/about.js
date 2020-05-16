@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-import {alias} from '@ember/object/computed';
-import { action } from "@ember/object";
+import {sort} from '@ember/object/computed';
 
 export default class AboutController extends Controller {
-  @alias('authors') model;
+  sortKey = ['order'];
+  @sort('model', 'sortKey') authors;
 }

@@ -39,8 +39,6 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       return articles.slice(0, 2);
     });
 
-    console.log(featuredArticles);
-
     let article = this.store.findRecord('article', args.article, {
       include: 'authors.image'
     });
