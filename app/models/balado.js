@@ -10,6 +10,7 @@ export default class BaladoModel extends Model {
   @attr('string') googleLink;
   @attr('string') spotifyLink;
   @attr('number') episodeNumber;
+  @attr('boolean') unlisted;
 
   @belongsTo('balado-category') baladoCategory;
   @belongsTo('image') image;

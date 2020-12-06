@@ -1,8 +1,10 @@
 <div class="container">
-  <h1>{{this.model.name}}</h1>
+  <h1>{{category.name}}</h1>
   <div class="row">
-    {{#each this.model.articles as |article|}}
-      <ArticleCard @article={{article}}/>
+    {{#each category.articles as |article|}}
+      {{#unless article.unlisted}}
+        <ArticleCard @article={{article}} />
+      {{/unless}}
     {{/each}}
   </div>
 </div>

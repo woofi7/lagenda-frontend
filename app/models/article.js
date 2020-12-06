@@ -6,6 +6,7 @@ export default class ArticleModel extends Model {
   @attr('date') updateDatetime;
   @attr('string') desc;
   @attr('string') content;
+  @attr('boolean') unlisted;
 
   @belongsTo('image') image;
   @belongsTo('article-category') articleCategory;

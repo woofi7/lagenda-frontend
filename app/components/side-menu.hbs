@@ -13,11 +13,13 @@
 
     <BsCollapse @collapsed={{and collapsed screen.isSmallAndDown}}>
     {{#each @categories as |category index|}}
-      {{#if (eq index 0)}}
-        <SideMenuCategory @category={{category}}/>
-      {{else}}
-        <SideMenuCategory @category={{category}} @collapsed={{true}} />
-      {{/if}}
+      {{#unless category.articles.firstObject.unlisted}}
+        {{#if (eq index 0)}}
+          <SideMenuCategory @category={{category}}/>
+        {{else}}
+          <SideMenuCategory @category={{category}} @collapsed={{true}} />
+        {{/if}}
+      {{/unless}}
     {{/each}}
     </BsCollapse>
   </ul>

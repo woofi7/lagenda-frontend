@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     {{#each this.articles as |article|}}
-      <ArticleCard @article={{article}} />
+      {{#unless article.unlisted}}
+        <ArticleCard @article={{article}} />
+      {{/unless}}
     {{/each}}
   </div>
 </div>

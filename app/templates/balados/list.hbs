@@ -7,9 +7,11 @@
         {{/link-to}}
       </div>
       <div class="row">
-        {{#each category.balados as |balado index|}}
+        {{#each category.sortedBalados as |balado index|}}
           {{#if (lt index 3)}}
-            <EpisodeCard @episode={{balado}} />
+            {{#unless balado.unlisted}}
+              <EpisodeCard @episode={{balado}} />
+            {{/unless}}
           {{else if (eq index 3)}}
             <div class="col px-0 mx-2 my-auto">
               <div class="balados-more-list d-table ml-4">

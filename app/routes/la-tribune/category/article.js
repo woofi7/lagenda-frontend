@@ -22,6 +22,9 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       sort: '-post-datetime',
       page: {
         size: 1
+      },
+      filter: {
+        unlisted: false
       }
     });
 
@@ -30,6 +33,9 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       sort: '-post-datetime',
       page: {
         size: 3
+      },
+      filter: {
+        unlisted: false
       }
     }, args)
     .then((articles) => {

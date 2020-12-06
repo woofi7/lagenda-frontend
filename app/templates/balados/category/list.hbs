@@ -4,8 +4,10 @@
       <h3 class="col">{{category.name}}</h3>
     </div>
     <div class="row">
-      {{#each category.balados as |balado|}}
-        <EpisodeCard @episode={{balado}} />
+      {{#each category.sortedBalados as |balado|}}
+        {{#unless balado.unlisted}}
+          <EpisodeCard @episode={{balado}} />
+        {{/unless}}
       {{/each}}
     </div>
   </div>

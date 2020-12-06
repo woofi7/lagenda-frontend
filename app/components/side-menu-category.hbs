@@ -17,10 +17,12 @@
         {{/if}}
       {{/each}}
     {{else}}
-      {{#each @category.articles as |article|}}
-        <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
-          <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
-        </LinkTo>
+      {{#each articles as |article|}}
+        {{#unless article.unlisted}}
+          <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
+            <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
+          </LinkTo>
+        {{/unless}}
       {{/each}}
       <LinkTo @route="la-tribune.category" @models={{array @category.id}}>
         <li class="py-2 pl-3 pr-2 mb-0 clickable font-italic">{{t "la-tribune.more"}}</li>
