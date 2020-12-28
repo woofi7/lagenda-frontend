@@ -6,19 +6,9 @@ import RSVP from "rsvp";
 export default class LaTribuneCategoryArticleRoute extends Route {
   @service router;
 
-  redirect() {
-    super.redirect();
-    window.scrollTo(0,0);
-  }
-
-  enter() {
-    super.enter();
-    window.scrollTo(0,0);
-  }
-
   async model(args) {
-    let featuredBalados = await this.store.query('balado', {
-      include: 'balado-category',
+    let featuredBalados = this.store.query('balado', {
+      include: 'balado-category.balados',
       sort: '-post-datetime',
       page: {
         size: 1
@@ -28,8 +18,8 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       }
     });
 
-    let featuredArticles = await this.store.query('article', {
-      include: 'article-category',
+    let featuredArticles = this.store.query('article', {
+      include: 'article-category.articles',
       sort: '-post-datetime',
       page: {
         size: 3
@@ -45,7 +35,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
       return articles.slice(0, 2);
     });
 
-    let article = this.store.findRecord('article', args.article, {
+    let article = await this.store.findRecord('article', args.article, {
       include: 'authors.image'
     });
 

@@ -5,11 +5,11 @@ export default class ArticleModel extends Model {
   @attr('date') postDatetime;
   @attr('date') updateDatetime;
   @attr('string') desc;
-  @attr('string') content;
+  @attr('string', { async: true }) content;
   @attr('boolean') unlisted;
 
-  @belongsTo('image') image;
-  @belongsTo('article-category') articleCategory;
+  @belongsTo('image', { async: true }) image;
+  @belongsTo('article-category', { async: true }) articleCategory;
 
-  @hasMany('author') authors;
+  @hasMany('author', { async: true }) authors;
 }
