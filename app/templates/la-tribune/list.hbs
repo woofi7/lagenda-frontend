@@ -1,9 +1,16 @@
 <div class="container">
-  <div class="row">
-    {{#each this.articles as |article|}}
-      {{#unless article.unlisted}}
+  <div class="container-fluid my-4 pr-0 content">
+    <div class="d-flex">
+      <span class="ml-auto align-self-center">
+        <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
+          {{property.name}}
+        </PowerSelect>
+      </span>
+    </div>
+    <div class="row">
+      {{#each this.visibleArticles as |article|}}
         <ArticleCard @article={{article}} />
-      {{/unless}}
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>

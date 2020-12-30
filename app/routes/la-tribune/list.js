@@ -1,16 +1,9 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
 
 export default Route.extend({
+
   model() {
-    return this.store.query('article', {
-      page: {
-        size: 18
-      },
-      filter: {
-        unlisted: false
-      }
-    });
+    return this.store.findAll('article');
   },
 
   formatDate(date) {

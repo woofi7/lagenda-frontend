@@ -1,10 +1,15 @@
 <div class="container">
-  <h1>{{category.name}}</h1>
+  <div class="d-flex">
+    <h1>{{model.name}}</h1>
+    <span class="ml-auto align-self-center">
+      <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
+        {{property.name}}
+      </PowerSelect>
+    </span>
+  </div>
   <div class="row">
-    {{#each category.articles as |article|}}
-      {{#unless article.unlisted}}
-        <ArticleCard @article={{article}} />
-      {{/unless}}
+    {{#each articles as |article|}}
+      <ArticleCard @article={{article}} />
     {{/each}}
   </div>
 </div>
