@@ -8,28 +8,28 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/assets/images/balados-slider.jpg" class="d-block w-100" alt="...">
+        <img src="https://files.lagenda.ca/images/balados-slider.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-block radial-ellipse-far">
           <h5 class="text-capitalize"><LinkTo @route="balados.list" class="text-white">Le balado</LinkTo></h5>
           <p>Pour des analyses détaillées.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/assets/images/lagenda-2-slider.jpg" class="d-block w-100" alt="...">
+        <img src="https://files.lagenda.ca/images/lagenda-2-slider.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-block radial-ellipse-far">
           <h5 class="text-capitalize"><LinkTo @route="about" class="text-white">À propos</LinkTo></h5>
           <p>Qui diable est assez cinglé pour se lancer dans ce projet?</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/assets/images/tribune-slider.jpg" class="d-block w-100" alt="...">
+        <img src="https://files.lagenda.ca/images/tribune-slider.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-block radial-ellipse-far">
           <h5 class="text-capitalize"><LinkTo @route="la-tribune" class="text-white">La tribune</LinkTo></h5>
           <p>L’endroit pour vous informer et vous exprimer.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/assets/images/lagenda-slider.jpg" class="d-block w-100" alt="...">
+        <img src="https://files.lagenda.ca/images/lagenda-slider.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-block radial-ellipse-far">
           <h5 class="text-capitalize"><LinkTo @route="faq" class="text-white">L'Agenda</LinkTo></h5>
           <p>Explorer les idées de demain</p>
@@ -47,6 +47,7 @@
   </div>
 </div>
 <div class="container mb-4">
+  {{outlet}}
   <h1 class="mt-4 text-center">Qui sommes-nous?</h1>
   <p class="text-justify">
     <b>Qui diable est assez cinglé pour se lancer dans ce projet?</b><br>
@@ -69,7 +70,9 @@
           {{/if}}
         </div>
         <div class="col-9 px-0">
-          <h3 class="mb-0">{{author.firstName}} {{author.lastName}}</h3>
+          <LinkTo @route="about.author" @model={{author.id}}>
+            <h3 class="mb-0">{{author.firstName}} {{author.lastName}}</h3>
+          </LinkTo>
           <h5>{{author.title}}</h5>
           <p>
             {{author.desc}}

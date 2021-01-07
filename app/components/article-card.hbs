@@ -5,16 +5,18 @@
         <span class="badge badge-primary m-2 p-1">Nouveau</span>
       {{/if}}
     </div>
-    <div class="article-thumbnail">
-      {{#if @article.image}}
-        <img class="img-fluid" src={{@article.image.url}} alt={{@article.image.alt}}>
-      {{else}}
-        <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
-      {{/if}}
-    </div>
+    {{#unless @hideImage}}
+      <div class="article-thumbnail">
+        {{#if @article.image}}
+          <img class="img-fluid" src={{@article.image.url}} alt={{@article.image.alt}}>
+        {{else}}
+          <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+        {{/if}}
+      </div>
+    {{/unless}}
     <div class="card-body p-2 d-flex flex-column">
       <h5 class="card-title mb-1">{{if @article.title @article.title (t "article-card.no-title")}}</h5>
-      <p class="card-text small">{{if @article.desc @article.desc (t "article-card.no-desc")}}</p>
+      <p class="card-text small">{{if this.desc this.desc (t "article-card.no-desc")}}</p>
       <div class="mt-auto row">
         <div class="col">
           <small>

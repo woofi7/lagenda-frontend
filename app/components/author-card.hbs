@@ -1,4 +1,4 @@
-<LinkTo @route="about">
+<LinkTo @route="about.author" @model={{@author.id}}>
   <div class="author-card p-1 mb-2">
     {{#if @author.image}}
       <img class="img-fluid float-left pr-1" src={{@author.image.url}} alt={{@author.image.alt}} height="80" width="80"/>

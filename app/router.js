@@ -28,5 +28,7 @@ Router.map(function() {
   this.route('contact');
   this.route('privacy-policy');
   this.route('terms-of-use');
-  this.route('about');
+  this.route('about', function() {
+    this.route('author', { path: ':author' });
+  });
 });
