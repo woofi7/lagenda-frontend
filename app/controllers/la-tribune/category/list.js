@@ -12,7 +12,7 @@ export default class LaTribuneCategoryListController extends Controller {
 
   sortProperties = [
     { name: 'Récent', properties: ['updateDatetime:desc'] },
-    { name: 'Vieux', properties: ['updateDatetime:asc'] },
+    { name: 'Ancien', properties: ['updateDatetime:asc'] },
     { name: 'Alphabétique', properties: ['title'] },
   ];
   selectedSort = { name: 'Récent', properties: ['updateDatetime:desc'] };

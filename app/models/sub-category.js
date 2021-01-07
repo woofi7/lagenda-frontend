@@ -4,5 +4,5 @@ export default class SubCategoryModel extends Model {
   @attr('string') name;
   @attr('number') order;
 
-  @hasMany('article') articles;
+  @hasMany('article', { async: true }) articles;
 }

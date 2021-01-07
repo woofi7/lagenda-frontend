@@ -40,7 +40,7 @@ export default class IndexRoute extends Route {
           title: 'Le balado',
           desc: 'Pour des analyses détaillées.',
           image: {
-            url: '/assets/images/balados-slider.jpg',
+            url: 'https://files.lagenda.ca/images/balados-slider.jpg',
             alt: 'Microphone dans un studio d\'enregistrement.'
           },
         },
@@ -50,7 +50,7 @@ export default class IndexRoute extends Route {
           title: 'À propos',
           desc: 'Qui diable est assez cinglé pour se lancer dans ce projet?',
           image: {
-            url: '/assets/images/lagenda-2-slider.jpg',
+            url: 'https://files.lagenda.ca/images/lagenda-2-slider.jpg',
             alt: 'Le parlement du Canada.'
           },
         },
@@ -60,7 +60,7 @@ export default class IndexRoute extends Route {
           title: 'La tribune',
           desc: 'L’endroit pour vous informer et vous exprimer.',
           image: {
-            url: '/assets/images/tribune-slider.jpg',
+            url: 'https://files.lagenda.ca/images/tribune-slider.jpg',
             alt: 'Bureau avec divers objets.'
           },
         },
@@ -68,9 +68,9 @@ export default class IndexRoute extends Route {
           id: 4,
           route: 'faq',
           title: 'L\'Agenda',
-          desc: 'Créer la politique de demain.',
+          desc: 'Explorer les idées de demain',
           image: {
-            url: '/assets/images/lagenda-slider.jpg',
+            url: 'https://files.lagenda.ca/images/lagenda-slider.jpg',
             alt: 'Château Frontenac à Québec.'
           },
         },

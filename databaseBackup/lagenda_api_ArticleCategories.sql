@@ -1,6 +1,11 @@
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (1, 'L''équipe');
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (2, 'Samuel Lamarche');
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (3, 'Jordan Larochelle');
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (4, 'Jonathan Carreiro-Benoît');
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (5, 'Textes du public');
-INSERT INTO lagenda_api.ArticleCategories (Id, Name) VALUES (6, 'Jérémie Juneau');
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (1, 'L''équipe', 10);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (2, 'Samuel Lamarche', 20);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (3, 'Jordan Larochelle', 30);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (4, 'Jonathan Carreiro-Benoît', 40);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (5, 'Textes du public', 50);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (6, 'Jérémie Juneau', 100);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (7, 'Adam Fontaine-Métivier', 60);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (8, 'Jeremy Bélanger', 70);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (9, 'Dereck Dumont', 80);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (11, 'Justin Lachapelle ', 90);
+INSERT INTO lagenda_api.ArticleCategories (Id, Name, `Order`) VALUES (14, 'Natasha Tremblay', 110);
