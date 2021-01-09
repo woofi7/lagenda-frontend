@@ -1,13 +1,18 @@
-<div class="row">
-  <div class="col">
-    <li {{on "click" this.toggleItems}} class={{concat "py-2 pr-2 mb-0 pl-3 clickable " (if @subCategory "h6" "h5")}}>
+<div class="row py-3 clickable" {{on "click" this.toggleItems}}>
+  <div class="col d-flex align-items-center">
+    {{#if @category.image}}
+      <img class="icon-img img-fluid" src={{@category.image.url}} alt={{@category.image.alt}}>
+    {{else}}
+      <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+    {{/if}}
+    <li class={{concat "mx-2 " (if @subCategory "" "")}}>
       {{@category.name}}
-      <i class={{concat "p-2 fas float-right " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
     </li>
+    <small class={{concat "ml-auto fas " (if collapsed "fa-chevron-right" "fa-chevron-down")}}></small>
   </div>
 </div>
-<BsCollapse @collapsed={{collapsed}}>
-  <ul class="list-unstyled side-menu-articles">
+<BsCollapse class="row" @collapsed={{collapsed}}>
+  <ul class="list-unstyled side-menu-articles col p-0">
     {{#if @category.subCategories}}
       {{#each @category.subCategories as |subCategory index|}}
         {{#if (eq index 0)}}
@@ -20,12 +25,12 @@
       {{#each articles as |article|}}
         {{#unless article.unlisted}}
           <LinkTo @route="la-tribune.category.article" @models={{array @category.id article.id}}>
-            <li class="py-2 pl-3 pr-2 mb-0 clickable">{{article.title}}</li>
+            <li class="clickable p-3 article">{{article.title}}</li>
           </LinkTo>
         {{/unless}}
       {{/each}}
       <LinkTo @route="la-tribune.category" @models={{array @category.id}}>
-        <li class="py-2 pl-3 pr-2 mb-0 clickable font-italic">{{t "la-tribune.more"}}</li>
+        <li class="clickable p-3 font-italic">{{t "la-tribune.more"}}</li>
       </LinkTo>
     {{/if}}
   </ul>

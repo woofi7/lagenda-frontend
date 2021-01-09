@@ -1,12 +1,15 @@
 import Controller from '@ember/controller';
-import {alias} from '@ember/object/computed';
+import { alias } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
+import { tracked } from "@glimmer/tracking";
 
 export default class LaTribuneCategoryArticleController extends Controller {
   @service router;
   @service fastboot;
 
   @alias('model.article') article;
+
+  @tracked submitText = false;
 
   getUrl() {
     let currentUrl;

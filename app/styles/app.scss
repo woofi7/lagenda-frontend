@@ -141,6 +141,10 @@ article-img-container {
 .btn-primary {
   background-color: #003da5;
   border-color: #003da5;
+
+  &:hover, &:focus {
+    background-color: #002F80;
+  }
 }
 
 .author-card {
@@ -181,21 +185,39 @@ article-img-container {
 }
 
 .clickable:hover {
-  color: dimgrey;
+  background-color: #002F80;
+  transition: 0.3s;
 }
 
 
 .side-menu {
-  background-color: #e8e8e8;
+  background-color: #003da5;
+  color: white;
+  box-shadow: 0 0 10px black;
+
+  .icon-img {
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+  }
+
+  a:hover {
+    color: black;
+  }
 }
 
 .side-menu-articles {
-  background-color: #e1e1e1;
+  background-color: #f8f9fa;
 }
 
-.side-menu-articles > a > li:hover,
-.side-menu-articles > a.active li {
+
+.side-menu-articles > a.active > .article {
   background-color: #cdcdcd;
+  font-weight: bold;
+}
+
+.side-menu-articles > a > li:hover{
+  background-color: #bfbfbf !important;
 }
 
 @include media-breakpoint-up(md) {
@@ -261,8 +283,12 @@ article-img-container {
   color: #495057;
 }
 
+.modal-open {
+  overflow-y: scroll;
+}
+
 .modal {
-  color: #636363;
+  color: black;
 
   .modal-content {
     padding: 20px;
@@ -280,7 +306,7 @@ article-img-container {
   h4 {
     text-align: center;
     font-size: 26px;
-    margin: 30px 0 -10px;
+    margin: 0 0 -10px;
   }
 
   .close {
@@ -291,7 +317,7 @@ article-img-container {
 
   .modal-body {
     text-align: center;
-    color: #999;
+    color: black;
   }
 
   .modal-footer {
@@ -327,11 +353,12 @@ article-img-container {
   }
 
   .btn-secondary {
-    background: #c1c1c1;
+    background: #cdcdcd;
+    color: black;
   }
 
   .btn-secondary:hover, .btn-secondary:focus {
-    background: #a8a8a8;
+    background: #bfbfbf;
   }
 
   .trigger-btn {
@@ -341,6 +368,9 @@ article-img-container {
 }
 
 .modal-error {
+  h4 {
+    margin-top: 30px;
+  }
   .icon-box {
     border: 3px solid #f15e5e;
     color: #f15e5e;
@@ -348,6 +378,9 @@ article-img-container {
 }
 
 .modal-success {
+  h4 {
+    margin-top: 30px;
+  }
   .icon-box {
     border: 3px solid #4BB543;
     color: #4BB543;
@@ -356,8 +389,15 @@ article-img-container {
 
 
 .modal-sent {
+  h4 {
+    margin-top: 30px;
+  }
   .icon-box {
     border: 3px solid #003da5;
     color: #003da5;
   }
+}
+
+.navbar {
+  box-shadow: 0 0 10px black;
 }

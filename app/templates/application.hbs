@@ -25,14 +25,14 @@
       {{#if (eq this.infolettre "success")}}
         <p>Votre abonnement a été confirmé avec succès.</p>
       {{else if (eq this.infolettre "sent")}}
-        <p>
+        <p class="text-justify">
           Un message de confirmation vous a été envoyé par courriel.
         </p>
-        <p>
+        <p class="text-justify">
           Pour compléter votre abonnement, veuillez cliquer sur le bouton "Confirmer mon adresse courriel" qui se
           trouve dans ce courriel.
         </p>
-        <p>
+        <p class="text-justify">
           Si ce courriel n'est pas dans votre boîte de réception, vérifiez votre boîte de courrier indésirable. Afin
           de recevoir nos prochains courriels et de profiter pleinement de votre abonnement, assurez-vous d'ajouter
           notre adresse à votre carnet d'expéditeurs sécuritaires.
@@ -42,7 +42,7 @@
       {{/if}}
     </Modal.body>
     <Modal.footer class="justify-content-center" as |footer|>
-      <BsButton @onClick={{action Modal.close}} @type="primary">Fermer</BsButton>
+      <BsButton @onClick={{action Modal.close}} @type="secondary">Fermer</BsButton>
     </Modal.footer>
   </BsModal>
 

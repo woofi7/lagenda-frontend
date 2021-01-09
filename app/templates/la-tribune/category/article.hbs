@@ -78,9 +78,9 @@
               Vous désirez réagir à l'actualité ou à l'un de nos article?
             </small>
             <p class="card-text mt-2">
-              <a type="mail" role="button" href="mailto:lagenda.media@gmail.com" class="w-100 btn btn-primary">
+              <button class="w-100 btn btn-primary text-white" onclick={{fn (mut this.submitText)}}>
                 Envoyez-nous votre texte!
-              </a>
+              </button>
             </p>
           </div>
         </div>
@@ -100,3 +100,24 @@
     </div>
   </div>
 </div>
+
+<BsModal @open={{this.submitText}} @position="center" as |Modal|>
+  <Modal.header class="flex-column">
+    <h4 class="modal-title w-100">Exprimez-vous!</h4>
+  </Modal.header>
+  <Modal.body class="text-justify">
+    <p>
+      Faites entendre votre voix, soumettez-nous votre texte faisant entre 500 à 1000 mots dans un format Word et nous
+      nous ferons un plaisir de le lire et de l’évaluer.
+    </p>
+    <p>
+      Nous nous réservons le droit de choisir de publier ou non
+      chaque texte. Si votre texte est choisi, nous vous recontacterons pour confirmer les détails de publications
+      (Photos, noms, date, etc.) Nous avons hâte de vous lire.
+    </p>
+  </Modal.body>
+  <Modal.footer class="justify-content-center" as |footer|>
+    <a type="mail" role="button" href="mailto:lagenda.media@gmail.com" class="btn btn-primary text-white">Soumettre</a>
+    <BsButton @onClick={{action Modal.close}} @type="secondary">Fermer</BsButton>
+  </Modal.footer>
+</BsModal>
