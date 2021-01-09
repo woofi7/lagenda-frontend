@@ -10,7 +10,7 @@
       <div class="col mb-3">
         <p class="text-justify">
           {{#if article.image}}
-            <div class="float-xl-left pr-3 pb-3 mx-auto">
+            <div class="float-xl-left pr-3 pb-3 mx-auto article-img-container">
               <img class="img-fluid article-img d-block" src={{article.image.url}} alt={{article.image.alt}}>
               {{#if article.image.credits}}
                 <small>{{article.image.credits}}</small>
@@ -40,6 +40,50 @@
         {{#each article.authors as |author|}}
           <AuthorCard @author={{author}}/>
         {{/each}}
+        <div class="card mt-4 bg-light">
+          <div class="card-body">
+            <h4 class="card-title text-uppercase font-weight-bold mb-0">Infolettre</h4>
+            <small class="card-text color-form">
+              Pour ne rien manquer de la part de notre équipe de la rédaction. Inscrivez-vous à notre infolettre.
+            </small>
+            <form class="mt-2" action="https://app.cyberimpact.com/optin" method="post" accept-charset="utf-8">
+              <div class="form-group">
+                <label class="d-none" for="ci_email">Adresse courriel</label>
+                <input type="email" class="form-control bg-light" id="ci_email" name="ci_email" placeholder="Adresse courriel">
+              </div>
+              <div class="form-group">
+                <label class="d-none" for="ci_firstname">Prénom</label>
+                <input type="text" class="form-control bg-light" id="ci_firstname" name="ci_firstname" placeholder="Prénom">
+              </div>
+              <div class="form-group">
+                <label class="d-none" for="ci_lastname">Nom</label>
+                <input type="text" class="form-control bg-light" id="ci_lastname" name="ci_lastname" placeholder="Nom">
+              </div>
+
+              <input type="hidden" id="ci_groups" name="ci_groups" value="2"/>
+              <input type="hidden" id="ci_language" name="ci_language" value="fr_ca"/>
+              <input type="hidden" id="ci_account" name="ci_account" value="e19b82d5-8f84-48f1-3518-62c0938c87bc"/>
+              <input type="hidden" id="ci_sent_url" name="ci_sent_url" value={{sentUrl}}/>
+              <input type="hidden" id="ci_error_url" name="ci_error_url" value={{errorUrl}} />
+              <input type="hidden" id="ci_confirm_url" name="ci_confirm_url" value={{successUrl}} />
+
+              <button type="submit" class="w-100 btn btn-primary">S'inscrire</button>
+            </form>
+          </div>
+        </div>
+        <div class="card mt-4 bg-light">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase font-weight-bold mb-0 color-blue">Exprimez-vous!</h5>
+            <small class="card-text color-form">
+              Vous désirez réagir à l'actualité ou à l'un de nos article?
+            </small>
+            <p class="card-text mt-2">
+              <a type="mail" role="button" href="mailto:lagenda.media@gmail.com" class="w-100 btn btn-primary">
+                Envoyez-nous votre texte!
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row mt-5">

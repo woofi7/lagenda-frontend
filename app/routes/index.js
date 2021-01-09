@@ -5,6 +5,12 @@ import RSVP from 'rsvp';
 export default class IndexRoute extends Route {
   @service('intl') intl;
 
+  setupController(controller, model, transition) {
+    super.setupController(controller, model, transition);
+    if (controller.infolettre)
+      this.controllerFor('application').set('infolettre', controller.infolettre);
+  }
+
   beforeModel() {
     return this.intl.setLocale(['fr-ca', 'en-us']);
   }
