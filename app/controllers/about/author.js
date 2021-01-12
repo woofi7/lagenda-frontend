@@ -1,11 +1,9 @@
 import Controller from '@ember/controller';
 import {alias, filter, sort} from "@ember/object/computed";
 import {computed} from "@ember/object";
-import {inject as service} from "@ember/service";
+import moment from 'moment';
 
 export default class AboutAuthorController extends Controller {
-  @service moment;
-
   @alias('model') author;
 
   sortKey = ['updateDatetime:desc'];
@@ -18,5 +16,5 @@ export default class AboutAuthorController extends Controller {
   @computed('filteredArticles')
   get articles () {
     return this.filteredArticles.slice(0, 3);
-  };
+  }
 }

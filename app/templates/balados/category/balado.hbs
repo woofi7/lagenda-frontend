@@ -1,34 +1,34 @@
 <div class="container">
-  <h2>{{balado.title}}</h2>
-  <small>{{moment balado.postDatetime 'dddd Do MMMM YYYY, h:mm:ss a'}}</small>
-  {{#if balado.updateDatetime}}
-    <small>Mise à jour: {{moment balado.updateDatetime 'MM-DD-YYYY'}}</small>
-  {{/if}}
+  <h2>{{this.balado.title}}</h2>
+  <small>
+    {{t "article.post-date"
+        date=(moment-format this.balado.postDatetime 'D MMMM YYYY à hh[h]mm' 'MM-YYYY-DD')}}
+  </small>
   <div class="row mb-3">
     <div class="col-8">
       <p>
-        {{{balado.desc}}}
+        {{this.baladoDesc}}
       </p>
     </div>
     <div class="col-md-4 col-12 px-md-0">
-      <h4 class="mb-2">Écouter l'épisode</h4>
+      <h4 class="mb-2">{{t "balados.listen.title"}}</h4>
       <div>
-        {{#if balado.appleLink}}
-          <a href={{balado.appleLink}} class="mx-2"><img src="/assets/logo/apple-podcast.png" alt="Apple podcast" height="40px" width="40px"></a>
+        {{#if this.balado.appleLink}}
+          <a href={{this.balado.appleLink}} class="mx-2"><img src="/assets/logo/apple-podcast.png" alt={{t "balados.listen.apple"}} height="40px" width="40px"></a>
         {{/if}}
-        {{#if balado.googleLink}}
-          <a href={{balado.googleLink}} class="mx-2"><img src="/assets/logo/google-podcasts.png" alt="Google podcast" height="40px" width="40px"></a>
+        {{#if this.balado.googleLink}}
+          <a href={{this.balado.googleLink}} class="mx-2"><img src="/assets/logo/google-podcasts.png" alt={{t "balados.listen.google"}} height="40px" width="40px"></a>
         {{/if}}
-        {{#if balado.spotifyLink}}
-          <a href={{balado.spotifyLink}} class="mx-2"><img src="/assets/logo/spotify.png" alt="Google play" height="40px" width="40px"></a>
+        {{#if this.balado.spotifyLink}}
+          <a href={{this.balado.spotifyLink}} class="mx-2"><img src="/assets/logo/spotify.png" alt={{t "balados.listen.google-play"}} height="40px" width="40px"></a>
         {{/if}}
-        {{#if balado.soundcloudLink}}
-          <a href={{balado.soundcloudLink}} class="mx-2"><img src="https://w.soundcloud.com/icon/assets/images/orange_white_40-94fc761.png" alt="Soundcloud" height="40px" width="40px"></a>
+        {{#if this.balado.soundcloudLink}}
+          <a href={{this.balado.soundcloudLink}} class="mx-2"><img src="https://w.soundcloud.com/icon/assets/images/orange_white_40-94fc761.png" alt={{t "balados.listen.sound-cloud"}} height="40px" width="40px"></a>
         {{/if}}
       </div>
       <div class="balados-thumbnail">
-        {{#if balado.image}}
-          <img class="img-fluid my-3" src={{balado.image.url}} alt={{balado.image.alt}}>
+        {{#if this.balado.image}}
+          <img class="img-fluid my-3" src={{this.balado.image.url}} alt={{this.balado.image.alt}}>
         {{else}}
           <img class="img-fluid my-3" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
         {{/if}}
@@ -37,71 +37,15 @@
   </div>
   <div class="row">
     <div class="col logo-list">
-      <h4>Partager le balado</h4>
+      <h4>{{t "balados.share"}}</h4>
       <div class="row">
         <div class="col">
           <FacebookButton />
-          <TwitterButton @text={{concat "Nouveau balado sur l'Agenda: " balado.title}} />
-          <LinkedinButton @text={{concat "Nouveau balado sur l'Agenda: " balado.title}} @title={{balado.title}} />
-          <EmailButton @title={{balado.title}} />
+          <TwitterButton @text={{concat "Nouveau balado sur l'Agenda: " this.balado.title}} />
+          <LinkedinButton @text={{concat "Nouveau balado sur l'Agenda: " this.balado.title}} @title={{this.balado.title}} />
+          <EmailButton @title={{this.balado.title}} />
         </div>
       </div>
     </div>
   </div>
-  <!--
-  <h3>Nos autres épisodes</h3>
-  <div class="row">
-    <div class="col px-0 mx-2">
-      <a href="#">
-        <div class="balados-thumbnail">
-          <img src="../../images/bg-5.jpg" class="img-fluid" alt="Image">
-          <div class="hover d-table">
-            <div class="d-table-cell align-middle text-center text-white">
-              <div class="h5">
-                Épisode 42
-              </div>
-              <div class="h6 text-uppercase ">
-                Titre du balados
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col px-0 mx-2">
-      <a href="#">
-        <div class="balados-thumbnail">
-          <img src="../../images/bg-6.jpg" class="img-fluid" alt="Image">
-          <div class="hover d-table">
-            <div class="d-table-cell align-middle text-center text-white">
-              <div class="h5">
-                Épisode 42
-              </div>
-              <div class="h6 text-uppercase ">
-                Titre du balados
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col px-0 mx-2">
-      <a href="#">
-        <div class="balados-thumbnail">
-          <img src="../../images/bg-7.jpg" class="img-fluid" alt="Image">
-          <div class="hover d-table">
-            <div class="d-table-cell align-middle text-center text-white">
-              <div class="h5">
-                Épisode 42
-              </div>
-              <div class="h6 text-uppercase ">
-                Titre du balados
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-  -->
 </div>

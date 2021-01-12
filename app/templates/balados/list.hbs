@@ -2,9 +2,11 @@
   <div class="row my-2">
     <div class="col">
       <div class="row">
-        {{#link-to "balados.category" category.id class="nav-item nav-link pl-1"}}
+        <LinkTo @route="balados.category"
+                @model={{category.id}}
+                class="nav-item nav-link pl-1">
           <h3 class="col mb-0 pl-1">{{category.name}}</h3>
-        {{/link-to}}
+        </LinkTo>
       </div>
       <div class="row">
         {{#each category.sortedBalados as |balado index|}}
@@ -15,9 +17,11 @@
           {{else if (eq index 3)}}
             <div class="col px-0 mx-2 my-auto">
               <div class="balados-more-list d-table ml-4">
-                {{#link-to "balados.category" category.id  class="d-table-cell align-middle text-center text-white h3"}}
+                <LinkTo @route="balados.category"
+                        @model={{category.id}}
+                        class="d-table-cell align-middle text-center text-white h3">
                   <i class="fas fa-ellipsis-h"></i>
-                {{/link-to}}
+                </LinkTo>
               </div>
             </div>
           {{/if}}
@@ -25,12 +29,10 @@
           <div class="col-12 col-sm-6 col-lg-3 p-0">
             <div class="nav-item nav-link p-0 m-2">
               <div class="balados-thumbnail">
-                <img src="/assets/images/placeholder.jpg" class="img-fluid" alt="Image">
+                <img src="/assets/images/placeholder.jpg" class="img-fluid" alt={{t "placeholder.alt"}}>
                 <div class="hover d-table">
                   <div class="d-table-cell align-middle text-center text-white">
-                    <div class="h5">
-                      À venir
-                    </div>
+                    <h5>{{t "balados.empty-category"}}</h5>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex">
-    <h1>{{model.name}}</h1>
+    <h1>{{this.model.name}}</h1>
     <span class="ml-auto align-self-center">
       <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
         {{property.name}}
@@ -8,7 +8,7 @@
     </span>
   </div>
   <div class="row">
-    {{#each articles as |article|}}
+    {{#each this.articles as |article|}}
       <ArticleCard @article={{article}} />
     {{/each}}
   </div>

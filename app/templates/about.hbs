@@ -1,17 +1,16 @@
 <div class="container mb-4">
   {{outlet}}
-  <h1 class="mt-4 text-center">Qui sommes-nous?</h1>
+  <h1 class="mt-4 text-center">{{t "about.title"}}</h1>
+  <h6>{{t "about.desc.title"}}</h6>
   <p class="text-justify">
-    <b>Qui diable est assez cinglé pour se lancer dans ce projet?</b><br>
-    Nous sommes des jeunes passionnés de politique étudiant dans des domaines divers et variés. Nous avons eu l’idée de
-    lancer ce collectif après une discussion autour d’un shish-taouk et avec l’idée floue de créer un balado sur la
-    politique. Quelques jours plus tard, l’un de nous deux a cru bon de se donner encore plus de travail et d'agrandir
-    drastiquement le projet pour inclure les projets cités dans la rubrique <b><a href="https://lagenda.ca/la-tribune/1/3" >Pourquoi L’Agenda?</a></b><br>
-    <br>
-    Bref voici ceux qui composent notre équipe plus en détail.
+    {{t "about.desc.text"}}
+    <LinkTo @route="la-tribune.category.article" @models={{array 1 3}} class="font-weight-bold">{{t "about.desc.link-text"}}</LinkTo>
+  </p>
+  <p>
+    {{t "about.desc.text2"}}
   </p>
 
-  {{#each authors as |author|}}
+  {{#each this.authors as |author|}}
     {{#if author.collaborator}}
       <div class="row mt-3">
         <div class="col-3">

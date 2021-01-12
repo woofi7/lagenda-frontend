@@ -1,4 +1,3 @@
-import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 import EmberRouterScroll from 'ember-router-scroll';
 

@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col">
     <div class="row">
-      <h3 class="col">{{category.name}}</h3>
+      <h3 class="col">{{this.category.name}}</h3>
     </div>
     <div class="row">
-      {{#each category.sortedBalados as |balado|}}
+      {{#each this.category.sortedBalados as |balado|}}
         {{#unless balado.unlisted}}
           <EpisodeCard @episode={{balado}} />
         {{/unless}}

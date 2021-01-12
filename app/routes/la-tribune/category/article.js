@@ -82,7 +82,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
         tagId: 'article-image-meta-tag',
         attrs: {
           property: 'og:image',
-          content: 'https://lagenda.ca' + image.url
+          content: image.url
         }
       },
       {

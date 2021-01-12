@@ -2,6 +2,8 @@
 title: "L'Agenda"
 placeholder:
   alt: "Placeholder of featured element."
+button:
+  close: "Fermer"
 
 #Pages
 home:
@@ -16,15 +18,42 @@ la-tribune:
   read-article: "Lire l'article"
   more: "Plus d'acticles..."
 
+article:
+  post-date: "Publié le {date}"
+  share:
+    title: "Partager l'article"
+
+
 balados:
   title: "Balados"
+  listen:
+    title: "Écouter l'épisode"
+    apple: "Apple podcast"
+    google: "Google podcast"
+    google-play: "Google Play"
+    sound-cloud: "SoundCloud"
+  share: "Partager le balado"
+  empty-category: "À venir"
+
+about:
+  button: "À propos"
+  title: "Qui sommes-nous?"
+  desc:
+    title: "Qui diable est assez cinglé pour se lancer dans ce projet?"
+    text: "Nous sommes des jeunes passionnés de politique étudiant dans des domaines divers et variés. Nous avons eu l’idée de
+           lancer ce collectif après une discussion autour d’un shish-taouk et avec l’idée floue de créer un balado sur la
+           politique. Quelques jours plus tard, l’un de nous deux a cru bon de se donner encore plus de travail et d'agrandir
+           drastiquement le projet pour inclure les projets cités dans la rubrique"
+    text2: "Bref voici ceux qui composent notre équipe plus en détail."
+    link-text: "Pourquoi L’Agenda?"
+  articles: "Articles"
 
 faq: "FAQ"
 contact-us: "Contactez-nous"
 privacy-policy: "Politique de confidentialité"
 terms-of-use: "Conditions d'utilisation"
 copyright: "© 2020 L'Agenda – Tous droits réservés."
-about: "À propos"
+
 
 #Components
 article-card:
@@ -36,6 +65,35 @@ author-card:
 
 episode-card:
   title: "Épisode {id}"
+
+infolettre:
+  title: "Abonnement à l'infolettre"
+  desc: "Pour ne rien manquer de la part de notre équipe de la rédaction. Inscrivez-vous à notre infolettre."
+  message:
+    success: "Votre abonnement a été confirmé avec succès"
+    sent1: "Un message de confirmation vous a été envoyé par courriel."
+    sent2: "Pour compléter votre abonnement, veuillez cliquer sur le bouton \"Confirmer mon adresse courriel\" qui se
+            trouve dans ce courriel."
+    sent3: "Si ce courriel n'est pas dans votre boîte de réception, vérifiez votre boîte de courrier indésirable. Afin
+            de recevoir nos prochains courriels et de profiter pleinement de votre abonnement, assurez-vous d'ajouter
+            notre adresse à votre carnet d'expéditeurs sécuritaires."
+    error: "Une erreur est survenue, svp essayez de nouveau."
+  form:
+    email: "Adresse courriel"
+    first-name: "Prénom"
+    last-name: "Nom"
+    submit: "S'inscrire"
+
+submit-text:
+  title: "Exprimez-vous!"
+  small-desc: "Vous désirez réagir à l'actualité ou à l'un de nos article?"
+  modal-button: "Envoyez-nous votre texte!"
+  desc1: "Faites entendre votre voix, soumettez-nous votre texte faisant entre 500 à 1000 mots dans un format Word et nous
+          nous ferons un plaisir de le lire et de l’évaluer."
+  desc2: "Nous nous réservons le droit de choisir de publier ou non
+          chaque texte. Si votre texte est choisi, nous vous recontacterons pour confirmer les détails de publications
+          (Photos, noms, date, etc.) Nous avons hâte de vous lire."
+  submit-text: "Soumettre un texte"
 
 # Translations
 lang.fr-ca: "Français"

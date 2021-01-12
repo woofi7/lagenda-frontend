@@ -15,7 +15,7 @@ module.exports = function(/* environment */) {
      * @type {Array?}
      * @default "null"
      */
-    locales: null,
+    locales: ['fr-ca'],
 
     /**
      * Merges the fallback locale's translations into all other locales as a

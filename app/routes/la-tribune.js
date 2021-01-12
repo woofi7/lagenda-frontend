@@ -7,7 +7,7 @@ export default class IndexRoute extends Route {
       this.controllerFor('application').set('infolettre', controller.infolettre);
   }
 
-  async model(params, transition) {
+  async model() {
     return this.store.findAll('article-category', {
       include: 'articles'
     });

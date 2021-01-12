@@ -1,10 +1,9 @@
 import Controller from '@ember/controller';
 import { sort, filter, alias } from '@ember/object/computed';
-import { inject as service } from '@ember/service';
 import { action, computed } from '@ember/object';
+import moment from 'moment';
 
 export default class LaTribuneListController extends Controller {
-  @service moment;
 
   @filter('sortedArticles', (a)  => {
     return moment(a.updateDatetime).isSameOrBefore() && !a.unlisted;
@@ -13,7 +12,7 @@ export default class LaTribuneListController extends Controller {
   @computed('articles',)
   get visibleArticles () {
     return this.articles.slice(0, 18);
-  };
+  }
 
   sortProperties = [
     { name: 'Récent', properties: ['updateDatetime:desc'] },
