@@ -25,10 +25,32 @@ module.exports = function(environment) {
       includeLocales: ['fr-ca'],
       allowEmpty: true,
     },
+
+    apiHost: 'http://localhost:4200',
+
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/]
+    },
+
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'google-oauth2': {
+          ***REMOVED***
+          redirectUri: 'http://localhost:4200/torii/redirect.html',
+          scope: 'repo user'
+        }
+      }
+    }
   };
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'https://lagenda.ca'
+    ENV.APP.API_HOST = 'https://lagenda.ca';
+    ENV.apiHost = 'https://lagenda.ca';
+
+    ENV.fastboot = {
+      hostWhitelist: ['lagenda.ca']
+    };
   }
 
   if (environment === 'development') {
