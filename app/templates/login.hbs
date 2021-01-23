@@ -1,0 +1,6 @@
+<form {{on "submit" this.authenticate}}>
+  <button type="submit">Login</button>
+  {{#if this.errorMessage}}
+    <p>{{this.errorMessage}}</p>
+  {{/if}}
+</form>

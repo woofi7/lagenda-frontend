@@ -38,7 +38,8 @@ module.exports = function(environment) {
         'google-oauth2': {
           ***REMOVED***
           redirectUri: 'http://localhost:4200/torii/redirect.html',
-          scope: 'repo user'
+          tokenExchangeUri: 'https://localhost:5001/oauth2',
+          scope: 'profile'
         }
       }
     }
@@ -51,6 +52,9 @@ module.exports = function(environment) {
     ENV.fastboot = {
       hostWhitelist: ['lagenda.ca']
     };
+
+    ENV.torii.providers['google-oauth2'].redirectUri = 'https://lagenda.ca/admin';
+    ENV.torii.providers['google-oauth2'].tokenExchangeUri = 'https://lagenda.ca/api/v1/oauth2';
   }
 
   if (environment === 'development') {

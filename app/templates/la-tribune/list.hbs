@@ -1,16 +1,19 @@
 <div class="container">
-  <div class="container-fluid my-4 pr-0 content">
-    <div class="d-flex">
-      <span class="ml-auto align-self-center">
-        <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
-          {{property.name}}
-        </PowerSelect>
-      </span>
-    </div>
-    <div class="row">
-      {{#each this.visibleArticles as |article|}}
-        <ArticleCard @article={{article}} />
-      {{/each}}
-    </div>
+  <div class="d-flex px-2">
+    <BsButton @type="primary" @defaultText="First" {{on "click" (fn this.changePage "first")}}></BsButton>
+    <BsButton @type="primary" @defaultText="Prev" {{on "click" (fn this.changePage "prev")}}></BsButton>
+    <BsButton @type="primary" @defaultText="Next" {{on "click" (fn this.changePage "next")}}></BsButton>
+    <BsButton @type="primary" @defaultText="Last" {{on "click" (fn this.changePage "last")}}></BsButton>
+
+    <span class="ml-auto align-self-center">
+      <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
+        {{property.name}}
+      </PowerSelect>
+    </span>
+  </div>
+  <div class="d-flex flex-wrap">
+    {{#each this.articles as |article|}}
+      <ArticleCard @article={{article}} />
+    {{/each}}
   </div>
 </div>

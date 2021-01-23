@@ -6,19 +6,19 @@ import { tracked } from "@glimmer/tracking";
 export default class LoginController extends Controller {
   @tracked errorMessage;
   @service session;
+  @service router
 
   @action
   async authenticate(e) {
     e.preventDefault();
-    let { identification, password } = this;
     try {
-      await this.session.authenticate('authenticator:oauth2', identification, password);
+      await this.session.authenticate('authenticator:torii', 'google');
     } catch(error) {
       this.errorMessage = error.error || error;
     }
 
     if (this.session.isAuthenticated) {
-      console.log('Authenticated');
+      router.transitionToRoute('admin');
     }
   }
 

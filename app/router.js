@@ -30,7 +30,6 @@ Router.map(function() {
   this.route('about', function() {
     this.route('author', { path: ':author' });
   });
-  this.route('admin', function() {
-    this.route('login');
-  });
+  this.route('admin');
+  this.route('login');
 });

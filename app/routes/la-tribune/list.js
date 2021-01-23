@@ -1,23 +1,26 @@
 import Route from '@ember/routing/route';
 
-export default Route.extend({
+export default class List extends Route {
+  queryParams = {
+    page: {
+      refreshModel: true
+    },
+    sort: {
+      refreshModel: true
+    },
+  };
+  computeParams(params) {
+    console.log(params);
 
-  model() {
-    return this.store.peekAll('article');
-  },
+    let newParams = {...params, page: { number: params.page, size: 18 }};
 
-  formatDate(date) {
-    var d = new Date(date),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
-      year = d.getFullYear();
-
-    if (month.length < 2)
-      month = '0' + month;
-    if (day.length < 2)
-      day = '0' + day;
-
-    return [year, month, day].join('-');
+    console.log(newParams);
+    return newParams;
   }
-});
+
+  model(params) {
+    return this.store.query('article', this.computeParams(params));
+  }
+
+};
 

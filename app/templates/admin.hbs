@@ -5,6 +5,9 @@
     {{#link-to 'admin.login'}}Login{{/link-to}}
   {{/if}}
 </div>
-<div class="main">
-  {{outlet}}
-</div>
+
+<button type="button" class="btn btn-primary" {{on "click" this.postArticle}}>
+  Create new article
+</button>
+
+ {{outlet}}
