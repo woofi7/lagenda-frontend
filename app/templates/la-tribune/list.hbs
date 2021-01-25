@@ -1,16 +1,23 @@
 <div class="container">
-  <div class="container-fluid my-4 pr-0 content">
-    <div class="d-flex">
-      <span class="ml-auto align-self-center">
-        <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
-          {{property.name}}
-        </PowerSelect>
-      </span>
-    </div>
-    <div class="row">
-      {{#each this.visibleArticles as |article|}}
-        <ArticleCard @article={{article}} />
-      {{/each}}
-    </div>
+  <div class="d-flex px-2">
+    <span class="ml-auto align-self-center">
+      <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
+        {{property.name}}
+      </PowerSelect>
+    </span>
+  </div>
+  <div class="d-flex flex-wrap">
+    {{#each this.articles as |article|}}
+      <ArticleCard @article={{article}} />
+    {{/each}}
+  </div>
+  <div class="px-2 w-100">
+    <Pager
+        @links={{this.links}}
+        @page={{this.page}}
+        @totalResources={{this.model.meta.total-resources}}
+        @pageSize={{18}}
+        @setPage={{this.setPage}}
+    />
   </div>
 </div>

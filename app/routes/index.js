@@ -14,20 +14,13 @@ export default class IndexRoute extends Route {
       sort: '-post-datetime',
       page: {
         size: 1
-      },
-      filter: {
-        unlisted: false
       }
     });
-
     let articles = await this.store.query('article', {
       include: 'article-category',
       sort: '-post-datetime',
       page: {
         size: 3
-      },
-      filter: {
-        unlisted: false
       }
     });
 

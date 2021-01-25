@@ -1,31 +1,29 @@
 import Controller from '@ember/controller';
-import { sort, filter, alias } from '@ember/object/computed';
-import { action, computed } from '@ember/object';
-import moment from 'moment';
+import { alias } from '@ember/object/computed';
+import { action } from '@ember/object';
 
 export default class LaTribuneListController extends Controller {
-
-  @filter('sortedArticles', (a)  => {
-    return moment(a.updateDatetime).isSameOrBefore() && !a.unlisted;
-  }) articles;
-
-  @computed('articles',)
-  get visibleArticles () {
-    return this.articles.slice(0, 18);
-  }
+  queryParams = ['page', 'sort'];
+  page =  1;
+  sort = '-update-datetime';
 
   sortProperties = [
-    { name: 'Récent', properties: ['updateDatetime:desc'] },
-    { name: 'Ancien', properties: ['updateDatetime:asc'] },
-    { name: 'Alphabétique', properties: ['title'] },
+    { name: 'Récent', properties: '-update-datetime' },
+    { name: 'Ancien', properties: 'update-datetime' }
   ];
-  selectedSort = { name: 'Récent', properties: ['updateDatetime:desc'] };
+  selectedSort = { name: 'Récent', properties: '-update-datetime' };
 
-  @alias('selectedSort.properties') properties;
-  @sort('model', 'properties') sortedArticles;
+  @alias('model') articles;
+  @alias('model.links') links;
 
   @action
   changeProperty(selected) {
+    this.set('sort', selected.properties)
     this.set('selectedSort', selected);
+  }
+
+  @action
+  setPage(pageNumber) {
+    this.set('page', pageNumber);
   }
 }
