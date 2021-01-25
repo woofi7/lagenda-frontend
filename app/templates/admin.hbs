@@ -1,13 +1,5 @@
-<div class="menu">
-  {{#if this.session.isAuthenticated}}
-    <a {{on "click" this.invalidateSession}}>Logout</a>
-  {{else}}
-    {{#link-to 'admin.login'}}Login{{/link-to}}
-  {{/if}}
+<div class="container mt-3">
+  <h1>{{t "admin.title"}}</h1>
 </div>
 
-<button type="button" class="btn btn-primary" {{on "click" this.postArticle}}>
-  Create new article
-</button>
-
- {{outlet}}
+{{outlet}}

@@ -54,6 +54,14 @@ privacy-policy: "Politique de confidentialité"
 terms-of-use: "Conditions d'utilisation"
 copyright: "© 2020 L'Agenda – Tous droits réservés."
 
+admin:
+  title: "Panneau d'administration"
+
+login:
+  title: "Accès au panneau d'administration"
+  disconnected-message: "Votre session à été terminée avec succès!"
+  connect-button: "Connexion avec Google"
+  google-logo-alt: "Google"
 
 #Components
 article-card:
@@ -94,6 +102,10 @@ submit-text:
           chaque texte. Si votre texte est choisi, nous vous recontacterons pour confirmer les détails de publications
           (Photos, noms, date, etc.) Nous avons hâte de vous lire."
   submit-text: "Soumettre un texte"
+
+navbar:
+  link-admin: "Panneau d'admin"
+  disconnect: "Déconnexion"
 
 # Translations
 lang.fr-ca: "Français"

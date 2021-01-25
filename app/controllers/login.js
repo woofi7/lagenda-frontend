@@ -8,6 +8,10 @@ export default class LoginController extends Controller {
   @service session;
   @service router
 
+  queryParams = ['disconnected']
+
+  disconnected = false;
+
   @action
   async authenticate(e) {
     e.preventDefault();
@@ -18,7 +22,7 @@ export default class LoginController extends Controller {
     }
 
     if (this.session.isAuthenticated) {
-      router.transitionToRoute('admin');
+      this.router.transitionTo('admin');
     }
   }
 

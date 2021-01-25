@@ -2,6 +2,8 @@
 @import 'ember-power-select/themes/bootstrap';
 @import "ember-power-select";
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 .bg-blue {
   background-color: #003da5 !important;
 }
@@ -400,4 +402,123 @@ article-img-container {
 
 .navbar {
   box-shadow: 0 0 10px black;
+}
+
+.navbar-admin {
+  .navbar-picture {
+    border-radius: 48%;
+    background-color: white;
+
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  a {
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      color: lightgrey;
+    }
+  }
+}
+
+.dropdown-menu {
+  border-radius: 0;
+
+  .dropdown-item {
+    background-color: #f8f9fa !important;
+    color: black;
+
+    &:hover {
+      color: dimgrey;
+    }
+    &:active {
+      font-weight: bold;
+      color: black;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.login-card {
+  width: 18rem;
+  box-shadow: 0 0 100px #002F80;
+  margin-top: 75px;
+}
+
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+.google-btn {
+  height: 36px;
+  background-color: $google-blue;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  border: none;
+  padding: 0;
+
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 34px;
+    height: 34px;
+    border-radius: 2px;
+    background-color: $white;
+  }
+  .google-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    color: $white;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    line-height: 36px;
+    font-family: "Roboto", serif;
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+  }
+  &:active {
+    background: $button-active-blue;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.alert {
+  border-radius: 0;
+}
+
+
+.pager {
+  background-color: #e2e6ea;
+
+  .btn-light {
+    background-color: transparent;
+    border: none;
+  }
+
+  .btn-light:hover {
+    background-color: #cbcfd2;
+  }
+
+  .btn-primary:hover {
+    background-color: #003da5;
+    cursor: default;
+  }
+
 }

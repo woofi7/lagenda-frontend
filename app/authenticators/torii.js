@@ -4,6 +4,7 @@ import config from '../config/environment';
 
 export default class ToriiAuthenticator extends Torii {
   @service torii;
+  @service router;
 
   async authenticate() {
     const tokenExchangeUri = config.torii.providers['google-oauth2'].tokenExchangeUri;

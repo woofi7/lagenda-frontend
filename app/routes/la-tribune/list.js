@@ -10,17 +10,11 @@ export default class List extends Route {
     },
   };
   computeParams(params) {
-    console.log(params);
-
-    let newParams = {...params, page: { number: params.page, size: 18 }};
-
-    console.log(newParams);
-    return newParams;
+    return {...params, page: {number: params.page, size: 18}};
   }
 
   model(params) {
     return this.store.query('article', this.computeParams(params));
   }
-
-};
+}
 

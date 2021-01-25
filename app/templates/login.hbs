@@ -1,6 +1,25 @@
-<form {{on "submit" this.authenticate}}>
-  <button type="submit">Login</button>
-  {{#if this.errorMessage}}
-    <p>{{this.errorMessage}}</p>
-  {{/if}}
-</form>
+<div class="container">
+  <div class="login-card card mx-auto">
+    {{#if this.disconnected}}
+      <div class="alert alert-success text-center" role="alert">
+        <small>{{t "login.disconnected-message"}}</small>
+      </div>
+    {{/if}}
+    <div class="card-body d-flex flex-column text-center">
+    <img class="icon-img card-img-top mx-auto w-50 p-2 pb-4 my-4" src="/assets/logo/logo-lagenda-blue.png" alt={{t "placeholder.alt"}}>
+      <h5 class="card-title mb-5">{{t "login.title"}}</h5>
+
+      <button type="button" class="google-btn" {{on "click" this.authenticate}}>
+        <div class="google-icon-wrapper p-1">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt={{t "login.google-logo-alt"}}/>
+        </div>
+        <p class="btn-text ml-3">{{t "login.connect-button"}}</p>
+      </button>
+      {{#if this.errorMessage}}
+        <small class="text-danger mt-3">{{this.errorMessage}}</small>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>

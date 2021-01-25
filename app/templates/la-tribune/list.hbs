@@ -1,10 +1,5 @@
 <div class="container">
   <div class="d-flex px-2">
-    <BsButton @type="primary" @defaultText="First" {{on "click" (fn this.changePage "first")}}></BsButton>
-    <BsButton @type="primary" @defaultText="Prev" {{on "click" (fn this.changePage "prev")}}></BsButton>
-    <BsButton @type="primary" @defaultText="Next" {{on "click" (fn this.changePage "next")}}></BsButton>
-    <BsButton @type="primary" @defaultText="Last" {{on "click" (fn this.changePage "last")}}></BsButton>
-
     <span class="ml-auto align-self-center">
       <PowerSelect @options={{this.sortProperties}} @selected={{this.selectedSort}} @onChange={{this.changeProperty}} as |property|>
         {{property.name}}
@@ -15,5 +10,14 @@
     {{#each this.articles as |article|}}
       <ArticleCard @article={{article}} />
     {{/each}}
+  </div>
+  <div class="px-2 w-100">
+    <Pager
+        @links={{this.links}}
+        @page={{this.page}}
+        @totalResources={{this.model.meta.total-resources}}
+        @pageSize={{18}}
+        @setPage={{this.setPage}}
+    />
   </div>
 </div>
