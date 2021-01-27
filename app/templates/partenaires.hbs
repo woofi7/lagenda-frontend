@@ -1,0 +1,36 @@
+<div class="container mb-4">
+  {{outlet}}
+  <h1 class="mt-4 text-center">{{t "partenaires.title"}}</h1>
+  <h6>{{t "partenaires.desc.title"}}</h6>
+  <p class="text-justify">
+    {{t "partenaires.desc.text"}}
+  </p>
+
+  {{#each this.partners as |partner|}}
+    <div class="row mt-3">
+      <div class="col-3">
+        {{#if partner.image}}
+          <img class="img-fluid mt-2" src={{partner.image.url}} alt={{partner.image.alt}}>
+        {{else}}
+          <img class="img-fluid article-img" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+        {{/if}}
+      </div>
+      <div class="col-9 px-0">
+        <LinkTo @route="partenaires.show" @model={{partner.id}}>
+          <h3 class="mb-0">{{partner.firstName}} {{partner.lastName}}</h3>
+        </LinkTo>
+        <h5>{{partner.title}}</h5>
+        <p>
+          {{partner.desc}}
+        </p>
+        <div class="row">
+          <div class="col logo-list">
+            {{#each partner.socialLinks as |socialLink|}}
+              <a href={{socialLink.link}}><i class={{concat "h2 " socialLink.typeClasses}}></i></a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

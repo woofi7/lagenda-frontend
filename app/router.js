@@ -32,4 +32,7 @@ Router.map(function() {
   });
   this.route('admin');
   this.route('login');
+  this.route('partenaires', function() {
+    this.route('show', { path: ':author' });
+  });
 });

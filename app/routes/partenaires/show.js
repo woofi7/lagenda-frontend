@@ -1,7 +1,6 @@
 import Route from '@ember/routing/route';
-import {inject as service} from "@ember/service";
 
-export default class AboutAuthorRoute extends Route {
+export default class PartenairesShowRoute extends Route {
   model(params) {
     return this.store.findRecord('author', params.author, {
       include: 'articles.article-category,image'
@@ -20,7 +19,7 @@ export default class AboutAuthorRoute extends Route {
         tagId: 'article-url-meta-tag',
         attrs: {
           property: 'og:url',
-          content: 'https://lagenda.ca/about/' + model.id
+          content: 'https://lagenda.ca/partenaires/' + model.id
         }
       },
       {

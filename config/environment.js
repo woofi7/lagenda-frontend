@@ -53,7 +53,7 @@ module.exports = function(environment) {
       hostWhitelist: ['lagenda.ca']
     };
 
-    ENV.torii.providers['google-oauth2'].redirectUri = 'https://lagenda.ca/admin';
+    ENV.torii.providers['google-oauth2'].redirectUri = 'https://lagenda.ca/torii/redirect.html';
     ENV.torii.providers['google-oauth2'].tokenExchangeUri = 'https://lagenda.ca/api/v1/oauth2';
   }
 

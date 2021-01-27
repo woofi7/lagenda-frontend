@@ -52,7 +52,7 @@ faq: "FAQ"
 contact-us: "Contactez-nous"
 privacy-policy: "Politique de confidentialité"
 terms-of-use: "Conditions d'utilisation"
-copyright: "© 2020 L'Agenda – Tous droits réservés."
+copyright: "© 2021 L'Agenda – Tous droits réservés."
 
 admin:
   title: "Panneau d'administration"
@@ -62,6 +62,12 @@ login:
   disconnected-message: "Votre session à été terminée avec succès!"
   connect-button: "Connexion avec Google"
   google-logo-alt: "Google"
+
+partenaires:
+  title: "Nos partenaires"
+  desc:
+    title: "Sous-titre"
+    text: "Content"
 
 #Components
 article-card:
