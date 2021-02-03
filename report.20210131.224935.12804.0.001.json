@@ -1,0 +1,608 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210131.224935.12804.0.001.json",
+    "dumpEventTime": "2021-01-31T22:49:35Z",
+    "dumpEventTimeStamp": "1612151375110",
+    "processId": 12804,
+    "threadId": null,
+    "cwd": "D:\\workspace\\lagenda",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\workspace\\lagenda\\node_modules\\.bin\\\\..\\ember-cli\\bin\\ember",
+      "serve"
+    ],
+    "nodejsVersion": "v12.16.3",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.3",
+      "v8": "7.8.279.23-node.35",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.16.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1g",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.3/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14050171,
+        "nice": 0,
+        "sys": 1758953,
+        "idle": 7263562,
+        "irq": 363890
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14063359,
+        "nice": 0,
+        "sys": 1017609,
+        "idle": 7991578,
+        "irq": 57015
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14362093,
+        "nice": 0,
+        "sys": 577875,
+        "idle": 8132578,
+        "irq": 18171
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 13884906,
+        "nice": 0,
+        "sys": 400328,
+        "idle": 8787312,
+        "irq": 7734
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14234843,
+        "nice": 0,
+        "sys": 977343,
+        "idle": 7860359,
+        "irq": 28703
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 13521750,
+        "nice": 0,
+        "sys": 504000,
+        "idle": 9046796,
+        "irq": 11015
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14759453,
+        "nice": 0,
+        "sys": 417062,
+        "idle": 7896031,
+        "irq": 9078
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14921078,
+        "nice": 0,
+        "sys": 437390,
+        "idle": 7714078,
+        "irq": 8031
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 13858781,
+        "nice": 0,
+        "sys": 716250,
+        "idle": 8497515,
+        "irq": 19921
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14529546,
+        "nice": 0,
+        "sys": 406453,
+        "idle": 8136546,
+        "irq": 10875
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14216406,
+        "nice": 0,
+        "sys": 350468,
+        "idle": 8505640,
+        "irq": 10109
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 14638453,
+        "nice": 0,
+        "sys": 223500,
+        "idle": 8210562,
+        "irq": 5375
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 13904687,
+        "nice": 0,
+        "sys": 397921,
+        "idle": 8769906,
+        "irq": 17718
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 13849890,
+        "nice": 0,
+        "sys": 294734,
+        "idle": 8927890,
+        "irq": 9921
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 15493171,
+        "nice": 0,
+        "sys": 970937,
+        "idle": 6608406,
+        "irq": 42750
+      },
+      {
+        "model": "AMD Ryzen 7 3700X 8-Core Processor             ",
+        "speed": 3600,
+        "user": 15760515,
+        "nice": 0,
+        "sys": 728296,
+        "idle": 6583703,
+        "irq": 15718
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Ethernet 2",
+        "internal": false,
+        "mac": "00:13:3b:0f:e2:55",
+        "address": "fe80::a00b:6d95:ebf0:b253",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 12
+      },
+      {
+        "name": "Ethernet 2",
+        "internal": false,
+        "mac": "00:13:3b:0f:e2:55",
+        "address": "192.168.0.126",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:93:6d:b6",
+        "address": "fe80::8952:8465:21c0:18fa",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 21
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:93:6d:b6",
+        "address": "172.17.128.241",
+        "netmask": "255.255.255.240",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-G901HRH"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff622ad2449",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+11577"
+    },
+    {
+      "pc": "0x00007ff622ad69a9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+29337"
+    },
+    {
+      "pc": "0x00007ff622ad5828",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24856"
+    },
+    {
+      "pc": "0x00007ff622c0d8c2",
+      "symbol": "v8::base::CPU::has_sse+68658"
+    },
+    {
+      "pc": "0x00007ff623429bbe",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff623411c91",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff6232de1ec",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff6232e9420",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff6232e5f44",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff6232db743",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff6232d9db4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff6232fafbd",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff623061871",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1665"
+    },
+    {
+      "pc": "0x00007ff623876c4d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x00007ff6237fd0f1",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+48113"
+    },
+    {
+      "pc": "0x000002af05d84ad2",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2154483712,
+    "totalCommittedMemory": 2154483712,
+    "usedMemory": 2142354280,
+    "availableMemory": 47907640,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094912,
+        "used": 154128,
+        "available": 1940784
+      },
+      "old_space": {
+        "memorySize": 1975660544,
+        "committedMemory": 1975660544,
+        "capacity": 1971564456,
+        "used": 1971024096,
+        "available": 540360
+      },
+      "code_space": {
+        "memorySize": 2789376,
+        "committedMemory": 2789376,
+        "capacity": 2459744,
+        "used": 2459744,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 10489856,
+        "committedMemory": 10489856,
+        "capacity": 7947600,
+        "used": 7947600,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 160464896,
+        "committedMemory": 160464896,
+        "capacity": 160191616,
+        "used": 160191616,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544288,
+        "used": 544288,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2094912,
+        "used": 0,
+        "available": 2094912
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 293.156,
+    "kernelCpuSeconds": 149.812,
+    "cpuConsumptionPercent": 2.81679,
+    "maxRss": 2245632000,
+    "pageFaults": {
+      "IORequired": 2266467,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 39113,
+      "writes": 31586
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\Users\\nsign\\AppData\\Local\\Temp\\broccoli-12804XeQJJtEHITdG\\cache-338-broccoli_rollup\\build",
+    "=D:": "D:\\workspace\\lagenda",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\nsign\\AppData\\Roaming",
+    "BW_SESSION": "3o3ab2HvXxq/FY6rhj/gtiQGkSyUJDBNFWJ+V5sBKBkHXaQjW9o5xsPuOxZiO1BMkY4FEMU7/h1eJYMttKMttg==",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132337855489473067",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-G901HRH",
+    "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL": "/",
+    "EMBER_CLI_INJECT_LIVE_RELOAD_PORT": "4200",
+    "EMBER_ENV": "development",
+    "EMBER_VERSION": "OCTANE",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GIT_SSH": "D:\\Putty\\PLINK.EXE",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\nsign",
+    "IDEA_INITIAL_DIRECTORY": "C:\\Windows\\system32",
+    "INIT_CWD": "D:\\workspace\\lagenda",
+    "JAVA_HOME": "C:\\Program Files\\AdoptOpenJDK\\jdk-8.0.252.09-hotspot\\",
+    "LOCALAPPDATA": "C:\\Users\\nsign\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-G901HRH",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.22.4 npm/? node/v12.16.3 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "C:\\Program Files (x86)\\Yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "ember serve",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_dependencies_ember_line_clamp": "^2.0.0",
+    "npm_package_dependencies_ember_truncate": "^2.0.1",
+    "npm_package_description": "Small description for lagenda goes here",
+    "npm_package_devDependencies_babel_eslint": "^10.0.3",
+    "npm_package_devDependencies_bootstrap": "^4.4.1",
+    "npm_package_devDependencies_broccoli_asset_rev": "^3.0.0",
+    "npm_package_devDependencies_ember_auto_import": "^1.5.3",
+    "npm_package_devDependencies_ember_bootstrap": "^3.1.1",
+    "npm_package_devDependencies_ember_cli": "~3.15.1",
+    "npm_package_devDependencies_ember_cli_app_version": "^3.2.0",
+    "npm_package_devDependencies_ember_cli_babel": "^7.13.0",
+    "npm_package_devDependencies_ember_cli_dependency_checker": "^3.2.0",
+    "npm_package_devDependencies_ember_cli_deploy": "^1.0.2",
+    "npm_package_devDependencies_ember_cli_deploy_build": "^2.0.0",
+    "npm_package_devDependencies_ember_cli_deploy_build_plus": "^0.2.2",
+    "npm_package_devDependencies_ember_cli_deploy_sftp": "^0.1.3",
+    "npm_package_devDependencies_ember_cli_eslint": "^5.1.0",
+    "npm_package_devDependencies_ember_cli_fastboot": "^2.2.3",
+    "npm_package_devDependencies_ember_cli_htmlbars": "^4.2.0",
+    "npm_package_devDependencies_ember_cli_inject_live_reload": "^2.0.1",
+    "npm_package_devDependencies_ember_cli_meta_tags": "^5.3.0",
+    "npm_package_devDependencies_ember_cli_moment_shim": "^3.7.1",
+    "npm_package_devDependencies_ember_cli_sass": "^10.0.1",
+    "npm_package_devDependencies_ember_cli_sri": "^2.1.1",
+    "npm_package_devDependencies_ember_cli_template_lint": "^1.0.0-beta.3",
+    "npm_package_devDependencies_ember_cli_uglify": "^3.0.0",
+    "npm_package_devDependencies_ember_cli_webpack_imports": "0.0.2",
+    "npm_package_devDependencies_ember_crumbly": "^3.0.1",
+    "npm_package_devDependencies_ember_data": "~3.15.0",
+    "npm_package_devDependencies_ember_export_application_global": "^2.0.1",
+    "npm_package_devDependencies_ember_fetch": "^8.0.1",
+    "npm_package_devDependencies_ember_intl": "^4.2.2",
+    "npm_package_devDependencies_ember_loading": "^0.4.0",
+    "npm_package_devDependencies_ember_load_initializers": "^2.1.1",
+    "npm_package_devDependencies_ember_math_helpers": "^2.15.0",
+    "npm_package_devDependencies_ember_maybe_import_regenerator": "^0.1.6",
+    "npm_package_devDependencies_ember_moment": "^8.0.0",
+    "npm_package_devDependencies_ember_power_select": "^4.0.0",
+    "npm_package_devDependencies_ember_qunit": "^4.6.0",
+    "npm_package_devDependencies_ember_resolver": "^7.0.0",
+    "npm_package_devDependencies_ember_router_scroll": "^3.3.3",
+    "npm_package_devDependencies_ember_screen": "^1.0.0",
+    "npm_package_devDependencies_ember_simple_auth": "3.1.0-beta.1",
+    "npm_package_devDependencies_ember_source": "~3.15.0",
+    "npm_package_devDependencies_ember_template_lint": "^2.16.0",
+    "npm_package_devDependencies_ember_truth_helpers": "^2.1.0",
+    "npm_package_devDependencies_ember_wormhole": "^0.5.5",
+    "npm_package_devDependencies_eslint_plugin_ember": "^7.7.1",
+    "npm_package_devDependencies_eslint_plugin_node": "^10.0.0",
+    "npm_package_devDependencies_loader_js": "^4.7.0",
+    "npm_package_devDependencies_qunit_dom": "^0.9.2",
+    "npm_package_devDependencies_sass": "^1.25.0",
+    "npm_package_devDependencies_torii": "^0.10.1",
+    "npm_package_devDependencies__ember_optional_features": "^1.1.0",
+    "npm_package_devDependencies__glimmer_component": "^1.0.0",
+    "npm_package_ember_edition": "octane",
+    "npm_package_engines_node": "8.* || >= 10.*",
+    "npm_package_license": "MIT",
+    "npm_package_name": "lagenda",
+    "npm_package_private": "true",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_repository_type": "git",
+    "npm_package_repository_url": "",
+    "npm_package_scripts_build": "ember build --environment=production",
+    "npm_package_scripts_deploy": "ember build --environment=production && (rm -r /host-app/distTest || true) && cp -r /app/dist /host-app/distTest",
+    "npm_package_scripts_docker_start": "powershell -ExecutionPolicy RemoteSigned .\\docker-start.ps1",
+    "npm_package_scripts_lint_hbs": "ember-template-lint .",
+    "npm_package_scripts_lint_js": "eslint .",
+    "npm_package_scripts_start": "ember serve",
+    "npm_package_scripts_test": "ember test",
+    "npm_package_version": "0.0.0",
+    "NUMBER_OF_PROCESSORS": "16",
+    "OneDrive": "C:\\Users\\nsign\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\nsign\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\nsign\\AppData\\Local\\Temp\\yarn--1612135650539-0.5930567226135259;D:\\workspace\\lagenda\\node_modules\\.bin;C:\\Users\\nsign\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\Bitwarden;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.7.10-hotspot\\bin;C:\\Program Files\\AdoptOpenJDK\\jdk-8.0.252.09-hotspot\\bin;C:\\Program Files\\AdoptOpenJDK\\jre-11.0.7.10-hotspot\\bin;C:\\Program Files\\AdoptOpenJDK\\jre-8.0.252.09-hotspot\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Users\\nsign\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\nsign\\.dotnet\\tools;C:\\Program Files (x86)\\Druide\\Antidote 9\\Application\\Bin64\\;C:\\Program Files (x86)\\Druide\\Antidote 9\\Application\\Bin32\\;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\nsign\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\nsign\\AppData\\Local\\Yarn\\bin;C:\\Users\\nsign\\AppData\\Roaming\\npm;C:\\Users\\nsign\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\nsign\\.dotnet\\tools;C:\\Users\\nsign\\AppData\\Local\\gitkraken\\bin",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.PY;.PYW",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "7100",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PT7HOME": "C:\\Program Files\\Cisco Packet Tracer 7.3.0",
+    "PUBLIC": "C:\\Users\\Public",
+    "QT_DEVICE_PIXEL_RATIO": "auto",
+    "SESSIONNAME": "Console",
+    "SVN_SSH": "D:\\Putty\\PLINK.EXE",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\Windows",
+    "TEMP": "C:\\Users\\nsign\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\nsign\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-G901HRH",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-G901HRH",
+    "USERNAME": "nsign",
+    "USERPROFILE": "C:\\Users\\nsign",
+    "windir": "C:\\Windows",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\System32\\KERNEL32.DLL",
+    "C:\\Windows\\System32\\KERNELBASE.dll",
+    "C:\\Windows\\System32\\WS2_32.dll",
+    "C:\\Windows\\System32\\RPCRT4.dll",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\System32\\ucrtbase.dll",
+    "C:\\Windows\\System32\\PSAPI.DLL",
+    "C:\\Windows\\System32\\ADVAPI32.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\System32\\profapi.dll",
+    "C:\\Windows\\System32\\sechost.dll",
+    "C:\\Windows\\System32\\USER32.dll",
+    "C:\\Windows\\System32\\win32u.dll",
+    "C:\\Windows\\System32\\GDI32.dll",
+    "C:\\Windows\\System32\\gdi32full.dll",
+    "C:\\Windows\\System32\\msvcp_win.dll",
+    "C:\\Windows\\System32\\CRYPT32.dll",
+    "C:\\Windows\\System32\\MSASN1.dll",
+    "C:\\Windows\\System32\\bcrypt.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\winmmbase.dll",
+    "C:\\Windows\\System32\\cfgmgr32.dll",
+    "C:\\Windows\\System32\\bcryptPrimitives.dll",
+    "C:\\Windows\\System32\\IMM32.DLL",
+    "C:\\Windows\\System32\\powrprof.dll",
+    "C:\\Windows\\System32\\UMPDC.dll",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\System32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\kernel.appcore.dll",
+    "C:\\Windows\\System32\\NSI.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\Windows\\System32\\fwpuclnt.dll",
+    "C:\\Windows\\SYSTEM32\\SspiCli.dll",
+    "C:\\Windows\\SYSTEM32\\ntmarta.dll"
+  ]
+}

@@ -8,30 +8,9 @@ module.exports = function(defaults) {
       'bootstrapVersion': 4,
       'importBootstrapCSS': true
     },
-
-    "ember-cli-webpack-imports": {
-      "expose": ["aws-amplify"]
-    },
-
     fingerprint: {
       exclude: ['images']
     },
-
-    /*"prember": {
-      "urls": [
-        '/',
-        '/balados',
-        '/la-tribune',
-        '/la-tribune/category',
-        '/la-tribune/category/article',
-        '/faq',
-        '/contact',
-        '/about',
-        '/privacy-policy',
-        'terms-of-use',
-        'about'
-      ]
-    }*/
   });
 
   // Use `app.import` to add additional libraries to the generated

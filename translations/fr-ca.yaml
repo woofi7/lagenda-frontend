@@ -34,6 +34,9 @@ balados:
     sound-cloud: "SoundCloud"
   share: "Partager le balado"
   empty-category: "À venir"
+  show-category: "Liste des balados"
+  other-balados: "Nos autres balados"
+  other-episodes: "Épisodes"
 
 about:
   button: "À propos"

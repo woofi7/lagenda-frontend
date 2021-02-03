@@ -11,8 +11,7 @@ export default class PartenairesShowRoute extends Route {
     await this.setHeadTags(model, redirect);
   }
 
-  async setHeadTags(model, redirect) {
-    let image = await model.image;
+  async setHeadTags(model) {
     let headTags = [
       {
         type: 'meta',

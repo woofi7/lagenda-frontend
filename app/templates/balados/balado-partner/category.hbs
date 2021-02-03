@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-5">
+    <h2>{{this.category.name}}</h2>
+    <h5>{{this.category.partner.name}}</h5>
+    <p>{{this.category.desc}}</p>
+  </div>
+  <div class="col h-25">
+    {{#if this.category.image}}
+      <img class="img-fluid w-100" src={{this.category.image.url}} alt={{this.category.image.alt}}>
+    {{else}}
+      <img class="img-fluid w-100 p-5 bg-blue" src="/assets/logo/lagenda-logo.png" alt={{t "placeholder.alt"}}>
+    {{/if}}
+  </div>
+</div>
+{{outlet}}
+<div>
+  <h4>{{t "balados.other-episodes"}}</h4>
+  <div class="d-flex custom-carousel">
+    <BsCarousel
+        @autoPlay={{false}}
+        @wrap={{true}}
+        @index={{0}}
+        @interval={{0}}
+        @keyboard={{false}}
+        @ltr={{true}}
+        @showControls={{true}}
+        @showIndicators={{false}}
+        @touch={{true}}
+        as |car|>
+      {{#each this.groupedEpisodes as |balados|}}
+        <car.slide>
+          <div class="d-flex px-5">
+            {{#each balados as |balado|}}
+              <BaladoCard @balado={{balado}} />
+            {{/each}}
+          </div>
+        </car.slide>
+      {{/each}}
+    </BsCarousel>
+  </div>
+</div>

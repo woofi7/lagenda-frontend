@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route';
-import {inject as service} from "@ember/service";
 
 export default class AboutAuthorRoute extends Route {
   model(params) {
@@ -12,8 +11,7 @@ export default class AboutAuthorRoute extends Route {
     await this.setHeadTags(model, redirect);
   }
 
-  async setHeadTags(model, redirect) {
-    let image = await model.image;
+  async setHeadTags(model) {
     let headTags = [
       {
         type: 'meta',

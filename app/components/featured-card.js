@@ -3,7 +3,7 @@ import Component from '@glimmer/component';
 export default class FeaturedCardComponent extends Component {
   get route() {
     if (this.args.type === 'balado') {
-      return "balados.category.balado";
+      return "balados.balado-partner.category.balado";
     }
     else if(this.args.type === 'article'){
       return "la-tribune.category.article";
@@ -39,5 +39,15 @@ export default class FeaturedCardComponent extends Component {
     }
 
     return null;
+  }
+
+  get routeModels() {
+    let models = [this.category.get('id'), this.args.model.id];
+
+    if (this.args.type === 'balado') {
+      models.unshift(this.category.get('partner.id'));
+    }
+
+    return models;
   }
 }

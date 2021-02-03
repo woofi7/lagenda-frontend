@@ -1,23 +1,23 @@
 <div class="pager d-inline-flex my-3">
   {{#if this.first}}
-    <BsButton @type={{this.first.style}} @defaultText={{this.first.text}} {{on "click" (fn this.changePage "first")}} @disabled={{this.loading.isLoading}}></BsButton>
+    <BsButton @type={{this.first.style}} @defaultText={{this.first.text}} {{on "click" (fn this.changePage "first")}} disabled={{this.loading.isLoading}}></BsButton>
   {{/if}}
   {{#if (and this.isPrevNextOfFirst)}}
     <span class="px-2">...</span>
   {{/if}}
   {{#if this.prev}}
-    <BsButton @type={{this.prev.style}} @defaultText={{this.prev.text}} {{on "click" (fn this.changePage "prev")}} @disabled={{this.loading.isLoading}}></BsButton>
+    <BsButton @type={{this.prev.style}} @defaultText={{this.prev.text}} {{on "click" (fn this.changePage "prev")}} disabled={{this.loading.isLoading}}></BsButton>
   {{/if}}
   {{#if this.self}}
-    <BsButton @type={{this.self.style}} @defaultText={{this.self.text}} @disabled={{this.loading.isLoading}}></BsButton>
+    <BsButton @type={{this.self.style}} @defaultText={{this.self.text}} disabled={{this.loading.isLoading}}></BsButton>
   {{/if}}
   {{#if this.next}}
-    <BsButton @type={{this.next.style}} @defaultText={{this.next.text}} {{on "click" (fn this.changePage "next")}} @disabled={{this.loading.isLoading}}></BsButton>
+    <BsButton @type={{this.next.style}} @defaultText={{this.next.text}} {{on "click" (fn this.changePage "next")}} disabled={{this.loading.isLoading}}></BsButton>
   {{/if}}
   {{#if (and this.isNextPreviousOfLast)}}
     <span class="px-2">...</span>
   {{/if}}
   {{#if this.last}}
-    <BsButton @type={{this.last.style}} @defaultText={{this.last.text}} {{on "click" (fn this.changePage "last")}} @disabled={{this.loading.isLoading}}></BsButton>
+    <BsButton @type={{this.last.style}} @defaultText={{this.last.text}} {{on "click" (fn this.changePage "last")}} disabled={{this.loading.isLoading}}></BsButton>
   {{/if}}
 </div>

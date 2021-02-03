@@ -1,45 +1,22 @@
-{{#each this.categories as |category|}}
-  <div class="row my-2">
-    <div class="col">
-      <div class="row">
-        <LinkTo @route="balados.category"
-                @model={{category.id}}
-                class="nav-item nav-link pl-1">
-          <h3 class="col mb-0 pl-1">{{category.name}}</h3>
-        </LinkTo>
-      </div>
-      <div class="row">
-        {{#each category.sortedBalados as |balado index|}}
-          {{#if (lt index 3)}}
-            {{#unless balado.unlisted}}
-              <EpisodeCard @episode={{balado}} />
-            {{/unless}}
-          {{else if (eq index 3)}}
-            <div class="col px-0 mx-2 my-auto">
-              <div class="balados-more-list d-table ml-4">
-                <LinkTo @route="balados.category"
-                        @model={{category.id}}
-                        class="d-table-cell align-middle text-center text-white h3">
-                  <i class="fas fa-ellipsis-h"></i>
-                </LinkTo>
-              </div>
-            </div>
-          {{/if}}
-        {{else}}
-          <div class="col-12 col-sm-6 col-lg-3 p-0">
-            <div class="nav-item nav-link p-0 m-2">
-              <div class="balados-thumbnail">
-                <img src="/assets/images/placeholder.jpg" class="img-fluid" alt={{t "placeholder.alt"}}>
-                <div class="hover d-table">
-                  <div class="d-table-cell align-middle text-center text-white">
-                    <h5>{{t "balados.empty-category"}}</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        {{/each}}
-      </div>
+{{#each this.partners as |partner index|}}
+  <div class="w-100 row balados-list-thumbnail my-3 mx-auto">
+    <div class={{concat "col image d-flex align-items-center p-0 " (unless (mod index 2) "order-lg-1")}}>
+      {{#if partner.image}}
+        <img class="img-fluid w-100" src={{partner.image.url}} alt={{partner.image.alt}}>
+      {{else}}
+        <img class="img-fluid w-100 p-5" src="/assets/logo/lagenda-logo.png" alt={{t "placeholder.alt"}}>
+      {{/if}}
+    </div>
+    <div class="col-12 col-lg-4 p-3 content d-flex align-items-start flex-column">
+      <h2>{{partner.name}}</h2>
+      <p class="w-100 h-100">
+        {{partner.desc}}
+      </p>
+      <LinkTo @route="balados.balado-partner.category"
+              @models={{array partner.id partner.sortedCategories.firstObject.id}}
+              class="btn btn-primary w-100">
+        {{t "balados.show-category"}}
+      </LinkTo>
     </div>
   </div>
 {{/each}}

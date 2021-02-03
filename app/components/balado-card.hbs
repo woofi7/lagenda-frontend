@@ -1,0 +1,19 @@
+<div class="px-1 d-flex col">
+  <div class={{concat "card episode-card w-100" (if this.isActive " active")}}>
+    {{#if @balado.image}}
+      <img class="card-img-top" src={{@balado.image.url}} alt={{@balado.image.alt}}>
+    {{else}}
+      <img class="card-img-top" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+    {{/if}}
+    <div class="card-body p-2 d-flex flex-column">
+      <h5 class="card-title">{{@balado.title}}</h5>
+      <p class="card-text">
+        <LineClamp @text={{@balado.desc}} @lines={{5}} @interactive={{false}} />
+      </p>
+      <small class="mt-auto pb-1">{{moment-format @balado.postDatetime 'YYYY-MM-DD à hh[h]mm' 'MM-YYYY-DD'}}</small>
+      <LinkTo class="btn btn-primary w-100" @route="balados.balado-partner.category.balado" @model={{@balado.id}}>
+        Liens vers le balado
+      </LinkTo>
+    </div>
+  </div>
+</div>

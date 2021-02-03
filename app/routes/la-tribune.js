@@ -9,7 +9,7 @@ export default class IndexRoute extends Route {
 
   async model() {
     return this.store.findAll('article-category', {
-      include: 'articles'
+      include: 'articles.image,articles.article-category,image'
     });
   }
 }

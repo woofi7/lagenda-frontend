@@ -8,7 +8,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
 
   async model(args) {
     let featuredBalados = this.store.query('balado', {
-      include: 'balado-category.balados',
+      include: 'balado-category.partner,image',
       sort: '-post-datetime',
       page: {
         size: 1
@@ -16,7 +16,7 @@ export default class LaTribuneCategoryArticleRoute extends Route {
     });
 
     let featuredArticles = this.store.query('article', {
-      include: 'article-category.articles',
+      include: 'article-category.articles,image',
       sort: '-post-datetime',
       page: {
         size: 3

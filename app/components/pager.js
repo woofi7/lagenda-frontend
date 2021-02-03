@@ -20,7 +20,7 @@ export default class PagerComponent extends Component {
   @computed('page')
   get first() {
     if (this.page <= 1)
-      return;
+      return null;
 
     return {
       style: "light",
@@ -31,7 +31,7 @@ export default class PagerComponent extends Component {
   @computed('page')
   get prev() {
     if (this.page <= 2)
-      return;
+      return null;
 
     return {
       style: "light",
@@ -50,7 +50,7 @@ export default class PagerComponent extends Component {
   @computed('page')
   get next() {
     if (this.page >= this.lastPage - 1)
-      return;
+      return null;
 
     return {
       style: "light",
@@ -61,7 +61,7 @@ export default class PagerComponent extends Component {
   @computed('page')
   get last() {
     if (this.page >= this.lastPage)
-      return;
+      return null;
 
     return {
       style: "light",

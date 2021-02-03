@@ -4,16 +4,12 @@
   {{else}}
     <img src="/assets/images/placeholder.jpg" class="card-img" alt={{t "placeholder.alt"}}>
   {{/if}}
-  <LinkTo @route={{this.route}} @models={{array category.id @model.id}} class="nav-item nav-link">
+  <LinkTo @route={{this.route}} @models={{this.routeModels}} class="nav-item nav-link">
     <div class="card-img-overlay">
-      <i class="fas {{type}} float-right"></i>
+      <i class="fas {{this.type}} float-right"></i>
       <h5 class="card-title mr-3">{{@model.title}}</h5>
       <p class="card-text">
-        {{line-clamp
-            text=@model.desc
-            lines=7
-            interactive=false
-        }}
+        <LineClamp @text={{@model.desc}} @lines={{7}} @interactive={{false}} />
       </p>
     </div>
   </LinkTo>

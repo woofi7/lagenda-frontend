@@ -1,0 +1,34 @@
+{{outlet}}
+<div class="my-3">
+  <h4>{{t "balados.other-balados"}}</h4>
+  {{#if (gt this.categories.length 4)}}
+    <div class="d-flex custom-carousel">
+      <BsCarousel class="w-100"
+          @autoPlay={{false}}
+          @wrap={{true}}
+          @index={{0}}
+          @interval={{0}}
+          @keyboard={{false}}
+          @ltr={{true}}
+          @showControls={{true}}
+          @showIndicators={{false}}
+          as |car|>
+        {{#each this.groupedCategories as |categories|}}
+          <car.slide>
+            <div class="d-flex px-5">
+              {{#each categories as |category|}}
+                <BaladoCategoryCard @category={{category}} />
+              {{/each}}
+            </div>
+          </car.slide>
+        {{/each}}
+      </BsCarousel>
+    </div>
+  {{else}}
+    <div class="d-flex">
+      {{#each this.categories as |category|}}
+        <BaladoCategoryCard @category={{category}} />
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

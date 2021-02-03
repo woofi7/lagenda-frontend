@@ -1,0 +1,18 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 d-sm-flex">
+  <div class={{concat "card w-100 category-card" (if this.isActive " active")}}>
+    {{#if @category.image}}
+      <img class="card-img-top" src={{@category.image.url}} alt={{@category.image.alt}}>
+    {{else}}
+      <img class="card-img-top" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+    {{/if}}
+    <div class="card-body p-2 d-flex flex-column">
+      <h5 class="card-title">{{@category.name}}</h5>
+      <p class="card-text">
+        {{@category.desc}}
+      </p>
+      <LinkTo class="btn btn-primary btn-sm w-100 mt-auto" @route="balados.balado-partner.category" @model={{@category.id}}>
+        Liens vers la catégorie
+      </LinkTo>
+    </div>
+  </div>
+</div>

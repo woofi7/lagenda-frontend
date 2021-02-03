@@ -10,10 +10,10 @@ Router.map(function() {
   this.route('index', { path: '/' }, function() {});
   this.route('balados', function() {
     this.route('list', { path: '/' });
-    this.route('show', { path: ':category' });
-    this.route('category', { path: ':category' }, function() {
-      this.route('list', { path: '/' });
-      this.route('balado', { path: ':balado' });
+    this.route('balado-partner', { path: ':partner'}, function() {
+      this.route('category', { path: ':category' }, function() {
+        this.route('balado', { path: ':balado' });
+      });
     });
   });
   this.route('la-tribune', function() {
@@ -30,9 +30,9 @@ Router.map(function() {
   this.route('about', function() {
     this.route('author', { path: ':author' });
   });
+  this.route('partenaires', function() {
+    this.route('show', { path: ':partner' });
+  });
   this.route('admin');
   this.route('login');
-  this.route('partenaires', function() {
-    this.route('show', { path: ':author' });
-  });
 });
