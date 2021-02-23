@@ -546,3 +546,12 @@ $button-active-blue: #1669F2;
     color: white;
   }
 }
+
+.dark-background {
+  background-color: #002F80;
+
+  &.clickable:hover {
+    background-color: #002464;
+  }
+}
+

@@ -3,24 +3,64 @@
     <div class="row">
     <LinkTo @route="la-tribune" class="h3 w-100 text-white m-0">
       <div class="col py-2 clickable">
-        Articles
-        {{#if screen.isSmallAndDown}}
-          <i {{on "click" this.toggleItems}} class={{concat "p-2 mb-0 fas float-right h4 " (if collapsed "fa-chevron-up" "fa-chevron-down")}}></i>
+        {{t "side-menu.collaborators.title"}}
+        {{#if this.screen.isSmallAndDown}}
+          <i {{on "click" this.toggleCollapsedCollab}} class={{concat "p-2 mb-0 fas float-right h4 " (if this.collabCollapsed "fa-chevron-up" "fa-chevron-down")}}></i>
         {{/if}}
       </div>
     </LinkTo>
     </div>
 
-    <BsCollapse @collapsed={{and collapsed screen.isSmallAndDown}}>
-    {{#each @categories as |category index|}}
-      {{#unless category.articles.firstObject.unlisted}}
+    <BsCollapse @collapsed={{and this.collapsed this.screen.isSmallAndDown}}>
+      {{#each this.filteredCategories as |category index|}}
         {{#if (eq index 0)}}
           <SideMenuCategory @category={{category}}/>
         {{else}}
           <SideMenuCategory @category={{category}} @collapsed={{true}} />
         {{/if}}
-      {{/unless}}
-    {{/each}}
+      {{/each}}
+      <div class="row py-3 clickable dark-background" {{on "click" this.toggleCollapseOtherCollab}}>
+        <div class="col d-flex align-items-center">
+          {{#if @category.image}}
+            <img class="icon-img img-fluid" src={{@category.image.url}} alt={{@category.image.alt}}>
+          {{else}}
+            <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+          {{/if}}
+          <li class="mx-2">
+            L'équipe
+          </li>
+          <small class={{concat "ml-auto fas " (if this.collabOtherCollapsed "fa-chevron-right" "fa-chevron-down")}}></small>
+        </div>
+      </div>
+      <BsCollapse @collapsed={{this.collabOtherCollapsed}}>
+        {{#each this.otherFilteredCategories as |category index|}}
+          {{#if (eq index 0)}}
+            <SideMenuCategory @category={{category}}/>
+          {{else}}
+            <SideMenuCategory @category={{category}} @collapsed={{true}} />
+          {{/if}}
+        {{/each}}
+      </BsCollapse>
+    </BsCollapse>
+
+    <div class="row">
+      <LinkTo @route="la-tribune" class="h3 w-100 text-white m-0">
+        <div class="col py-2 clickable">
+          {{t "side-menu.partners.title"}}
+          {{#if this.screen.isSmallAndDown}}
+            <i {{on "click" this.toggleCollapsedPartners}} class={{concat "p-2 mb-0 fas float-right h4 " (if this.partnersCollapsed "fa-chevron-up" "fa-chevron-down")}}></i>
+          {{/if}}
+        </div>
+      </LinkTo>
+    </div>
+    <BsCollapse @collapsed={{and this.partnersCollapsed this.screen.isSmallAndDown}}>
+      {{#each this.partnersCatagories as |category index|}}
+        {{#if (eq index 0)}}
+          <SideMenuCategory @category={{category}}/>
+        {{else}}
+          <SideMenuCategory @category={{category}} @collapsed={{true}} />
+        {{/if}}
+      {{/each}}
     </BsCollapse>
   </ul>
 </nav>

@@ -116,6 +116,13 @@ navbar:
   link-admin: "Panneau d'admin"
   disconnect: "Déconnexion"
 
+side-menu:
+  collaborators:
+    title: "Collaborateurs"
+    more: "Nos autres collaborateurs"
+  partners:
+    title: "Partenaires"
+
 # Translations
 lang.fr-ca: "Français"
 lang.en-us: "Anglais"

@@ -1,10 +1,10 @@
 import Controller from '@ember/controller';
-import { alias } from '@ember/object/computed';
-import { inject as service } from '@ember/service';
-import { tracked } from "@glimmer/tracking";
-import { htmlSafe } from '@ember/template';
+import {inject as service} from "@ember/service";
+import {alias} from "@ember/object/computed";
+import {tracked} from "@glimmer/tracking";
+import {htmlSafe} from "@ember/template";
 
-export default class LaTribuneCategoryArticleController extends Controller {
+export default class LaTribuneCategoryV2ArticleController extends Controller {
   @service router;
   @service fastboot;
 

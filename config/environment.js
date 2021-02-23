@@ -38,7 +38,7 @@ module.exports = function(environment) {
         'google-oauth2': {
           ***REMOVED***
           redirectUri: 'http://localhost:4200/torii/redirect.html',
-          tokenExchangeUri: 'https://localhost:5001/oauth2',
+          tokenExchangeUri: 'https://localhost:5001/api/v1/oauth2',
           scope: 'profile'
         }
       }

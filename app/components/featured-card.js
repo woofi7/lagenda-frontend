@@ -6,7 +6,7 @@ export default class FeaturedCardComponent extends Component {
       return "balados.balado-partner.category.balado";
     }
     else if(this.args.type === 'article'){
-      return "la-tribune.category.article";
+      return "la-tribune.category-v2.article";
     }
     else if(this.args.type === 'video'){
       return "";

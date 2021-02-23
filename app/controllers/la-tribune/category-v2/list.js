@@ -1,9 +1,9 @@
 import Controller from '@ember/controller';
-import { sort, filter, alias } from '@ember/object/computed';
-import { action } from '@ember/object';
-import moment from 'moment';
+import {alias, filter, sort} from "@ember/object/computed";
+import moment from "moment";
+import {action} from "@ember/object";
 
-export default class LaTribuneCategoryListController extends Controller {
+export default class LaTribuneCategoryV2ListController extends Controller {
 
   @filter('model.articles', (a)  => {
     return moment(a.updateDatetime).isSameOrBefore() && !a.unlisted;

@@ -19,8 +19,15 @@ Router.map(function() {
   this.route('la-tribune', function() {
     this.route('list', { path: '/' });
     this.route('category', { path: ':category' }, function() {
-      this.route('list', { path: '/' });
       this.route('article', { path: ':article' });
+    });
+    this.route('category-v2', { path: 'categorie/:category' }, function() {
+      this.route('list', { path: '/' });
+      this.route('author', { path: 'auteur/:author' }, function() {
+        this.route('list', { path: '/' });
+        this.route('article', { path: 'article/:article' });
+      });
+      this.route('article', { path: 'article/:article' });
     });
   });
   this.route('faq');
