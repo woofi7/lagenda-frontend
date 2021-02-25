@@ -17,12 +17,17 @@ la-tribune:
   title: "La Tribune"
   read-article: "Lire l'article"
   more: "Plus d'acticles..."
+  author-category: "Accéder à la catégorie"
 
 article:
   post-date: "Publié le {date}"
   share:
     title: "Partager l'article"
 
+article-category:
+  author-category:
+    categories: "Catégories"
+    articles: "Articles"
 
 balados:
   title: "Balados"

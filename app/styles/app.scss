@@ -189,6 +189,14 @@ article-img-container {
   transition: 0.3s;
 }
 
+.sub-menu {
+  color: black;
+
+  &:hover {
+    background-color: lightgrey;
+    transition: 0.3s;
+  }
+}
 
 .side-menu {
   background-color: #003da5;

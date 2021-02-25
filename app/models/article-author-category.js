@@ -7,6 +7,7 @@ export default class ArticleAuthorCategoryModel extends Model {
   @attr('boolean') unlisted;
 
   @belongsTo('image', { async: true }) image;
+  @belongsTo('article-category', { async: true }) articleCategory;
 
   @hasMany('article', { async: true }) articles;
 }

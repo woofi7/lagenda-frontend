@@ -1,0 +1,23 @@
+<div class="col-12 col-sm-6 col-lg-4 p-2 d-sm-flex">
+  <div class="card mx-0 w-100">
+    <div class="article-thumbnail">
+      {{#if @category.image}}
+        <img class="img-fluid" src={{@category.image.url}} alt={{@category.image.alt}}>
+      {{else}}
+        <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+      {{/if}}
+    </div>
+    <div class="card-body p-2 d-flex flex-column">
+      <h5 class="card-title mb-1">{{if @category.name @category.name (t "article-card.no-title")}}</h5>
+      <div class="mt-auto row">
+        <div class="col">
+          <LinkTo @route="la-tribune.category-v2.author.list"
+                  @models={{array @category.articleCategory.id @category.id}}
+                  class="btn btn-primary btn-sm float-right">
+            {{t "la-tribune.author-category"}}
+          </LinkTo>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

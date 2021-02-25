@@ -7,6 +7,8 @@ import {htmlSafe} from "@ember/template";
 export default class LaTribuneCategoryV2ArticleController extends Controller {
   @service router;
   @service fastboot;
+  @service featuredCards;
+  @service store;
 
   @alias('model.article') article;
 

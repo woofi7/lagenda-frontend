@@ -1,14 +1,8 @@
 import Controller from '@ember/controller';
-import {alias, filter, sort} from "@ember/object/computed";
-import moment from "moment";
+import {alias, sort} from "@ember/object/computed";
 import {action} from "@ember/object";
 
-export default class LaTribuneCategoryV2ListController extends Controller {
-
-  @filter('model.articles', (a)  => {
-    return moment(a.updateDatetime).isSameOrBefore() && !a.unlisted;
-  }) filteredArticles;
-
+export default class LaTribuneCategoryV2AuthorListController extends Controller {
   sortProperties = [
     { name: 'Récent', properties: ['updateDatetime:desc'] },
     { name: 'Ancien', properties: ['updateDatetime:asc'] },
@@ -17,9 +11,7 @@ export default class LaTribuneCategoryV2ListController extends Controller {
   selectedSort = { name: 'Récent', properties: ['updateDatetime:desc'] };
 
   @alias('selectedSort.properties') properties;
-  @sort('filteredArticles', 'properties') articles;
-
-  @alias('model.articleAuthorCategories') articleAuthorCategories;
+  @sort('model.articles', 'properties') articles;
 
   @action
   changeProperty(selected) {

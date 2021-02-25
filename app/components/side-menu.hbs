@@ -1,5 +1,5 @@
 <nav class="side-menu mx-md-0 mx-4 mt-4 mt-md-0 row">
-  <ul class="list-unstyled col mb-1">
+  <ul class="list-unstyled col mb-3">
     <div class="row">
     <LinkTo @route="la-tribune" class="h3 w-100 text-white m-0">
       <div class="col py-2 clickable">
@@ -11,7 +11,7 @@
     </LinkTo>
     </div>
 
-    <BsCollapse @collapsed={{and this.collapsed this.screen.isSmallAndDown}}>
+    <BsCollapse @collapsed={{and this.collabCollapsed this.screen.isSmallAndDown}}>
       {{#each this.filteredCategories as |category index|}}
         {{#if (eq index 0)}}
           <SideMenuCategory @category={{category}}/>

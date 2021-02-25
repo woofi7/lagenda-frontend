@@ -8,7 +8,6 @@ export default class LaTribuneCategoryV2ArticleRoute extends Route {
 
   async model(args) {
     let featuredBalados = this.store.query('balado', {
-      include: 'balado-category.partner,image',
       sort: '-post-datetime',
       page: {
         size: 1
@@ -16,7 +15,6 @@ export default class LaTribuneCategoryV2ArticleRoute extends Route {
     });
 
     let featuredArticles = this.store.query('article', {
-      include: 'article-category.articles,image',
       sort: '-post-datetime',
       page: {
         size: 3
@@ -29,7 +27,7 @@ export default class LaTribuneCategoryV2ArticleRoute extends Route {
         return articles.slice(0, 2);
       });
 
-    let article = await this.store.findRecord('article', args.article, {
+    let article = this.store.findRecord('article', args.article, {
       include: 'authors.image'
     });
 

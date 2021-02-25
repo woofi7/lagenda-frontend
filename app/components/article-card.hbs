@@ -24,8 +24,8 @@
           </small>
         </div>
         <div class="col">
-          <LinkTo @route="la-tribune.category-v2.article"
-                  @models={{array @article.articleCategory.id @article.id}}
+          <LinkTo @route={{this.routePath}}
+                  @models={{this.routeModels}}
                   class="btn btn-primary btn-sm float-right">
             {{t "la-tribune.read-article"}}
           </LinkTo>

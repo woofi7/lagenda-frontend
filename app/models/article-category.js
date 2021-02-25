@@ -1,4 +1,4 @@
-import Model, {belongsTo, hasMany} from '@ember-data/model';
+import Model, {attr, belongsTo, hasMany} from '@ember-data/model';
 
 export default class ArticleCategoryModel extends Model {
   @attr('string') name;
@@ -10,5 +10,5 @@ export default class ArticleCategoryModel extends Model {
   @belongsTo('image', { async: true }) image;
 
   @hasMany('article', { async: true }) articles;
-  @hasMany('article-author-category', { async: true }) authorCategories;
+  @hasMany('article-author-category', { async: true }) articleAuthorCategories;
 }
