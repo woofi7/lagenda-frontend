@@ -32,6 +32,7 @@ article-category:
 balados:
   title: "Balados"
   listen:
+    balado: "Écouter le balado"
     title: "Écouter l'épisode"
     apple: "Apple podcast"
     google: "Google podcast"
