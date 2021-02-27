@@ -4,15 +4,16 @@ import {computed} from "@ember/object";
 
 export default class ActicleCardComponent extends Component {
 
-  @computed('args.article')
+  @computed('args.article.articleAuthorCategory')
   get routePath() {
-    if (this.args.article.get('articleAuthorCategory.id'))
+    if (this.args.article.get('articleAuthorCategory.id')) {
       return  "la-tribune.category-v2.author.article";
+    }
 
     return  "la-tribune.category-v2.article";
   }
 
-  @computed('args.article')
+  @computed('args.article.articleAuthorCategory')
   get routeModels() {
     if (this.args.article.get('articleAuthorCategory.id'))
       return [this.args.article.get('articleAuthorCategory.articleCategory.id'), this.args.article.get('articleAuthorCategory.id'), this.args.article.id];
