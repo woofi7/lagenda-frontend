@@ -35,6 +35,9 @@
         {{#if this.balado.soundcloudLink}}
           <a href={{this.balado.soundcloudLink}} class="mx-2"><img src="https://w.soundcloud.com/icon/assets/images/orange_white_40-94fc761.png" alt={{t "balados.listen.sound-cloud"}} height="40px" width="40px"></a>
         {{/if}}
+        {{#if this.balado.youtubeLink}}
+          <a href={{this.balado.youtubeLink}} class="mx-2"><img src="/assets/logo/youtube.png" alt={{t "balados.listen.youtube"}} height="40px" width="40px"></a>
+        {{/if}}
       </div>
       <div class="logo-list mt-auto">
         <h4>{{t "balados.share"}}</h4>

@@ -9,6 +9,8 @@ export default class BaladoModel extends Model {
   @attr('string') appleLink;
   @attr('string') googleLink;
   @attr('string') spotifyLink;
+  @attr('string') soundcloudLink;
+  @attr('string') youtubeLink;
   @attr('number') episodeNumber;
   @attr('boolean') unlisted;
   @attr('string') simpleCastId;
