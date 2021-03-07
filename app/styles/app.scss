@@ -563,3 +563,41 @@ $button-active-blue: #1669F2;
   }
 }
 
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.card-columns {
+  column-count: 1;
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-up(xl) {
+    column-count: 3;
+  }
+}
+
+.search-img {
+  height: 1.5em;
+}
+
+.btn-icon {
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.btn-icon:hover {
+  color: lightgrey;
+}
+
+.mark {
+  background-color: rgba(253,255,50,0.2);
+  padding-left: unset;
+  padding-right: unset;
+}
+
+@import "dark";

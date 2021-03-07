@@ -1,6 +1,9 @@
 import Route from '@ember/routing/route';
+import {inject as service} from "@ember/service";
 
 export default class PrivacyPolicyRoute extends Route {
+  @service fastboot;
+
   model() {
     return "<div class=\"container my-4\">" +
       "  <h2>Politique de confidentialité</h2>" +
@@ -63,5 +66,10 @@ export default class PrivacyPolicyRoute extends Route {
       "    <li>Statistique</li>" +
       "  </ul>" +
       "</div>"
+  }
+
+  beforeModel() {
+    if (!this.fastboot.isFastBoot)
+      document.getElementsByTagName('body')[0].classList.remove('dark');
   }
 }

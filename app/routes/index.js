@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
+import {inject as service} from "@ember/service";
 
 export default class IndexRoute extends Route {
+  @service fastboot;
+
   setupController(controller, model, transition) {
     super.setupController(controller, model, transition);
     if (controller.infolettre)
@@ -70,5 +73,10 @@ export default class IndexRoute extends Route {
       articles,
       balados
     });
+  }
+
+  beforeModel() {
+    if (!this.fastboot.isFastBoot)
+      document.getElementsByTagName('body')[0].classList.remove('dark');
   }
 }

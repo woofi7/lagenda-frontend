@@ -1,5 +1,121 @@
-<div class="container mt-3">
+<div class="container-fluid mt-3 pb-4">
   <h1>{{t "admin.title"}}</h1>
+  <div class="card-columns">
+      <div class="card">
+        <h5 class="card-header"><i class="fas fa-feather-alt mr-3"></i>{{t "la-tribune.title"}}</h5>
+        <div class="card-body p-2">
+          <div class="pb-2">
+            <LinkTo @route="admin.article-categries" class="btn btn-dark">Catégories</LinkTo>
+            <LinkTo @route="admin.article.add" model={{1}} class="btn btn-dark">Ajouter un article</LinkTo>
+          </div>
+          <h5>Trouver un article</h5>
+          <PowerSelect
+              @triggerClass="w-100"
+              @searchEnabled={{true}}
+              @search={{perform this.searchArticleTask}}
+              @selected={{this.articleSelected}}
+              @onChange={{fn (mut this.articleSelected)}} as |article select|>
+            <span class="text-truncate">{{text-highlight article.title query=select.lastSearchedText}}</span>
+          </PowerSelect>
+          <h5 class="pt-2">Articles récents</h5>
+          <div class="d-flex align-content-stretch flex-wrap">
+            {{#each this.articles as |article index|}}
+              <Admin::ArticleCard @article={{article}} @index={{index}} />
+            {{/each}}
+          </div>
+          <h5 class="pt-2">Auteurs</h5>
+          <div class="d-flex align-content-stretch flex-wrap justify-content-center">
+            {{#each this.authors as |author|}}
+              <Admin::AuthorAvatar @author={{author}} />
+            {{/each}}
+            <LinkTo @route="admin.author.list">
+              <div class="avatar p-1 d-flex align-items-center justify-content-center">
+                <i class="fas fa-ellipsis-h h1 text-white"></i>
+              </div>
+            </LinkTo>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header"><i class="fas fa-headphones mr-3"></i>{{t "balados.title"}}</h5>
+        <div class="card-body p-2">
+          <div class="pb-2">
+            <LinkTo @route="admin.balado-categries" class="btn btn-dark">Catégories</LinkTo>
+            <LinkTo @route="admin.balado.add" class="btn btn-dark">Ajouter un balado</LinkTo>
+          </div>
+          <h5>Trouver un balado</h5>
+          <PowerSelect
+              @triggerClass="w-100"
+              @searchEnabled={{true}}
+              @search={{perform this.searchBaladoTask}}
+              @selected={{this.baladoSelected}}
+              @onChange={{fn (mut this.baladoSelected)}} as |balado select|>
+            <span class="text-truncate">{{text-highlight balado.title query=select.lastSearchedText}}</span>
+          </PowerSelect>
+          <h5 class="pt-2">Balados récents</h5>
+          <div class="d-flex align-content-stretch flex-wrap">
+            {{#each this.balados as |balado index|}}
+              <Admin::BaladoCard @balado={{balado}} @index={{index}} />
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header"><i class="fas fa-images mr-3"></i>{{t "admin.image.title"}}</h5>
+        <div class="card-body p-2">
+          <div class="pb-2">
+            <LinkTo @route="admin.balado.add" class="btn btn-dark">Ajouter une image</LinkTo>
+          </div>
+          <h5>Trouver une image</h5>
+          <PowerSelect
+              @triggerClass="w-100"
+              @searchEnabled={{true}}
+              @search={{perform this.searchImageTask}}
+              @selected={{this.imageSelected}}
+              @onChange={{this.changeImageSelected}} as |image select|>
+            <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+            <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} />
+          </PowerSelect>
+          {{#if this.imageSelected}}
+            <div class="row pt-3">
+              <div class="col-8 pr-0">
+                <CopyText @text={{this.imageSelected.url}} />
+                <div class="d-inline-flex align-items-center py-1 w-100">
+                  <h6 class="mr-2">Id</h6>
+                  <CopyText @text={{this.imageSelected.id}} />
+                </div>
+                {{#if this.imageSelected.alt}}
+                  <div class="py-1">
+                    <h6>Desc</h6>
+                    {{this.imageSelected.alt}}
+                  </div>
+                {{/if}}
+                {{#if this.imageSelected.credits}}
+                  <div class="py-1">
+                    <h6>Crédits</h6>
+                    {{this.imageSelected.credits}}
+                  </div>
+                {{/if}}
+                <div class="py-1">
+                  <h6>Taille</h6>
+                  {{#if this.imageSize}}
+                    <span>{{this.imageSize.width}} x {{this.imageSize.height}} ({{this.imageSize.ratio}})</span>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="col-4 d-flex flex-column justify-content-between">
+                <img src={{this.imageSelected.url}} class="img-fluid" alt={{this.imageSelected.alt}} />
+                <LinkTo @route="admin.image.edit"
+                        @model={{this.imageSelected.id}}
+                        class="btn btn-primary btn-sm align-self-end">
+                  Modifier
+                </LinkTo>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+  </div>
 </div>
 
 {{outlet}}

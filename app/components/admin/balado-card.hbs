@@ -1,0 +1,33 @@
+<div class={{concat "p-0 col-12 col-md-6" (if (eq @index 0) " pr-2")}}>
+  <div class={{concat "card" this.cardStyle}}>
+    {{#unless @hideImage}}
+      <div class="article-thumbnail">
+        {{#if @balado.image}}
+          <img class="img" src={{@balado.image.url}} alt={{@balado.image.alt}}>
+        {{else}}
+          <img class="img-fluid" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}}>
+        {{/if}}
+      </div>
+    {{/unless}}
+    <div class="card-body p-2 d-flex flex-column">
+      <h6 class="card-title mb-1">{{if @balado.title @balado.title (t "article-card.no-title")}}</h6>
+      <p class="card-text small">
+        <LineClamp @text={{if @balado.desc @balado.desc (t "article-card.no-desc")}} @lines={{3}} @interactive={{false}} />
+      </p>
+      <div class="mt-auto row">
+        <div class="col pr-0">
+          <small>
+            {{moment-format @balado.updateDatetime 'YYYY-MM-DD à hh[h]mm' 'MM-YYYY-DD'}}
+          </small>
+        </div>
+        <div class="col pl-1">
+          <LinkTo @route="admin.article.edit"
+                  @model={{@balado.id}}
+                  class="btn btn-primary btn-sm float-right">
+            {{t "la-tribune.read-article"}}
+          </LinkTo>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

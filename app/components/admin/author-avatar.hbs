@@ -1,0 +1,4 @@
+<LinkTo @route="admin.author.edit" @model={{@author.id}}>
+  <img class="avatar p-1"  src={{@author.image.url}} alt={{@author.image.alt}} />
+  <BsTooltip @placement="top">{{@author.firstName}} {{@author.lastName}}</BsTooltip>
+</LinkTo>

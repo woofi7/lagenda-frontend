@@ -65,6 +65,8 @@ copyright: "© 2021 L'Agenda – Tous droits réservés."
 
 admin:
   title: "Panneau d'administration"
+  image:
+    title: 'Images'
 
 login:
   title: "Accès au panneau d'administration"

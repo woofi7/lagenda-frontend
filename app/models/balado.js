@@ -17,4 +17,20 @@ export default class BaladoModel extends Model {
 
   @belongsTo('balado-category') baladoCategory;
   @belongsTo('image') image;
+
+  get state() {
+    if (this.title
+      && this.desc
+      && this.episodeNumber
+      && this.image) {
+      if (this.postDatetime >= Date().toString() || !this.simpleCastId) {
+        return "warning";
+      }
+      return "success";
+    }
+    else {
+      return "error";
+    }
+
+  }
 }
