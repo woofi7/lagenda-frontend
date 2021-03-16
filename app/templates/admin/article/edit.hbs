@@ -1,1 +1,155 @@
-{{outlet}}
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @position="center"
+         @size="lg"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">Article</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    <div class="image-modal">
+      <BsForm class="text-left" @model={{this.article}} @onSubmit={{action "submit"}} as |form|>
+        <div class="row">
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">Id</label>
+              <CopyText @text={{this.article.id}} />
+            </form.group>
+          </div>
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">Visibilité</label>
+              <XToggle
+                  @onLabel="Visible"
+                  @offLabel="Caché"
+                  @theme="flip"
+                  @value={{not this.article.unlisted}}
+                  @onToggle={{this.toggleUnlisted}}
+              />
+            </form.group>
+          </div>
+          <div class="col">
+            <form.group>
+              <label class="control-label">Url</label>
+              <CopyText @text={{this.articleUrl}} />
+            </form.group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <form.group>
+                  <label>Date de publication</label>
+                  <EmberFlatpickr
+                      class="form-control"
+                      @allowInput={{true}}
+                      @date={{this.article.postDatetime}}
+                      @enableTime={{true}}
+                      @locale="fr"
+                      @onChange={{this.changeDatetime}}
+                  />
+                </form.group>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form.element @label="Dernière modification" @property="updateDatetime" as |el|>
+                  <input class="form-control color-gray" value={{moment-format el.value 'YYYY-MM-DD à hh:mm' 'MM-YYYY-DD'}} disabled>
+                </form.element>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <form.group>
+              <label>Image</label>
+              <PowerSelect
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @search={{perform this.searchImageTask}}
+                  @selected={{this.article.image}}
+                  @options={{this.imageOptions}}
+                  @onChange={{this.changeImageSelected}} as |image select|>
+                <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} />
+              </PowerSelect>
+              <div class="row pt-2">
+                <div class="col-6 pr-0">
+                  <CopyText @text={{this.article.image.url}} />
+                  {{#if this.article.image.alt}}
+                    <div class="py-1">
+                      <h6>Desc</h6>
+                      {{this.article.image.alt}}
+                    </div>
+                  {{/if}}
+                  {{#if this.article.image.credits}}
+                    <div class="py-1">
+                      <h6>Crédits</h6>
+                      {{this.article.image.credits}}
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="col">
+                  <img src={{this.article.image.url}} class="img-fluid" alt={{this.article.image.alt}} />
+                  <div class="py-1">
+                    <h6>Taille</h6>
+                    {{this.loadImageSize}}
+                    {{#if this.imageSize}}
+                      <span>{{this.imageSize.width}} x {{this.imageSize.height}} ({{this.imageSize.ratio}})</span>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+
+            </form.group>
+          </div>
+        </div>
+        <form.element @controlType="text" @label="Titre" @property="title" />
+        <div class="row">
+          <div class="col">
+            <form.group>
+              <label class="control-label">Auteurs</label>
+              <PowerSelectMultiple
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @searchField="firstName"
+                  @options={{this.selectableAuthors}}
+                  @selected={{this.article.authors}}
+                  @placeholder="Sélectionner un auteur"
+                  @onChange={{fn (mut this.article.authors)}} as |author|>
+                {{author.firstName}} {{author.lastName}}
+              </PowerSelectMultiple>
+            </form.group>
+          </div>
+          <div class="col">
+            <form.group>
+              <label class="control-label">Catégorie</label>
+              <PowerSelect
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @searchField="name"
+                  @options={{this.selectableCategories}}
+                  @selected={{this.articleSelectedCategory}}
+                  @placeholder="Sélectionner une catégorie"
+                  @onChange={{this.selectCategory}} as |category|>
+                {{category.name}}
+              </PowerSelect>
+            </form.group>
+          </div>
+        </div>
+        <form.element @controlType="textarea" @label="Description" @property="desc" as |el|>
+          <el.control rows="5" />
+        </form.element>
+        <label>Contenu</label>
+        {{#unless this.fastboot.isFastBoot}}
+          <TuiEditor
+              @value={{this.article.content}}
+              @onChange={{fn (mut this.article.content)}}
+          />
+        {{/unless}}
+        <BsButton @defaultText="Submit" @type="primary" type="submit" class="float-right mr-0 mt-3" />
+      </BsForm>
+    </div>
+  </Modal.body>
+</BsModal>

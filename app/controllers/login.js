@@ -6,7 +6,7 @@ import { tracked } from "@glimmer/tracking";
 export default class LoginController extends Controller {
   @tracked errorMessage;
   @service session;
-  @service router
+  @service router;
 
   queryParams = ['disconnected']
 

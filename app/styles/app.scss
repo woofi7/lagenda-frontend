@@ -600,4 +600,34 @@ $button-active-blue: #1669F2;
   padding-right: unset;
 }
 
+.image-modal {
+  img {
+    max-height: 200px;
+  }
+}
+
+.color-gray {
+  color: gray !important;
+}
+
+.te-preview {
+  background-color: white;
+}
+
+.x-toggle-component {
+  justify-content: left;
+}
+
+.x-toggle-container {
+  padding: unset;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.ember-basic-dropdown-content {
+  z-index: 10000;
+}
+
 @import "dark";

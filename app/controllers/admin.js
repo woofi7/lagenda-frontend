@@ -5,10 +5,8 @@ import { alias } from '@ember/object/computed';
 import { isBlank } from '@ember/utils';
 import { timeout } from 'ember-concurrency';
 import { tracked } from "@glimmer/tracking";
-import { task } from 'ember-concurrency';
 import { keepLatestTask } from 'ember-concurrency-decorators';
 
-import RSVP from "rsvp";
 
 const DEBOUNCE_MS = 250;
 
@@ -37,10 +35,6 @@ export default class AdminController extends Controller {
     this.fetchImageData.perform();
   }
 
-  @action
-  textCopied() {
-  }
-
   @keepLatestTask *fetchImageData() {
     let img = new Image();
     img.onload = yield () => {
@@ -50,7 +44,7 @@ export default class AdminController extends Controller {
       this.set('imageSize', {width: img.width, height: img.height, ratio });
 
     };
-    img.src = this.imageSelected.url;
+    img.src = this.image.url;
   }
 
   @keepLatestTask *searchArticleTask (term) {

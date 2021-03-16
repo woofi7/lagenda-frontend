@@ -6,6 +6,7 @@ export default class AuthorModel extends Model {
   @attr('string') title;
   @attr('string') desc;
   @attr('boolean') collaborator;
+  @attr('boolean') partner;
   @attr('number') order;
 
   @belongsTo('image') image;

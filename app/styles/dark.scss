@@ -13,7 +13,7 @@
     border-color: #1D1D1D;
   }
 
-  .ember-basic-dropdown-trigger, .ember-power-select-search > input, .form-control {
+  .ember-basic-dropdown-trigger, .ember-power-select-search > input, .form-control, .editor {
     background-color: #1D1D1D;
     border-color: #121212;
     color: white;
@@ -28,5 +28,25 @@
     border-color: #121212 !important;
   }
 
+  .modal-content {
+    background-color: #2D2D2D;
+    box-shadow: 0 0 20px black;
+    color: white;
+  }
 
+  .modal-body, .modal-header > .close  {
+    color: white;
+  }
+
+  .clickable:hover {
+    color: white;
+  }
+
+  & .x-toggle-btn {
+    background-color: transparent;
+  }
+
+  .ember-power-select-trigger-multiple-input {
+    color: white;
+  }
 }

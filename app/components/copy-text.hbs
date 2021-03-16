@@ -1,14 +1,8 @@
-<label class="sr-only" for="copyImageUrl">Copy text</label>
 <div class="input-group">
-  <input type="text" class="form-control" id="copyImageUrl" value={{@text}} readonly>
+  <input type="text" class="form-control" value={{@text}} readonly>
   <div class="input-group-append">
-    <div class="input-group-text">
-      <CopyButton class="btn btn-icon p-0"
-                  @clipboardText={{@text}}
-                  @success={{this.onSuccess}}
-                  @error={{this.onError}}>
+    <div class="input-group-text clickable" {{on "click" this.copyToClipboard}}>
         <i class="fas fa-copy"></i>
-      </CopyButton>
       <BsTooltip @placement="top" @triggerEvents="" @visible={{this.showTooltip}} @delayHide={{5}}>{{this.tooltipText}}</BsTooltip>
     </div>
   </div>

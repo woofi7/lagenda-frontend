@@ -8,16 +8,15 @@ export default class CopyTextComponent extends Component {
   @tracked tooltipText = "false";
 
   @action
-  onSuccess() {
-    this.tooltipText = "Copié avec succès";
-
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.args.text).then(() => {
+      this.tooltipText = "Copié avec succès";
+    }, () => {
+      this.tooltipText = "Erreur";
+    });
     this.showTooltip = true;
     later(this, function() {
       this.showTooltip = false;
     }, 1000);
-  }
-
-  @action
-  onError() {
   }
 }

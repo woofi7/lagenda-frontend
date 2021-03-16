@@ -39,7 +39,7 @@ export default class AdminRoute extends Route.extend(ApplicationRouteMixin) {
   }
 
   beforeModel(transition) {
-    this.get('session').requireAuthentication(transition, 'login');
+    //this.get('session').requireAuthentication(transition, 'login');
 
     if (!this.fastboot.isFastBoot)
       document.getElementsByTagName('body')[0].classList.add('dark');

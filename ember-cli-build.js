@@ -11,6 +11,9 @@ module.exports = function(defaults) {
     fingerprint: {
       exclude: ['images']
     },
+    flatpickr: {
+      locales: ['fr'],
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

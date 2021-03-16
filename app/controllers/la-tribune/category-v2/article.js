@@ -32,7 +32,7 @@ export default class LaTribuneCategoryV2ArticleController extends Controller {
 
   getUrl() {
     let currentUrl;
-    if (this.fastboot.isFastboot) {
+    if (this.fastboot.isFastBoot) {
       currentUrl = document.location.href;
     }
     else {
