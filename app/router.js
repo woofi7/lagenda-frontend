@@ -45,23 +45,20 @@ Router.map(function() {
       this.route('edit', { path: ':article'});
       this.route('add');
     });
-
     this.route('author', function() {
       this.route('edit', { path: ':author'});
       this.route('add');
-      this.route('list');
     });
-    this.route('article-categries');
-    this.route('balado-categries');
-
     this.route('balado', function() {
       this.route('add');
     });
-    this.route('balado-categories');
-
     this.route('image', function() {
       this.route('add');
       this.route('edit', { path: ':image'});
+    });
+    this.route('article-category', { path: '/' }, function() {
+      this.route('edit', { path: ':category' });
+      this.route('add', { path: 'add' });
     });
   });
   this.route('login');

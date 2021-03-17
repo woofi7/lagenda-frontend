@@ -1,11 +1,11 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-module('Unit | Route | admin/balado-categories', function(hooks) {
+module('Unit | Route | admin/article-category/edit', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:admin/balado-categories');
+    let route = this.owner.lookup('route:admin/article-category/edit');
     assert.ok(route);
   });
 });
