@@ -66,7 +66,29 @@ copyright: "© 2021 L'Agenda – Tous droits réservés."
 admin:
   title: "Panneau d'administration"
   image:
-    title: 'Images'
+    title: "Images"
+  article:
+    edit:
+      title: "Article"
+      id: "Id"
+      visibility: "Visibilité"
+      visible: "Visible"
+      hidden: "Caché"
+      linkTo: "Url"
+      postDatetime: "Date de publication"
+      updateDatetime: "Dernière modification"
+      image:
+        title: "Image"
+        desc: "Description"
+        credits: "Crédits"
+        sizeTitle: "Taille"
+        size: "{width} x {height} ({ratio})"
+      authors: "Auteurs"
+      selectAuthor: "Sélectionner un auteur"
+      category: "Catégorie"
+      selectCategory: "Sélectionner une catégorie"
+      desc: "Description"
+      content: "Contenu"
 
 login:
   title: "Accès au panneau d'administration"

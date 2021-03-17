@@ -28,17 +28,15 @@ export default class AdminArticleEditController extends Controller {
     return this.store.peekAll('image');
   }
 
-  gcd (a, b) {
-    return (b == 0) ? a : this.gcd (b, a%b);
-  }
-
   @computed('article.id')
   get articleUrl() {
-    const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
-    const category = this.article.articleCategory.get('id') ? this.article.articleCategory.get('id')
-      : this.article.articleAuthorCategory.get('id');
+    if (this.article.articleCategory.get('id') || this.article.articleAuthorCategory.get('id')) {
+      const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
+      const category = this.article.articleCategory.get('id') ? this.article.articleCategory.get('id')
+        : this.article.articleAuthorCategory.get('id');
 
-    return host + this.router.urlFor('la-tribune.category-v2.article', category, this.article.id);
+      return host + this.router.urlFor('la-tribune.category-v2.article', category, this.article.id);
+    }
   }
 
   @computed('article.articleCategory', 'article.articleAuthorCategory')
@@ -87,6 +85,7 @@ export default class AdminArticleEditController extends Controller {
 
   @action
   submit(form) {
+    form.updateDatetime = new Date();
     form.save()
       .then(() => {
         this.notifications.success('Article modifié avec succès!', {
@@ -149,6 +148,10 @@ export default class AdminArticleEditController extends Controller {
 
   @keepLatestTask *fetchImageData() {
     if (!this.fastboot.isFastBoot) {
+      const url = yield this.article.get('image.url');
+      if (!url)
+        return;
+
       let img = new Image();
       img.onload = yield () => {
         const gcd = this.gcd(img.width, img.height);
@@ -157,7 +160,11 @@ export default class AdminArticleEditController extends Controller {
         this.set('imageSize', {width: img.width, height: img.height, ratio });
 
       };
-      img.src = yield this.article.get('image.url');
+      img.src = url;
     }
+  }
+
+  gcd (a, b) {
+    return (b === 0) ? a : this.gcd (b, a%b);
   }
 }

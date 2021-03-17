@@ -28,17 +28,17 @@
             </form.group>
           </div>
         </div>
-        <FileUpload @name="photos"
-                    @accept="image/*"
-                    @onfileadd={{action this.uploadImage}} as |queue|>
-          <a class="button">
-            {{#if queue.files.length}}
-              Uploading...
-            {{else}}
-              Upload file
-            {{/if}}
-          </a>
-        </FileUpload>
+<!--        <FileUpload @name="photos"-->
+<!--                    @accept="image/*"-->
+<!--                    @onfileadd={{action this.uploadImage}} as |queue|>-->
+<!--          <a class="button">-->
+<!--            {{#if queue.files.length}}-->
+<!--              Uploading...-->
+<!--            {{else}}-->
+<!--              Upload file-->
+<!--            {{/if}}-->
+<!--          </a>-->
+<!--        </FileUpload>-->
         <form.element @controlType="text" @label="Description" @property="alt" />
         <form.element @controlType="text" @label="Crédits" @property="credits" />
         <div class="d-flex pb-2">

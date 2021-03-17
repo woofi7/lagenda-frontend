@@ -5,24 +5,24 @@
          @size="lg"
          as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">Article</h4>
+    <h4 class="modal-title w-100">{{t "admin.article.edit.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0">
     <div class="image-modal">
-      <BsForm class="text-left" @model={{this.article}} @onSubmit={{action "submit"}} as |form|>
+      <BsForm class="text-left" @model={{this.article}} @onSubmit={{this.submit}} as |form|>
         <div class="row">
           <div class="col-3">
             <form.group>
-              <label class="control-label">Id</label>
+              <label class="control-label">{{t "admin.article.edit.id"}}</label>
               <CopyText @text={{this.article.id}} />
             </form.group>
           </div>
           <div class="col-3">
             <form.group>
-              <label class="control-label">Visibilité</label>
+              <label class="control-label">{{t "admin.article.edit.visibility"}}</label>
               <XToggle
-                  @onLabel="Visible"
-                  @offLabel="Caché"
+                  @onLabel={{t "admin.article.edit.visible"}}
+                  @offLabel={{t "admin.article.edit.hidden"}}
                   @theme="flip"
                   @value={{not this.article.unlisted}}
                   @onToggle={{this.toggleUnlisted}}
@@ -31,7 +31,7 @@
           </div>
           <div class="col">
             <form.group>
-              <label class="control-label">Url</label>
+              <label class="control-label">{{t "admin.article.edit.linkTo"}}</label>
               <CopyText @text={{this.articleUrl}} />
             </form.group>
           </div>
@@ -41,7 +41,7 @@
             <div class="row">
               <div class="col">
                 <form.group>
-                  <label>Date de publication</label>
+                  <label>{{t "admin.article.edit.postDatetime"}}</label>
                   <EmberFlatpickr
                       class="form-control"
                       @allowInput={{true}}
@@ -55,15 +55,15 @@
             </div>
             <div class="row">
               <div class="col">
-                <form.element @label="Dernière modification" @property="updateDatetime" as |el|>
-                  <input class="form-control color-gray" value={{moment-format el.value 'YYYY-MM-DD à hh:mm' 'MM-YYYY-DD'}} disabled>
+                <form.element @label={{t "admin.article.edit.updateDatetime"}} @property="updateDatetime" as |el|>
+                  <input class="form-control color-gray" value={{moment-format el.value 'YYYY-MM-DD à hh:mm' 'MM-YYYY-DD'}} disabled />
                 </form.element>
               </div>
             </div>
           </div>
           <div class="col">
             <form.group>
-              <label>Image</label>
+              <label>{{t "admin.article.edit.image.title"}}</label>
               <PowerSelect
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
@@ -72,20 +72,22 @@
                   @options={{this.imageOptions}}
                   @onChange={{this.changeImageSelected}} as |image select|>
                 <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
-                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} />
+                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
               </PowerSelect>
               <div class="row pt-2">
                 <div class="col-6 pr-0">
-                  <CopyText @text={{this.article.image.url}} />
+                  {{#if this.article.image.url}}
+                    <CopyText @text={{this.article.image.url}} />
+                  {{/if}}
                   {{#if this.article.image.alt}}
                     <div class="py-1">
-                      <h6>Desc</h6>
+                      <h6>{{t "admin.article.edit.image.desc"}}</h6>
                       {{this.article.image.alt}}
                     </div>
                   {{/if}}
                   {{#if this.article.image.credits}}
                     <div class="py-1">
-                      <h6>Crédits</h6>
+                      <h6>{{t "admin.article.edit.image.credits"}}</h6>
                       {{this.article.image.credits}}
                     </div>
                   {{/if}}
@@ -93,10 +95,15 @@
                 <div class="col">
                   <img src={{this.article.image.url}} class="img-fluid" alt={{this.article.image.alt}} />
                   <div class="py-1">
-                    <h6>Taille</h6>
                     {{this.loadImageSize}}
                     {{#if this.imageSize}}
-                      <span>{{this.imageSize.width}} x {{this.imageSize.height}} ({{this.imageSize.ratio}})</span>
+                      <h6>{{t "admin.article.edit.image.sizeTitle"}}</h6>
+                      <span>
+                        {{t "admin.article.edit.image.size"
+                          width=this.imageSize.width
+                          height=this.imageSize.height
+                          ratio=this.imageSize.ratio}}
+                      </span>
                     {{/if}}
                   </div>
                 </div>
@@ -109,14 +116,14 @@
         <div class="row">
           <div class="col">
             <form.group>
-              <label class="control-label">Auteurs</label>
+              <label class="control-label">{{t "admin.article.edit.authors"}}</label>
               <PowerSelectMultiple
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
                   @searchField="firstName"
                   @options={{this.selectableAuthors}}
                   @selected={{this.article.authors}}
-                  @placeholder="Sélectionner un auteur"
+                  @placeholder={{t "admin.article.edit.selectAuthor"}}
                   @onChange={{fn (mut this.article.authors)}} as |author|>
                 {{author.firstName}} {{author.lastName}}
               </PowerSelectMultiple>
@@ -124,24 +131,24 @@
           </div>
           <div class="col">
             <form.group>
-              <label class="control-label">Catégorie</label>
+              <label class="control-label">{{t "admin.article.edit.category"}}</label>
               <PowerSelect
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
                   @searchField="name"
                   @options={{this.selectableCategories}}
                   @selected={{this.articleSelectedCategory}}
-                  @placeholder="Sélectionner une catégorie"
+                  @placeholder={{t "admin.article.edit.selectCategory"}}
                   @onChange={{this.selectCategory}} as |category|>
                 {{category.name}}
               </PowerSelect>
             </form.group>
           </div>
         </div>
-        <form.element @controlType="textarea" @label="Description" @property="desc" as |el|>
+        <form.element @controlType="textarea" @label={{t "admin.article.edit.desc"}} @property="desc" as |el|>
           <el.control rows="5" />
         </form.element>
-        <label>Contenu</label>
+        <label>{{t "admin.article.edit.content"}}</label>
         {{#unless this.fastboot.isFastBoot}}
           <TuiEditor
               @value={{this.article.content}}

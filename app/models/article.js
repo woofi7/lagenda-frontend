@@ -1,4 +1,5 @@
 import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
+import {computed} from "@ember/object";
 
 export default class ArticleModel extends Model {
   @attr('string') title;
@@ -14,6 +15,7 @@ export default class ArticleModel extends Model {
 
   @hasMany('author', { async: true }) authors;
 
+  @computed('title', 'desc', 'content', 'image', 'authors', 'articleCategory', 'articleAuthorCategory', 'unlisted')
   get state() {
     if (this.title
       && this.desc
@@ -21,7 +23,7 @@ export default class ArticleModel extends Model {
       && this.image
       && this.authors
       && (this.articleCategory || this.articleAuthorCategory)) {
-      if (this.postDatetime >= Date().toString()) {
+      if (this.postDatetime >= Date().toString() || this.unlisted) {
         return "warning";
       }
       return "success";

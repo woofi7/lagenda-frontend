@@ -14,7 +14,6 @@ export default class LoginController extends Controller {
 
   @action
   async authenticate(e) {
-    e.preventDefault();
     try {
       await this.session.authenticate('authenticator:torii', 'google');
     } catch(error) {

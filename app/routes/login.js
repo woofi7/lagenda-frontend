@@ -8,7 +8,6 @@ export default class AdminLoginRoute extends Route {
   beforeModel() {
     this.get('session').prohibitAuthentication('admin');
 
-
     if (!this.fastboot.isFastBoot)
       document.getElementsByTagName('body')[0].classList.add('dark');
   }

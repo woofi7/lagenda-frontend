@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import RSVP from "rsvp";
 
-export default class AdminRoute extends Route.extend(ApplicationRouteMixin) {
+export default class AdminRoute extends Route {
   @service session;
   @service fastboot;
 
@@ -39,7 +39,7 @@ export default class AdminRoute extends Route.extend(ApplicationRouteMixin) {
   }
 
   beforeModel(transition) {
-    //this.get('session').requireAuthentication(transition, 'login');
+    this.get('session').requireAuthentication(transition, 'login');
 
     if (!this.fastboot.isFastBoot)
       document.getElementsByTagName('body')[0].classList.add('dark');

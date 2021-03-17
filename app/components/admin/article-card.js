@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { computed } from "@ember/object";
 
 export default class AdminArticleCardComponent extends Component {
-  @computed('args.article')
+  @computed('args.article.state')
   get cardStyle () {
     switch (this.args.article.state) {
       case 'error':
