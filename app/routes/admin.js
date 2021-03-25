@@ -9,7 +9,7 @@ export default class AdminRoute extends Route {
 
   model() {
     let articles = this.store.query('article', {
-      include: 'image',
+      include: 'image,authors,article-category',
       sort: '-post-datetime',
       page: {
         size: 2

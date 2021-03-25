@@ -42,7 +42,20 @@ module.exports = function(environment) {
           scope: 'profile'
         }
       }
-    }
+    },
+
+    "ember-drag-drop-polyfill": {
+      // These options are passed through to mobile-drag-drop
+      mobileDragDrop: {
+        enableEnterLeave: true,
+        holdToDrag: 500, // Hold for 500ms until drag starts
+      },
+      // These options are used by ember-drag-drop-polyfill
+      customOptions: {
+        enableIOSHack: true, // Enable if targeting iOS Safari 10.x and higher, see https://github.com/timruffles/mobile-drag-drop/issues/77
+        includeScrollBehavior: true // Sets the 'dragImageTranslateOverride' option in mobile-drag-drop
+      }
+    },
   };
 
   if (environment === 'production') {

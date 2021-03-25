@@ -56,10 +56,10 @@ Router.map(function() {
       this.route('add');
       this.route('edit', { path: ':image'});
     });
-    this.route('article-category', { path: '/' }, function() {
+    this.route('article-category', { path: 'article-category' }, function() {
       this.route('edit', { path: ':category' });
-      this.route('add', { path: 'add' });
     });
+    this.route('balado-category');
   });
   this.route('login');
 });

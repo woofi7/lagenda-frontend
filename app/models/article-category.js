@@ -10,5 +10,5 @@ export default class ArticleCategoryModel extends Model {
   @belongsTo('image', { async: true }) image;
 
   @hasMany('article', { async: true }) articles;
-  @hasMany('article-author-category', { async: true }) articleAuthorCategories;
+  @hasMany('article-author-category') articleAuthorCategories;
 }

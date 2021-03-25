@@ -1,1 +1,140 @@
-{{outlet}}
+<BsForm class="text-left" @model={{this.category}} @onSubmit={{perform this.submitForm}} as |form|>
+  <div class="row">
+    <div class="col-3">
+      <form.group>
+        <label class="control-label">{{t "admin.form.id"}}</label>
+        <CopyText @text={{this.category.id}} />
+      </form.group>
+    </div>
+    <div class="col-3">
+      <form.group>
+        <label class="control-label">{{t "admin.form.visibility"}}</label>
+        <XToggle
+            @onLabel={{t "admin.form.visible"}}
+            @offLabel={{t "admin.form.hidden"}}
+            @theme="flip"
+            @value={{not this.category.unlisted}}
+            @onToggle={{this.toggleUnlisted}}
+        />
+      </form.group>
+    </div>
+    <div class="col">
+      <form.group>
+        <label class="control-label">{{t "admin.form.linkTo"}}</label>
+        <CopyText @text={{this.categoryUrl}} />
+      </form.group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form.element @controlType="text" @label={{t "admin.form.name"}} @property="name" />
+    </div>
+    <div class="col">
+      <form.group>
+        <label>{{t "admin.form.image.title"}}</label>
+        <PowerSelect
+            @triggerClass="w-100"
+            @searchEnabled={{true}}
+            @search={{perform this.searchImageTask}}
+            @selected={{this.category.image}}
+            @options={{this.imageOptions}}
+            @onChange={{this.changeImageSelected}} as |image select|>
+          <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+          <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
+        </PowerSelect>
+        <div class="row pt-2">
+          {{#if this.category.image}}
+          <div class="col-6 pr-0">
+            {{#if this.category.image.url}}
+              <CopyText @text={{this.category.image.url}} />
+            {{/if}}
+            {{#if this.category.image.alt}}
+              <div class="py-1">
+                <h6>{{t "admin.form.image.desc"}}</h6>
+                {{this.category.image.alt}}
+              </div>
+            {{/if}}
+            {{#if this.category.image.credits}}
+              <div class="py-1">
+                <h6>{{t "admin.form.image.credits"}}</h6>
+                {{this.category.image.credits}}
+              </div>
+            {{/if}}
+          </div>
+          <div class="col">
+              <img src={{this.category.image.url}} class="img-fluid" alt={{this.category.image.alt}} />
+              <div class="py-1">
+                {{this.loadImageSize}}
+                {{#if this.imageSize}}
+                  <h6>{{t "admin.form.image.sizeTitle"}}</h6>
+                  <span>
+                    {{t "admin.form.image.size"
+                        width=this.imageSize.width
+                        height=this.imageSize.height
+                        ratio=this.imageSize.ratio}}
+                  </span>
+                {{/if}}
+              </div>
+          </div>
+          {{else}}
+            <div class="text-center col">
+              <h5>Looks like there's no image here.</h5>
+              <img class="img-fluid" width="100px" src="https://files.lagenda.ca/images/PngItem_415432.png" alt="Troll face">
+            </div>
+          {{/if}}
+        </div>
+      </form.group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form.group>
+        <label class="control-label">{{t "admin.form.sub-category"}}</label>
+        <PowerSelectMultiple
+            @triggerClass="w-100"
+            @searchEnabled={{true}}
+            @options={{this.selectableCategories}}
+            @selected={{this.subCategories}}
+            @placeholder={{t "admin.form.selectCategory"}}
+            @onChange={{this.selectCategory}} as |category|>
+          {{category.name}}
+        </PowerSelectMultiple>
+      </form.group>
+    </div>
+    <div class="col">
+      <SortableObjects @sortableObjectList={{this.subCategories}} @sortEndAction={{this.sortEndAction}} @sortingScope="subCategories">
+        {{#each this.subCategories as |category|}}
+          <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="subCategories">
+            {{#if category.image}}
+              <img class="icon-img img-fluid" src={{category.image.url}} alt={{category.image.alt}}>
+            {{else}}
+              <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+            {{/if}}
+            <span class="ml-2">{{category.name}}</span>
+            {{#if category.externalLink}}
+              <a href={{category.externalLink}} class="text-white"><i class="fas fa-external-link-alt"></i></a>
+            {{/if}}
+            <span class="float-right">
+              {{#if category.unlisted}}
+                <span class="badge badge-pill badge-warning">Caché</span>
+              {{/if}}
+              <span class="handle">&varr;</span>
+            </span>
+          </DraggableObject>
+        {{/each}}
+      </SortableObjects>
+    </div>
+  </div>
+  <div class="w-100 d-inline-block">
+    <BsButton @disabled={{this.submitForm.isRunning}}
+              @type="primary"
+              type="submit"
+              class="float-right mr-0 mt-3">
+      {{#if this.submitForm.isRunning}}
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      {{/if}}
+      Sauvegarder
+    </BsButton>
+  </div>
+</BsForm>
+<hr>

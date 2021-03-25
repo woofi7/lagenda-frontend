@@ -13,6 +13,7 @@ const DEBOUNCE_MS = 250;
 export default class AdminController extends Controller {
   @service session;
   @service store;
+  @service fastboot;
 
   @alias('session.data.authenticated.user_info') profile;
 
@@ -32,19 +33,24 @@ export default class AdminController extends Controller {
   changeImageSelected(image) {
     this.imageSize = null;
     this.imageSelected = image;
-    this.fetchImageData.perform();
+    this.fetchImageData.perform(this.imageSelected.get('url'));
   }
 
-  @keepLatestTask *fetchImageData() {
-    let img = new Image();
-    img.onload = yield () => {
-      const gcd = this.gcd(img.width, img.height);
-      const ratio = img. width / gcd + ":" + img.height / gcd;
+  @keepLatestTask *fetchImageData(url) {
+    if (!this.fastboot.isFastBoot) {
+      if (!url)
+        return;
 
-      this.set('imageSize', {width: img.width, height: img.height, ratio });
+      let img = new Image();
+      img.onload = yield () => {
+        const gcd = this.gcd(img.width, img.height);
+        const ratio = img. width / gcd + ":" + img.height / gcd;
 
-    };
-    img.src = this.image.url;
+        this.set('imageSize', {width: img.width, height: img.height, ratio });
+
+      };
+      img.src = url;
+    }
   }
 
   @keepLatestTask *searchArticleTask (term) {

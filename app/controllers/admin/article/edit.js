@@ -56,7 +56,7 @@ export default class AdminArticleEditController extends Controller {
     ]
   }
 
-  @computed('authorCategories.articleAuthorCategories', 'article.articleCategory', 'article.articleAuthorCategory')
+  @computed('categories', 'categories.articleAuthorCategories', 'article.articleCategory', 'article.articleAuthorCategory')
   get selectableCategories() {
     let categories = this.categories.filter((c) =>
       c !== this.article.articleCategory

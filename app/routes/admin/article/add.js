@@ -6,12 +6,12 @@ export default class AdminArticleAddRoute extends Route {
   @service fastboot;
 
   async model() {
-    let article = await this.fastboot.isFastBoot ? null : this.store.createRecord('article');
+    let article = this.fastboot.isFastBoot ? null : this.store.createRecord('article');
     let authors = this.store.findAll('author');
-    let articleCategories = await this.store.findAll('article-category', {
-      include: 'article-author-categories'
+    let articleCategories = this.store.findAll('article-category', {
+      include: 'article-author-categories',
+      reload: true
     });
-    await articleCategories.map((c) => c.get('articleAuthorCategories'));
 
     if (!this.fastboot.isFastBoot) {
       article.postDatetime = new Date();

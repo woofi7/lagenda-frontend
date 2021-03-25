@@ -5,24 +5,24 @@
          @size="lg"
          as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">{{t "admin.article.edit.title"}}</h4>
+    <h4 class="modal-title w-100">{{t "admin.article.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0">
-    <div class="image-modal">
+    <div class="admin-modal">
       <BsForm class="text-left" @model={{this.article}} @onSubmit={{this.submit}} as |form|>
         <div class="row">
           <div class="col-3">
             <form.group>
-              <label class="control-label">{{t "admin.article.edit.id"}}</label>
+              <label class="control-label">{{t "admin.form.id"}}</label>
               <CopyText @text={{this.article.id}} />
             </form.group>
           </div>
           <div class="col-3">
             <form.group>
-              <label class="control-label">{{t "admin.article.edit.visibility"}}</label>
+              <label class="control-label">{{t "admin.form.visibility"}}</label>
               <XToggle
-                  @onLabel={{t "admin.article.edit.visible"}}
-                  @offLabel={{t "admin.article.edit.hidden"}}
+                  @onLabel={{t "admin.form.visible"}}
+                  @offLabel={{t "admin.form.hidden"}}
                   @theme="flip"
                   @value={{not this.article.unlisted}}
                   @onToggle={{this.toggleUnlisted}}
@@ -31,7 +31,7 @@
           </div>
           <div class="col">
             <form.group>
-              <label class="control-label">{{t "admin.article.edit.linkTo"}}</label>
+              <label class="control-label">{{t "admin.form.linkTo"}}</label>
               <CopyText @text={{this.articleUrl}} />
             </form.group>
           </div>
@@ -41,7 +41,7 @@
             <div class="row">
               <div class="col">
                 <form.group>
-                  <label>{{t "admin.article.edit.postDatetime"}}</label>
+                  <label>{{t "admin.form.postDatetime"}}</label>
                   <EmberFlatpickr
                       class="form-control"
                       @allowInput={{true}}
@@ -55,7 +55,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <form.element @label={{t "admin.article.edit.updateDatetime"}} @property="updateDatetime" as |el|>
+                <form.element @label={{t "admin.form.updateDatetime"}} @property="updateDatetime" as |el|>
                   <input class="form-control color-gray" value={{moment-format el.value 'YYYY-MM-DD à hh:mm' 'MM-YYYY-DD'}} disabled />
                 </form.element>
               </div>
@@ -63,7 +63,7 @@
           </div>
           <div class="col">
             <form.group>
-              <label>{{t "admin.article.edit.image.title"}}</label>
+              <label>{{t "admin.form.image.title"}}</label>
               <PowerSelect
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
@@ -81,13 +81,13 @@
                   {{/if}}
                   {{#if this.article.image.alt}}
                     <div class="py-1">
-                      <h6>{{t "admin.article.edit.image.desc"}}</h6>
+                      <h6>{{t "admin.form.image.desc"}}</h6>
                       {{this.article.image.alt}}
                     </div>
                   {{/if}}
                   {{#if this.article.image.credits}}
                     <div class="py-1">
-                      <h6>{{t "admin.article.edit.image.credits"}}</h6>
+                      <h6>{{t "admin.form.image.credits"}}</h6>
                       {{this.article.image.credits}}
                     </div>
                   {{/if}}
@@ -97,9 +97,9 @@
                   <div class="py-1">
                     {{this.loadImageSize}}
                     {{#if this.imageSize}}
-                      <h6>{{t "admin.article.edit.image.sizeTitle"}}</h6>
+                      <h6>{{t "admin.form.image.sizeTitle"}}</h6>
                       <span>
-                        {{t "admin.article.edit.image.size"
+                        {{t "admin.form.image.size"
                           width=this.imageSize.width
                           height=this.imageSize.height
                           ratio=this.imageSize.ratio}}
@@ -116,14 +116,14 @@
         <div class="row">
           <div class="col">
             <form.group>
-              <label class="control-label">{{t "admin.article.edit.authors"}}</label>
+              <label class="control-label">{{t "admin.form.authors"}}</label>
               <PowerSelectMultiple
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
                   @searchField="firstName"
                   @options={{this.selectableAuthors}}
                   @selected={{this.article.authors}}
-                  @placeholder={{t "admin.article.edit.selectAuthor"}}
+                  @placeholder={{t "admin.form.selectAuthor"}}
                   @onChange={{fn (mut this.article.authors)}} as |author|>
                 {{author.firstName}} {{author.lastName}}
               </PowerSelectMultiple>
@@ -131,31 +131,31 @@
           </div>
           <div class="col">
             <form.group>
-              <label class="control-label">{{t "admin.article.edit.category"}}</label>
+              <label class="control-label">{{t "admin.form.category"}}</label>
               <PowerSelect
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
                   @searchField="name"
                   @options={{this.selectableCategories}}
                   @selected={{this.articleSelectedCategory}}
-                  @placeholder={{t "admin.article.edit.selectCategory"}}
+                  @placeholder={{t "admin.form.selectCategory"}}
                   @onChange={{this.selectCategory}} as |category|>
                 {{category.name}}
               </PowerSelect>
             </form.group>
           </div>
         </div>
-        <form.element @controlType="textarea" @label={{t "admin.article.edit.desc"}} @property="desc" as |el|>
+        <form.element @controlType="textarea" @label={{t "admin.form.desc"}} @property="desc" as |el|>
           <el.control rows="5" />
         </form.element>
-        <label>{{t "admin.article.edit.content"}}</label>
+        <label>{{t "admin.form.content"}}</label>
         {{#unless this.fastboot.isFastBoot}}
           <TuiEditor
               @value={{this.article.content}}
               @onChange={{fn (mut this.article.content)}}
           />
         {{/unless}}
-        <BsButton @defaultText="Submit" @type="primary" type="submit" class="float-right mr-0 mt-3" />
+        <BsButton @defaultText={{t "admin.form.submit"}} @type="primary" type="submit" class="float-right mr-0 mt-3" />
       </BsForm>
     </div>
   </Modal.body>

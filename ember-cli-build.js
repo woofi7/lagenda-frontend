@@ -13,6 +13,14 @@ module.exports = function(defaults) {
     },
     flatpickr: {
       locales: ['fr'],
+    },
+    'ember-cli-babel': {
+      includePolyfill: true
+    },
+    "ember-drag-drop-polyfill": {
+      includeCSS: true,
+      includeIconsCss: false,
+      includeDebugCss: true
     }
   });
 

@@ -1,0 +1,81 @@
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @size="lg"
+         @position="center"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">{{t "admin.article-category.title"}}</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    <div class="admin-modal">
+      <div class="row">
+        <div class="col">
+          {{outlet}}
+        </div>
+      </div>
+      <div class="row">
+
+
+
+
+        <div class="col-12 col-lg-6">
+          <h5>Collaborateurs</h5>
+          <div class="list-group text-left">
+            <SortableObjects @sortableObjectList={{this.sortableObjectList}} @sortEndAction={{this.sortEndAction}} @sortingScope="categories">
+              {{#each this.sortableObjectList as |category|}}
+                <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="categories">
+                  {{#if category.image}}
+                    <img class="icon-img img-fluid" src={{category.image.url}} alt={{category.image.alt}}>
+                  {{else}}
+                    <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+                  {{/if}}
+                  <span class="ml-2">{{category.name}}</span>
+                  {{#if category.externalLink}}
+                    <a href={{category.externalLink}} class="text-white"><i class="fas fa-external-link-alt"></i></a>
+                  {{/if}}
+                  <span class="float-right">
+                      {{#if category.unlisted}}
+                        <span class="badge badge-pill badge-warning">Caché</span>
+                      {{/if}}
+                    <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
+                        class="fas fa-edit"></i></LinkTo>
+                     <span class="handle">&varr;</span>
+                  </span>
+                </DraggableObject>
+              {{/each}}
+            </SortableObjects>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <h5>Partenaires</h5>
+          <div class="list-group text-left">
+            <SortableObjects @sortableObjectList={{this.sortableObjectList2}} @sortEndAction={{this.sortEndAction2}} @onChange={{this.reorderItems}} @sortingScope="categories">
+              {{#each this.sortableObjectList2 as |category|}}
+                <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="categories">
+                  {{#if category.image}}
+                    <img class="icon-img img-fluid" src={{category.image.url}} alt={{category.image.alt}}>
+                  {{else}}
+                    <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+                  {{/if}}
+                  <span class="ml-2">{{category.name}}</span>
+                  {{#if category.externalLink}}
+                    <a href={{category.externalLink}} class="text-white"><i class="fas fa-external-link-alt"></i></a>
+                  {{/if}}
+                  <span class="float-right">
+                    {{#if category.unlisted}}
+                      <span class="badge badge-pill badge-warning">Caché</span>
+                    {{/if}}
+                    <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i class="fas fa-edit"></i></LinkTo>
+                    <span class="handle">&varr;</span>
+                  </span>
+                </DraggableObject>
+              {{/each}}
+            </SortableObjects>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </Modal.body>
+</BsModal>
