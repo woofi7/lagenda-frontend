@@ -1,7 +1,12 @@
 import Component from '@glimmer/component';
+import {inject as service} from "@ember/service";
 
 export default class ShareButtonComponent extends Component {
+  @service fastboot;
+
   getCurrentUrl() {
+    if (this.fastboot.isFastBoot)
+      return;
     return this.url ? this.url : document.location.href;
   }
 

@@ -108,6 +108,12 @@ admin:
     addBalado: "Ajouter un balado"
     findBalado: "Trouver un balado"
     recentBalados: "Balados récents"
+    appleLink: "Lien Apple"
+    googleLink: "Lien Google"
+    spotifyLink: "Lien Spotify"
+    soundcloudLink: "Lien SoundCloud"
+    youtubeLink: "Lien YouTube"
+    simpleCastId: "Id SimpleCast"
   article-category:
     title: "Catégories - La Tribune"
 

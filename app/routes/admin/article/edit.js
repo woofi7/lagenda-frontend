@@ -1,13 +1,12 @@
 import Route from '@ember/routing/route';
 import RSVP from "rsvp";
-import { A } from '@ember/array';
 
 export default class AdminArticleEditRoute extends Route {
   async model(params) {
     let article = await this.store.findRecord('article', params.article, {
       include: 'article-author-category,article-category'
     });
-    let authors = this.store.findAll('author');
+    let authors = await this.store.findAll('author');
     let articleCategories = await this.store.findAll('article-category', {
       include: 'article-author-categories'
     });

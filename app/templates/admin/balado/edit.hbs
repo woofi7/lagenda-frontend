@@ -5,16 +5,16 @@
          @size="lg"
          as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">{{t "admin.article.title"}}</h4>
+    <h4 class="modal-title w-100">{{t "admin.balado.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0">
     <div class="admin-modal">
-      <BsForm class="text-left" @model={{this.article}} @onSubmit={{this.submit}} as |form|>
+      <BsForm class="text-left" @model={{this.balado}} @onSubmit={{this.submit}} as |form|>
         <div class="row">
           <div class="col-3">
             <form.group>
               <label class="control-label">{{t "admin.form.id"}}</label>
-              <CopyText @text={{this.article.id}} />
+              <CopyText @text={{this.balado.id}} />
             </form.group>
           </div>
           <div class="col-3">
@@ -24,7 +24,7 @@
                   @onLabel={{t "admin.form.visible"}}
                   @offLabel={{t "admin.form.hidden"}}
                   @theme="flip"
-                  @value={{not this.article.unlisted}}
+                  @value={{not this.balado.unlisted}}
                   @onToggle={{this.toggleUnlisted}}
               />
             </form.group>
@@ -32,7 +32,7 @@
           <div class="col">
             <form.group>
               <label class="control-label">{{t "admin.form.linkTo"}}</label>
-              <CopyText @text={{this.articleUrl}} />
+              <CopyText @text={{this.baladoUrl}} />
             </form.group>
           </div>
         </div>
@@ -68,42 +68,42 @@
               <PowerSelect
                   @triggerClass="w-100"
                   @searchEnabled={{true}}
-                  @search={{perform this.searchImageTask}}
-                  @selected={{this.article.image}}
-                  @options={{this.imageOptions}}
+                  @search={{perform this.image.searchImageTask}}
+                  @selected={{this.balado.image}}
+                  @options={{this.image.imageOptions}}
                   @onChange={{this.changeImageSelected}} as |image select|>
                 <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
                 <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
               </PowerSelect>
               <div class="row pt-2">
                 <div class="col-6 pr-0">
-                  {{#if this.article.image.url}}
-                    <CopyText @text={{this.article.image.url}} />
+                  {{#if this.balado.image.url}}
+                    <CopyText @text={{this.balado.image.url}} />
                   {{/if}}
-                  {{#if this.article.image.alt}}
+                  {{#if this.balado.image.alt}}
                     <div class="py-1">
                       <h6>{{t "admin.form.image.desc"}}</h6>
-                      {{this.article.image.alt}}
+                      {{this.balado.image.alt}}
                     </div>
                   {{/if}}
-                  {{#if this.article.image.credits}}
+                  {{#if this.balado.image.credits}}
                     <div class="py-1">
                       <h6>{{t "admin.form.image.credits"}}</h6>
-                      {{this.article.image.credits}}
+                      {{this.balado.image.credits}}
                     </div>
                   {{/if}}
                 </div>
                 <div class="col">
-                  <img src={{this.article.image.url}} class="img-fluid" alt={{this.article.image.alt}} />
+                  <img src={{this.balado.image.url}} class="img-fluid" alt={{this.balado.image.alt}} />
                   <div class="py-1">
                     {{this.loadImageSize}}
-                    {{#if this.imageSize}}
+                    {{#if this.image.imageSize}}
                       <h6>{{t "admin.form.image.sizeTitle"}}</h6>
                       <span>
                         {{t "admin.form.image.size"
-                          width=this.imageSize.width
-                          height=this.imageSize.height
-                          ratio=this.imageSize.ratio}}
+                            width=this.image.imageSize.width
+                            height=this.image.imageSize.height
+                            ratio=this.image.imageSize.ratio}}
                       </span>
                     {{/if}}
                   </div>
@@ -113,22 +113,16 @@
             </form.group>
           </div>
         </div>
-        <form.element @controlType="text" @label="Titre" @property="title" />
         <div class="row">
           <div class="col">
-            <form.group>
-              <label class="control-label">{{t "admin.form.authors"}}</label>
-              <PowerSelectMultiple
-                  @triggerClass="w-100"
-                  @searchEnabled={{true}}
-                  @searchField="firstName"
-                  @options={{this.selectableAuthors}}
-                  @selected={{this.article.authors}}
-                  @placeholder={{t "admin.form.selectAuthor"}}
-                  @onChange={{fn (mut this.article.authors)}} as |author|>
-                {{author.firstName}} {{author.lastName}}
-              </PowerSelectMultiple>
-            </form.group>
+            <div class="row">
+              <div class="col">
+                <form.element @controlType="text" @label="Titre" @property="title" />
+              </div>
+              <div class="col">
+                <form.element @controlType="text" @label={{t "admin.balado.simpleCastId"}} @property="simpleCastId" />
+              </div>
+            </div>
           </div>
           <div class="col">
             <form.group>
@@ -138,7 +132,7 @@
                   @searchEnabled={{true}}
                   @searchField="name"
                   @options={{this.selectableCategories}}
-                  @selected={{this.articleSelectedCategory}}
+                  @selected={{this.balado.baladoCategory}}
                   @placeholder={{t "admin.form.selectCategory"}}
                   @onChange={{this.selectCategory}} as |category|>
                 {{category.name}}
@@ -149,14 +143,29 @@
         <form.element @controlType="textarea" @label={{t "admin.form.desc"}} @property="desc" as |el|>
           <el.control rows="5" />
         </form.element>
-        <label>{{t "admin.form.content"}}</label>
-        {{#unless this.fastboot.isFastBoot}}
-          <TuiEditor
-              @height="500px"
-              @value={{this.article.content}}
-              @onChange={{fn (mut this.article.content)}}
-          />
-        {{/unless}}
+        <div class="row">
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.balado.appleLink"}} @property="appleLink" />
+          </div>
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.balado.googleLink"}} @property="googleLink" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.balado.spotifyLink"}} @property="spotifyLink" />
+          </div>
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.balado.soundcloudLink"}} @property="soundcloudLink" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.balado.youtubeLink"}} @property="youtubeLink" />
+          </div>
+          <div class="col">
+          </div>
+        </div>
         <BsButton @defaultText={{t "admin.form.submit"}} @type="primary" type="submit" class="float-right mr-0 mt-3" />
       </BsForm>
     </div>

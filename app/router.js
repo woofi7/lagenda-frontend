@@ -42,21 +42,23 @@ Router.map(function() {
   });
   this.route('admin', function() {
     this.route('article', function() {
-      this.route('edit', { path: ':article'});
       this.route('add');
+      this.route('edit', { path: ':article'});
     });
     this.route('author', function() {
-      this.route('edit', { path: ':author'});
       this.route('add');
+      this.route('edit', { path: ':author'});
     });
     this.route('balado', function() {
       this.route('add');
+      this.route('edit', { path: ':balado' });
     });
     this.route('image', function() {
       this.route('add');
       this.route('edit', { path: ':image'});
     });
     this.route('article-category', { path: 'article-category' }, function() {
+      this.route('add');
       this.route('edit', { path: ':category' });
     });
     this.route('balado-category');

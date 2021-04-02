@@ -21,7 +21,8 @@ export default class SideMenuComponent extends Component {
       .flat()
       .sortBy('postDatetime')
       .slice(-2)
-      .map(a => a.get('articleCategory')));
+      .map(a => a.get('articleCategory'))
+      .filter((v, i, a) => a.findIndex(e => e.Id === v.Id) === i));
 
     return filteredCategories;
   }

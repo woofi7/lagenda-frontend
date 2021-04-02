@@ -3,7 +3,7 @@ import {inject as service} from "@ember/service";
 
 export default class IndexRoute extends Route {
   @service fastboot;
-  
+
   setupController(controller, model, transition) {
     super.setupController(controller, model, transition);
     if (controller.infolettre)
@@ -11,7 +11,7 @@ export default class IndexRoute extends Route {
   }
 
   async model() {
-    return this.store.findAll('article-category', {
+    return await this.store.findAll('article-category', {
       include: 'articles.image,articles.article-category,image'
     });
   }

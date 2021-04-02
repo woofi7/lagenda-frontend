@@ -23,7 +23,7 @@ export default class BaladoModel extends Model {
       && this.desc
       && this.episodeNumber
       && this.image) {
-      if (this.postDatetime >= Date().toString() || !this.simpleCastId) {
+      if (this.postDatetime >= Date().toString() || !this.simpleCastId || this.unlisted) {
         return "warning";
       }
       return "success";

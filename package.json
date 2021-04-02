@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "build": "ember deploy production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
@@ -44,6 +44,7 @@
     "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-notifications": "^6.3.3",
     "ember-cli-sass": "^10.0.1",
+    "ember-cli-showdown": "^4.5.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.3",
     "ember-cli-uglify": "^3.0.0",

@@ -12,6 +12,7 @@ const DEBOUNCE_MS = 250;
 export default class AdminArticleEditController extends Controller {
   @service router;
   @service fastboot;
+  @service store;
 
   @alias('model.article') article;
   @alias('model.authors') authors;
@@ -44,7 +45,7 @@ export default class AdminArticleEditController extends Controller {
     return isPresent(this.article.get('articleCategory.id')) ? this.article.get('articleCategory') : this.article.get('articleAuthorCategory');
   }
 
-  @computed('authors', 'article.authors')
+  @computed('authors.length', 'article.authors')
   get selectableAuthors() {
     const allAuthors = this.authors.filter((a) => !this.article.authors.includes(a));
     const collaborators = allAuthors.filter((a) => a.collaborator);
@@ -56,7 +57,7 @@ export default class AdminArticleEditController extends Controller {
     ]
   }
 
-  @computed('categories', 'categories.articleAuthorCategories', 'article.articleCategory', 'article.articleAuthorCategory')
+  @computed('categories.length', 'categories.articleAuthorCategories', 'article.articleCategory', 'article.articleAuthorCategory')
   get selectableCategories() {
     let categories = this.categories.filter((c) =>
       c !== this.article.articleCategory
@@ -86,6 +87,7 @@ export default class AdminArticleEditController extends Controller {
   @action
   submit(form) {
     form.updateDatetime = new Date();
+    form.postDatetime = form.postDatetime.firstObject;
     form.save()
       .then(() => {
         this.notifications.success('Article modifié avec succès!', {
@@ -97,11 +99,6 @@ export default class AdminArticleEditController extends Controller {
           htmlContent: true
         });
       });
-  }
-
-  @action
-  changeDatetime(dt) {
-    this.article.postDatetime = dt;
   }
 
   @action
@@ -126,7 +123,6 @@ export default class AdminArticleEditController extends Controller {
   @action
   changeImageSelected(image) {
     this.imageSize = null;
-    this.imageSelected = image;
     this.article.image = image;
 
     this.fetchImageData.perform();

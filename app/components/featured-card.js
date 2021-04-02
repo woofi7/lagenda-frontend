@@ -58,7 +58,6 @@ export default class FeaturedCardComponent extends Component {
         models = [this.args.model.get('articleCategory.id'), this.args.model.id];
       }
     }
-    console.log(models);
 
     return models;
   }

@@ -17,6 +17,10 @@
             @onChange={{fn (mut this.articleSelected)}} as |article select|>
           <span class="text-truncate">{{text-highlight article.title query=select.lastSearchedText}}</span>
         </PowerSelect>
+        {{#if this.articleSelected}}
+          <h5 class="pt-2">{{t "admin.article.title"}}</h5>
+          <Admin::ArticleCard @article={{this.articleSelected}} @index={{this.articleSelected.id}} />
+        {{/if}}
         <h5 class="pt-2">{{t "admin.article.recentArticles"}}</h5>
         <div class="d-flex align-content-stretch flex-wrap">
           {{#each this.articles as |article index|}}
@@ -52,6 +56,10 @@
             @onChange={{fn (mut this.baladoSelected)}} as |balado select|>
           <span class="text-truncate">{{text-highlight balado.title query=select.lastSearchedText}}</span>
         </PowerSelect>
+        {{#if this.baladoSelected}}
+          <h5 class="pt-2">{{t "admin.balado.title"}}</h5>
+          <Admin::BaladoCard @balado={{this.baladoSelected}} @index={{this.baladoSelected.id}} />
+        {{/if}}
         <h5 class="pt-2">{{t "admin.balado.recentBalados"}}</h5>
         <div class="d-flex align-content-stretch flex-wrap">
           {{#each this.balados as |balado index|}}

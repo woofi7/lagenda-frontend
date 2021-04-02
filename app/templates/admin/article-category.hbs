@@ -9,16 +9,17 @@
   </Modal.header>
   <Modal.body class="px-0">
     <div class="admin-modal">
+      <div class="row pb-2">
+        <div class="col">
+          <LinkTo @route="admin.article-category.add" class="btn btn-primary float-left">Ajouter une catégorie</LinkTo>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           {{outlet}}
         </div>
       </div>
       <div class="row">
-
-
-
-
         <div class="col-12 col-lg-6">
           <h5>Collaborateurs</h5>
           <div class="list-group text-left">
@@ -74,6 +75,11 @@
             </SortableObjects>
           </div>
         </div>
+
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col">
 
       </div>
     </div>

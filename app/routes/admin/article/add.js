@@ -7,7 +7,7 @@ export default class AdminArticleAddRoute extends Route {
 
   async model() {
     let article = this.fastboot.isFastBoot ? null : this.store.createRecord('article');
-    let authors = this.store.findAll('author');
+    let authors = await this.store.findAll('author');
     let articleCategories = this.store.findAll('article-category', {
       include: 'article-author-categories',
       reload: true

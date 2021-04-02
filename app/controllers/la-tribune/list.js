@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 export default class LaTribuneListController extends Controller {
   queryParams = ['page', 'sort'];
   page =  1;
-  sort = '-update-datetime';
+  sort = '-post-datetime';
 
   sortProperties = [
     { name: 'Récent', properties: '-update-datetime' },
