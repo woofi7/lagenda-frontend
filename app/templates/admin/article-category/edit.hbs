@@ -102,7 +102,7 @@
       </form.group>
     </div>
     <div class="col">
-      <SortableObjects @sortableObjectList={{this.subCategories}} @sortEndAction={{this.sortEndAction}} @sortingScope="subCategories">
+      <SortableObjects @sortableObjectList={{this.subCategories}} @sortingScope="subCategories">
         {{#each this.subCategories as |category|}}
           <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="subCategories">
             {{#if category.image}}

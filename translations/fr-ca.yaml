@@ -116,6 +116,13 @@ admin:
     simpleCastId: "Id SimpleCast"
   article-category:
     title: "Catégories - La Tribune"
+  balado-category:
+    title: "Partenaire - Catégories"
+    add: "Ajouter une catégorie"
+  partners:
+    categories-button: "Catégories"
+    title: "Partenaires - Balados"
+    add-partner: "Ajouter un partenaire"
 
 login:
   title: "Accès au panneau d'administration"

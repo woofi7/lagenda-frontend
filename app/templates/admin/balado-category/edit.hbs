@@ -1,0 +1,126 @@
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @position="center"
+         @size="lg"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">{{t "admin.balado-category.title"}}</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    <div class="admin-modal">
+      <BsForm class="text-left" @model={{this.category}} @onSubmit={{this.submit}} as |form|>
+        <div class="row">
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.id"}}</label>
+              <CopyText @text={{this.category.id}} />
+            </form.group>
+          </div>
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.visibility"}}</label>
+              <XToggle
+                  @onLabel={{t "admin.form.visible"}}
+                  @offLabel={{t "admin.form.hidden"}}
+                  @theme="flip"
+                  @value={{not this.category.unlisted}}
+                  @onToggle={{this.toggleUnlisted}}
+              />
+            </form.group>
+          </div>
+          <div class="col">
+            <form.group>
+              <label class="control-label">{{t "admin.form.linkTo"}}</label>
+              <CopyText @text={{this.categoryUrl}} />
+            </form.group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <form.element @controlType="text" @label={{t "admin.form.name"}} @property="name" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form.element @controlType="textarea" @label={{t "admin.form.desc"}} @property="desc" as |el|>
+                  <el.control rows="5" />
+                </form.element>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form.group>
+                  <label class="control-label">{{t "admin.form.category"}}</label>
+                  <PowerSelect
+                      @triggerClass="w-100"
+                      @searchEnabled={{true}}
+                      @searchField="name"
+                      @options={{this.partners}}
+                      @selected={{this.category.partner}}
+                      @placeholder={{t "admin.form.selectCategory"}}
+                      @onChange={{fn (mut this.category.partner)}} as |partner|>
+                    {{partner.name}}
+                  </PowerSelect>
+                </form.group>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <form.group>
+              <label>{{t "admin.form.image.title"}}</label>
+              <PowerSelect
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @search={{perform this.image.searchImageTask}}
+                  @selected={{this.partner.image}}
+                  @options={{this.image.imageOptions}}
+                  @onChange={{fn (mut this.category.image)}} as |image select|>
+                <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
+              </PowerSelect>
+              <div class="row pt-2">
+                <div class="col-6 pr-0">
+                  {{#if this.category.image.url}}
+                    <CopyText @text={{this.category.image.url}} />
+                  {{/if}}
+                  {{#if this.category.image.alt}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.desc"}}</h6>
+                      {{this.category.image.alt}}
+                    </div>
+                  {{/if}}
+                  {{#if this.category.image.credits}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.credits"}}</h6>
+                      {{this.category.image.credits}}
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="col">
+                  <img src={{this.category.image.url}} class="img-fluid" alt={{this.category.image.alt}} />
+                  <div class="py-1">
+                    {{this.loadImageSize}}
+                    {{#if this.image.imageSize}}
+                      <h6>{{t "admin.form.image.sizeTitle"}}</h6>
+                      <span>
+                        {{t "admin.form.image.size"
+                            width=this.image.imageSize.width
+                            height=this.image.imageSize.height
+                            ratio=this.image.imageSize.ratio}}
+                      </span>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+
+            </form.group>
+          </div>
+        </div>
+        <BsButton @defaultText={{t "admin.form.submit"}} @type="primary" type="submit" class="float-right mr-0 mt-3" />
+      </BsForm>
+    </div>
+  </Modal.body>
+</BsModal>

@@ -1,10 +1,9 @@
 import Controller from '@ember/controller';
-import { alias } from '@ember/object/computed';
-import { action, computed } from "@ember/object";
-import { isBlank, isEmpty } from "@ember/utils";
-import { keepLatestTask, dropTask } from "ember-concurrency-decorators";
-import { tracked } from "@glimmer/tracking";
-import { inject as service } from "@ember/service";
+import {alias} from '@ember/object/computed';
+import {action, computed} from "@ember/object";
+import {isEmpty} from "@ember/utils";
+import {dropTask} from "ember-concurrency-decorators";
+import {inject as service} from "@ember/service";
 
 export default class AdminArticleCategoryEditController extends Controller {
   @service fastboot;
@@ -70,12 +69,10 @@ export default class AdminArticleCategoryEditController extends Controller {
         articles: category.articles
       });
 
-      console.log('Create new articleCategory: ' + ac.name);
       yield ac.save();
 
       for (let a of category.articles.toArray()) {
         if (a) {
-          console.log('Change article category: ' + a.get('articleAuthorCategory.id') + " -> " + ac.id);
           a.articleCategory = ac;
           yield a.save();
         }
@@ -92,7 +89,6 @@ export default class AdminArticleCategoryEditController extends Controller {
       i++;
 
       if (category.get('articleCategory.id') === form.id) {
-        console.log('Skip category ' + category.id);
         continue;
       }
 
@@ -108,14 +104,12 @@ export default class AdminArticleCategoryEditController extends Controller {
             articles: category.articles,
             articleCategory: form
           });
-          console.log('Create new authorCategory: ' + aac.name);
           yield aac.save();
 
           form.articleAuthorCategories.addObject(aac);
 
           for (let a of category.articles.toArray()) {
             if (a) {
-              console.log('Change article category: ' + a.get('articleCategory.id') + " -> " + aac.id);
               a.articleAuthorCategory = aac;
               yield a.save();
             }
@@ -126,7 +120,6 @@ export default class AdminArticleCategoryEditController extends Controller {
         else {
           for (let a of category.articles) {
             if (a) {
-              console.log('Change article category: ' + a.get('articleCategory.id') + " -> " + form.id);
               a.articleAuthorCategory = form;
               yield a.save();
             }
@@ -135,14 +128,15 @@ export default class AdminArticleCategoryEditController extends Controller {
       }
       // Model : article-author-category
       else if(category.get('constructor.modelName') === this.store.modelFor('article-author-category').modelName) {
-        console.log('Change article category: ' + category.id + " -> " + form.id);
         category.articleCategory = form;
       }
     }
 
-    this.subCategories.map(c => {
+    for (let j = 0; j < this.subCategories.length; j++) {
+      let c = this.subCategories.get(j);
+      c.set('order', j * 10);
       c.save();
-    });
+    }
 
     yield form.save()
       .then(() => {

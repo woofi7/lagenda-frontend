@@ -5,6 +5,7 @@ export default class BaladoPartnerModel extends Model {
   @attr('string') name;
   @attr('number') order;
   @attr('string') desc;
+  @attr('boolean') unlisted;
 
   @belongsTo('image', { async: true }) image;
 

@@ -64,7 +64,6 @@ export default class ImageService extends Service {
       this.width = img.width;
       this.height = img.height;
       this.ratio = img. width / gcd + ":" + img.height / gcd;
-      console.log('image data loaded')
     };
     img.src = url;
   }

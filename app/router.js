@@ -61,7 +61,14 @@ Router.map(function() {
       this.route('add');
       this.route('edit', { path: ':category' });
     });
-    this.route('balado-category');
+    this.route('balado-category', { path: 'balado-category' }, function() {
+      this.route('add');
+      this.route('edit', { path: ':category' });
+    });
+    this.route('balado-partner', { path: 'partner-category' }, function() {
+      this.route('add');
+      this.route('edit', { path: ':category' });
+    });
   });
   this.route('login');
 });

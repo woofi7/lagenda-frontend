@@ -5,13 +5,13 @@
          @position="center"
          as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">{{t "admin.balado-category.title"}}</h4>
+    <h4 class="modal-title w-100">{{t "admin.partners.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0 pb-0">
     <div class="admin-modal">
       <div class="row pb-2">
         <div class="col">
-          <LinkTo @route="admin.balado-category.add" class="btn btn-primary float-left">Ajouter un partenaire</LinkTo>
+          <LinkTo @route="admin.balado-partner.add" class="btn btn-primary float-left ml-0">{{t "admin.partners.add-partner"}}</LinkTo>
         </div>
       </div>
       <div class="row">
@@ -21,7 +21,6 @@
       </div>
       <div class="row">
         <div class="col">
-          <h5>Partenaires</h5>
           <div class="list-group text-left">
             <SortableObjects @sortableObjectList={{this.sortablePartnersList}} @sortEndAction={{this.dragEndAction}} @sortingScope="categories">
               {{#each this.sortablePartnersList as |category|}}
@@ -32,14 +31,11 @@
                     <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
                   {{/if}}
                   <span class="ml-2">{{category.name}}</span>
-                  {{#if category.externalLink}}
-                    <a href={{category.externalLink}} class="text-white"><i class="fas fa-external-link-alt"></i></a>
-                  {{/if}}
                   <span class="float-right">
-                      {{#if category.unlisted}}
-                        <span class="badge badge-pill badge-warning">Caché</span>
-                      {{/if}}
-                    <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
+                    {{#if category.unlisted}}
+                      <span class="badge badge-pill badge-warning">Caché</span>
+                    {{/if}}
+                    <LinkTo @route="admin.balado-partner.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
                         class="fas fa-edit"></i></LinkTo>
                      <span class="handle">&varr;</span>
                   </span>

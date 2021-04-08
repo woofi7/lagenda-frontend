@@ -1,0 +1,140 @@
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @position="center"
+         @size="lg"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">{{t "admin.partners.title"}}</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    <div class="admin-modal">
+      <BsForm class="text-left" @model={{this.partner}} @onSubmit={{this.submit}} as |form|>
+        <div class="row">
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.id"}}</label>
+              <CopyText @text={{this.partner.id}} />
+            </form.group>
+          </div>
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.visibility"}}</label>
+              <XToggle
+                  @onLabel={{t "admin.form.visible"}}
+                  @offLabel={{t "admin.form.hidden"}}
+                  @theme="flip"
+                  @value={{not this.partner.unlisted}}
+                  @onToggle={{this.toggleUnlisted}}
+              />
+            </form.group>
+          </div>
+          <div class="col">
+            <form.group>
+              <label class="control-label">{{t "admin.form.linkTo"}}</label>
+              <CopyText @text={{this.partnerUrl}} />
+            </form.group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <form.element @controlType="text" @label={{t "admin.form.name"}} @property="name" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <form.element @controlType="textarea" @label={{t "admin.form.desc"}} @property="desc" as |el|>
+                  <el.control rows="5" />
+                </form.element>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <form.group>
+              <label>{{t "admin.form.image.title"}}</label>
+              <PowerSelect
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @search={{perform this.image.searchImageTask}}
+                  @selected={{this.partner.image}}
+                  @options={{this.image.imageOptions}}
+                  @onChange={{fn (mut this.partner.image)}} as |image select|>
+                <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
+              </PowerSelect>
+              <div class="row pt-2">
+                <div class="col-6 pr-0">
+                  {{#if this.partner.image.url}}
+                    <CopyText @text={{this.partner.image.url}} />
+                  {{/if}}
+                  {{#if this.partner.image.alt}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.desc"}}</h6>
+                      {{this.partner.image.alt}}
+                    </div>
+                  {{/if}}
+                  {{#if this.partner.image.credits}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.credits"}}</h6>
+                      {{this.partner.image.credits}}
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="col">
+                  <img src={{this.partner.image.url}} class="img-fluid" alt={{this.partner.image.alt}} />
+                  <div class="py-1">
+                    {{this.loadImageSize}}
+                    {{#if this.image.imageSize}}
+                      <h6>{{t "admin.form.image.sizeTitle"}}</h6>
+                      <span>
+                        {{t "admin.form.image.size"
+                            width=this.image.imageSize.width
+                            height=this.image.imageSize.height
+                            ratio=this.image.imageSize.ratio}}
+                      </span>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+
+            </form.group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <LinkTo @route="admin.balado-category.add" class="btn btn-dark ml-0 mb-2">{{t "admin.balado-category.add"}}</LinkTo>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="list-group text-left">
+              <SortableObjects @sortableObjectList={{this.sortableCategoriesList}} @sortingScope="categories">
+                {{#each this.sortableCategoriesList as |category|}}
+                  <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="categories">
+                    {{#if category.image}}
+                      <img class="icon-img img-fluid" src={{category.image.url}} alt={{category.image.alt}}>
+                    {{else}}
+                      <img class="icon-img img-fluid" src="/assets/logo/logo-lagenda-white.png" alt={{t "placeholder.alt"}}>
+                    {{/if}}
+                    <span class="ml-2">{{category.name}}</span>
+                    <span class="float-right">
+                    {{#if category.unlisted}}
+                      <span class="badge badge-pill badge-warning">Caché</span>
+                    {{/if}}
+                      <LinkTo @route="admin.balado-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
+                          class="fas fa-edit"></i></LinkTo>
+                     <span class="handle">&varr;</span>
+                  </span>
+                  </DraggableObject>
+                {{/each}}
+              </SortableObjects>
+            </div>
+          </div>
+        </div>
+        <BsButton @defaultText={{t "admin.form.submit"}} @type="primary" type="submit" class="float-right mr-0 mt-3" />
+      </BsForm>
+    </div>
+  </Modal.body>
+</BsModal>

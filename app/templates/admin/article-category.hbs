@@ -36,9 +36,9 @@
                     <a href={{category.externalLink}} class="text-white"><i class="fas fa-external-link-alt"></i></a>
                   {{/if}}
                   <span class="float-right">
-                      {{#if category.unlisted}}
-                        <span class="badge badge-pill badge-warning">Caché</span>
-                      {{/if}}
+                    {{#if category.unlisted}}
+                      <span class="badge badge-pill badge-warning">Caché</span>
+                    {{/if}}
                     <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
                         class="fas fa-edit"></i></LinkTo>
                      <span class="handle">&varr;</span>
