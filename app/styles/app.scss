@@ -600,12 +600,6 @@ $button-active-blue: #1669F2;
   padding-right: unset;
 }
 
-.admin-modal {
-  img {
-    max-height: 200px;
-  }
-}
-
 .color-gray {
   color: gray !important;
 }
@@ -630,4 +624,15 @@ $button-active-blue: #1669F2;
   z-index: 10000;
 }
 
+.image-upload-dropzone {
+  min-height: 150px;
+  background-color: #121212;
+  border-radius: 25px;
+}
+
+.color-orange {
+  color: orangered;
+}
+
 @import "dark";
+@import "pink";

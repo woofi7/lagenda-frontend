@@ -7,7 +7,7 @@ export default class SideMenuCategoryComponent extends Component {
   @tracked collapsed = true;
   @tracked category;
 
-  @sort('args.category.articles', (a,b) => b.updateDatetime - a.updateDatetime) sortedArticles;
+  @sort('args.category.articles', (a,b) => b.postDatetime - a.postDatetime) sortedArticles;
 
   get articles() {
     return this.sortedArticles.slice(0, 5);

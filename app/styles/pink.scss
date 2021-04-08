@@ -1,0 +1,92 @@
+.pink {
+  & {
+    background-color: deeppink;
+    color: black;
+  }
+
+  .bg-blue, .side-menu {
+    background-color: hotpink !important;
+    color: black !important;
+  }
+
+  .text-white {
+    color: black !important;
+  }
+
+  .clickable:hover {
+    background-color: deeppink;
+  }
+
+  .dark-background {
+    background-color: deeppink;
+  }
+
+  .btn-primary {
+    background-color: hotpink;
+    border-color: hotpink;
+
+    &:hover {
+      background-color: deeppink;
+      border-color: deeppink;
+    }
+  }
+
+  .card-img-overlay {
+    background-color: transparent;
+  }
+
+  a {
+    color: black !important;
+  }
+
+  .card {
+    background-color: pink;
+    border-color: hotpink;
+  }
+
+  .ember-basic-dropdown-trigger, .ember-power-select-search > input, .form-control, .editor {
+    background-color: hotpink;
+    border-color: deeppink;
+    color: white;
+  }
+
+  .ember-power-select-option:hover {
+    background-color: lightpink !important;
+  }
+
+  .ember-basic-dropdown-content, .ember-power-select-option, .input-group-text {
+    background-color: pink !important;
+    border-color: deeppink !important;
+  }
+
+  .modal-content {
+    background-color: hotpink;
+    box-shadow: 0 0 20px deeppink;
+    color: black;
+  }
+
+  .modal-body, .modal-header > .close  {
+    color: black;
+  }
+
+  .clickable:hover {
+    color: black;
+  }
+
+  & .x-toggle-btn {
+    background-color: transparent;
+  }
+
+  .ember-power-select-trigger-multiple-input {
+    color: black;
+  }
+
+  .list-group-item {
+    background-color: hotpink;
+    color: black;
+  }
+
+  .tui-popup-body {
+    color: deeppink;
+  }
+}

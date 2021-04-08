@@ -42,7 +42,7 @@ export default class ImageService extends Service {
     yield timeout(DEBOUNCE_MS);
 
     return yield this.store.query('image', {
-      filter: 'contains(url,\'' + term + '\')',
+      filter: 'contains(name,\'' + term + '\')',
       page: {
         size: 20
       }

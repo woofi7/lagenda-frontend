@@ -20,7 +20,7 @@ la-tribune:
   author-category: "Accéder à la catégorie"
 
 article:
-  post-date: "Publié le {date}"
+  post-date: "Dernière modification le {date}"
   share:
     title: "Partager l'article"
 

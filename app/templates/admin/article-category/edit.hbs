@@ -35,10 +35,10 @@
         <PowerSelect
             @triggerClass="w-100"
             @searchEnabled={{true}}
-            @search={{perform this.searchImageTask}}
+            @search={{perform this.image.searchImageTask}}
             @selected={{this.category.image}}
             @options={{this.imageOptions}}
-            @onChange={{this.changeImageSelected}} as |image select|>
+            @onChange={{fn (mut this.category.image)}} as |image select|>
           <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
           <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
         </PowerSelect>
@@ -65,13 +65,13 @@
               <img src={{this.category.image.url}} class="img-fluid" alt={{this.category.image.alt}} />
               <div class="py-1">
                 {{this.loadImageSize}}
-                {{#if this.imageSize}}
+                {{#if this.image.imageSize}}
                   <h6>{{t "admin.form.image.sizeTitle"}}</h6>
                   <span>
                     {{t "admin.form.image.size"
-                        width=this.imageSize.width
-                        height=this.imageSize.height
-                        ratio=this.imageSize.ratio}}
+                        width=this.image.imageSize.width
+                        height=this.image.imageSize.height
+                        ratio=this.image.imageSize.ratio}}
                   </span>
                 {{/if}}
               </div>
@@ -133,7 +133,7 @@
       {{#if this.submitForm.isRunning}}
         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
       {{/if}}
-      Sauvegarder
+      {{t "admin.form.submit"}}
     </BsButton>
   </div>
 </BsForm>

@@ -1,1 +1,65 @@
-{{outlet}}
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @position="center"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">Image</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    {{#if this.alertMessage}}
+      <div class={{concat "alert text-left alert-" this.alertType}} role="alert">
+        {{this.alertMessage}}
+      </div>
+    {{/if}}
+    <div class="admin-modal">
+      <div class="row">
+        <div class="col">
+          <FileDropzone class="image-upload-dropzone d-flex align-items-center justify-content-center flex-column"
+                        @name="photos"
+                        as |dropzone queue|>
+            {{#if dropzone.active}}
+              {{#if dropzone.valid}}
+                <span>Drop to upload</span>
+              {{else}}
+                <span>Invalid</span>
+              {{/if}}
+            {{else if queue.files.length}}
+              <span>Uploading {{queue.files.length}} files. ({{queue.progress}}%)</span>
+            {{else}}
+              <h4 class="m-3">Ajouter une image</h4>
+              {{#if dropzone.supported}}
+                <p>
+                  Ajouter une image dans cette zone ou
+                </p>
+              {{/if}}
+              <FileUpload @name="photos"
+                          @accept="image/*"
+                          @onfileadd={{action this.uploadImage}} as |queue|>
+                <a class="btn btn-dark" id="upload-image">Ajouter une image</a>
+              </FileUpload>
+            {{/if}}
+          </FileDropzone>
+        </div>
+      </div>
+      {{#each this.uploadedImages as |image index|}}
+        <h6 class="text-left pt-3">{{#if image.isNew}}<i class="fas fa-exclamation-triangle pr-2 color-orange"></i>{{/if}}Image {{add index 1}}</h6>
+        <BsForm class="text-left row" @model={{image}} @onSubmit={{this.submit}} as |form|>
+          <div class="col pr-0">
+            <form.group>
+              <label class="control-label">{{t "admin.form.linkTo"}}</label>
+              <CopyText @text={{image.url}} />
+            </form.group>
+            <form.element @controlType="text" @label="Nom" @property="name" />
+            <form.element @controlType="text" @label="Description" @property="alt" />
+            <form.element @controlType="text" @label="Crédits" @property="credits" />
+          </div>
+          <div class="col-6 d-flex flex-column">
+            <img src={{image.url}} alt={{image.alt}}>
+            <BsButton class="align-self-end mt-auto mb-3" @type="dark" @buttonType="submit">Sauvegarder</BsButton>
+          </div>
+        </BsForm>
+      {{/each}}
+    </div>
+  </Modal.body>
+</BsModal>

@@ -10,11 +10,11 @@ export default class LaTribuneCategoryV2ListController extends Controller {
   }) filteredArticles;
 
   sortProperties = [
-    { name: 'Récent', properties: ['updateDatetime:desc'] },
-    { name: 'Ancien', properties: ['updateDatetime:asc'] },
+    { name: 'Récent', properties: ['postDatetime:desc'] },
+    { name: 'Ancien', properties: ['postDatetime:asc'] },
     { name: 'Alphabétique', properties: ['title'] },
   ];
-  selectedSort = { name: 'Récent', properties: ['updateDatetime:desc'] };
+  selectedSort = { name: 'Récent', properties: ['postDatetime:desc'] };
 
   @alias('selectedSort.properties') properties;
   @sort('filteredArticles', 'properties') articles;

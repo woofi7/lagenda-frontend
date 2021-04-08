@@ -7,52 +7,43 @@
     <h4 class="modal-title w-100">Image</h4>
   </Modal.header>
   <Modal.body class="px-0">
-    {{#if this.alertMessage}}
-      <div class={{concat "alert text-left alert-" this.alertType}} role="alert">
-        {{this.alertMessage}}
-      </div>
-    {{/if}}
     <div class="admin-modal">
-      <BsForm class="text-left" @model={{this.image}} @onSubmit={{action "submit"}} as |form|>
+      <BsForm class="text-left" @model={{this.imageModel}} @onSubmit={{this.submit}} as |form|>
         <div class="row">
           <div class="col">
             <form.group>
               <label class="control-label">Id</label>
-              <CopyText @text={{this.image.id}} />
+              <CopyText @text={{this.imageModel.id}} />
             </form.group>
           </div>
           <div class="col">
             <form.group>
               <label class="control-label">Url</label>
-              <CopyText @text={{this.imageUrl}} />
+              <CopyText @text={{this.imageModel.url}} />
             </form.group>
           </div>
         </div>
-<!--        <FileUpload @name="photos"-->
-<!--                    @accept="image/*"-->
-<!--                    @onfileadd={{action this.uploadImage}} as |queue|>-->
-<!--          <a class="button">-->
-<!--            {{#if queue.files.length}}-->
-<!--              Uploading...-->
-<!--            {{else}}-->
-<!--              Upload file-->
-<!--            {{/if}}-->
-<!--          </a>-->
-<!--        </FileUpload>-->
+        <form.element @controlType="text" @label="Nom" @property="name" />
         <form.element @controlType="text" @label="Description" @property="alt" />
-        <form.element @controlType="text" @label="Crédits" @property="credits" />
-        <div class="d-flex pb-2">
-          <div>
-            <div class="pb-2">
-              <h6>Dimensions</h6>
-              {{this.imageSize.width}} x {{this.imageSize.height}}
-            </div>
-            <div class="pb-2">
-              <h6>Ratio</h6>
-              {{this.imageSize.ratio}}
-            </div>
+        <div class="row">
+          <div class="col">
+            <form.element @controlType="text" @label="Crédits" @property="credits" />
           </div>
-          <img class="img-fluid ml-auto" src={{this.image.url}} />
+          {{this.loadImageSize}}
+          {{#if this.image.imageSize}}
+            <div class="col">
+              <h6>{{t "admin.form.image.sizeTitle"}}</h6>
+              <span>
+                {{t "admin.form.image.size"
+                    width=this.image.imageSize.width
+                    height=this.image.imageSize.height
+                    ratio=this.image.imageSize.ratio}}
+              </span>
+            </div>
+          {{/if}}
+        </div>
+        <div class="pb-2 d-flex justify-content-center">
+          <img class="img-fluid" src={{this.imageModel.url}} alt={{this.imageModel.alt}} />
         </div>
         <BsButton @defaultText="Submit" @type="primary" type="submit" class="float-right mr-0" />
       </BsForm>

@@ -3,22 +3,18 @@ import { alias } from '@ember/object/computed';
 import { action, computed } from "@ember/object";
 import { isBlank, isEmpty } from "@ember/utils";
 import { keepLatestTask, dropTask } from "ember-concurrency-decorators";
-import { timeout } from "ember-concurrency";
 import { tracked } from "@glimmer/tracking";
 import { inject as service } from "@ember/service";
-
-const DEBOUNCE_MS = 250;
 
 export default class AdminArticleCategoryEditController extends Controller {
   @service fastboot;
   @service router;
+  @service image;
 
   @alias('model.category') category;
   @alias('model.categories') categories;
   @alias('model.authorCategories') authorCategories;
   @alias('model.subCategories') subCategories;
-
-  @tracked imageSize = null;
 
   @computed('categories', 'authorCategories', 'subCategories')
   get selectableCategories() {
@@ -55,48 +51,8 @@ export default class AdminArticleCategoryEditController extends Controller {
 
   @action
   changeImageSelected(image) {
-    this.imageSize = null;
-    this.imageSelected = image;
     this.category.image = image;
-
-    this.fetchImageData.perform();
-  }
-
-  @action
-  sortEndAction() {
-    console.log('Sort Ended');
-  }
-
-  @keepLatestTask *searchImageTask (term) {
-    if (isBlank(term) || term.length < 3)
-      return this.store.peekAll('image');
-
-    yield timeout(DEBOUNCE_MS);
-
-    return yield this.store.query('image', {
-      filter: 'contains(url,\'' + term + '\')',
-      page: {
-        size: 20
-      }
-    });
-  }
-
-  @keepLatestTask *fetchImageData() {
-    if (!this.fastboot.isFastBoot) {
-      const url = yield this.category.get('image.url');
-      if (!url)
-        return;
-
-      let img = new Image();
-      img.onload = yield () => {
-        const gcd = this.gcd(img.width, img.height);
-        const ratio = img. width / gcd + ":" + img.height / gcd;
-
-        this.set('imageSize', {width: img.width, height: img.height, ratio });
-
-      };
-      img.src = url;
-    }
+    this.image.imageUrl = image.url;
   }
 
   @dropTask *submitForm(form) {

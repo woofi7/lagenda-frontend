@@ -8,10 +8,10 @@ export default class LaTribuneListController extends Controller {
   sort = '-post-datetime';
 
   sortProperties = [
-    { name: 'Récent', properties: '-update-datetime' },
-    { name: 'Ancien', properties: 'update-datetime' }
+    { name: 'Récent', properties: '-post-datetime' },
+    { name: 'Ancien', properties: 'post-datetime' }
   ];
-  selectedSort = { name: 'Récent', properties: '-update-datetime' };
+  selectedSort = { name: 'Récent', properties: '-post-datetime' };
 
   @alias('model') articles;
   @alias('model.links') links;

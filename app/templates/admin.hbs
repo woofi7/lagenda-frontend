@@ -72,15 +72,15 @@
       <h5 class="card-header"><i class="fas fa-images mr-3"></i>{{t "admin.image.title"}}</h5>
       <div class="card-body p-2">
         <div class="pb-2">
-          <LinkTo @route="admin.balado.add" class="btn btn-dark">{{t "admin.image.addImage"}}</LinkTo>
+          <LinkTo @route="admin.image.add" class="btn btn-dark">{{t "admin.image.addImage"}}</LinkTo>
         </div>
         <h5>{{t "admin.image.findImage"}}</h5>
         <PowerSelect
             @triggerClass="w-100"
             @searchEnabled={{true}}
-            @search={{perform this.searchImageTask}}
+            @search={{perform this.image.searchImageTask}}
             @selected={{this.imageSelected}}
-            @onChange={{this.changeImageSelected}} as |image select|>
+            @onChange={{fn (mut this.imageSelected)}} as |image select|>
           <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
           <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
         </PowerSelect>
@@ -104,12 +104,6 @@
                   {{this.imageSelected.credits}}
                 </div>
               {{/if}}
-              <div class="py-1">
-                <h6>{{t "admin.form.image.sizeTitle"}}</h6>
-                {{#if this.imageSize}}
-                  <span>{{t "admin.form.image.size" width=this.imageSize.width height=this.imageSize.height ratio=this.imageSize.ratio}}</span>
-                {{/if}}
-              </div>
             </div>
             <div class="col-4 d-flex flex-column justify-content-between">
               <img src={{this.imageSelected.url}} class="img-fluid" alt={{this.imageSelected.alt}} />

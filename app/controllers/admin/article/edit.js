@@ -6,6 +6,7 @@ import {inject as service} from "@ember/service";
 import {isBlank, isPresent} from '@ember/utils';
 import {keepLatestTask} from "ember-concurrency-decorators";
 import {timeout} from "ember-concurrency";
+import { isArray } from '@ember/array';
 
 const DEBOUNCE_MS = 250;
 
@@ -13,20 +14,21 @@ export default class AdminArticleEditController extends Controller {
   @service router;
   @service fastboot;
   @service store;
+  @service image;
 
   @alias('model.article') article;
   @alias('model.authors') authors;
   @alias('model.articleCategories') categories;
 
   @tracked flatpickrRef = null
-  @tracked imageSize = null;
-
-  get loadImageSize() {
-    this.fetchImageData.perform();
-  }
 
   get imageOptions() {
     return this.store.peekAll('image');
+  }
+
+  @computed('article.image.url')
+  get loadImageSize() {
+    this.image.imageUrl = this.article.get('image.url');
   }
 
   @computed('article.id')
@@ -87,7 +89,8 @@ export default class AdminArticleEditController extends Controller {
   @action
   submit(form) {
     form.updateDatetime = new Date();
-    form.postDatetime = form.postDatetime.firstObject;
+    form.postDatetime = isArray(form.postDatetime) ? form.postDatetime.firstObject : form.postDatetime;
+
     form.save()
       .then(() => {
         this.notifications.success('Article modifié avec succès!', {
@@ -118,49 +121,5 @@ export default class AdminArticleEditController extends Controller {
   @action
   toggleUnlisted() {
     this.article.unlisted = !this.article.unlisted;
-  }
-
-  @action
-  changeImageSelected(image) {
-    this.imageSize = null;
-    this.article.image = image;
-
-    this.fetchImageData.perform();
-  }
-
-  @keepLatestTask *searchImageTask (term) {
-    if (isBlank(term) || term.length < 3)
-      return this.store.peekAll('image');
-
-    yield timeout(DEBOUNCE_MS);
-
-    return yield this.store.query('image', {
-      filter: 'contains(url,\'' + term + '\')',
-      page: {
-        size: 20
-      }
-    });
-  }
-
-  @keepLatestTask *fetchImageData() {
-    if (!this.fastboot.isFastBoot) {
-      const url = yield this.article.get('image.url');
-      if (!url)
-        return;
-
-      let img = new Image();
-      img.onload = yield () => {
-        const gcd = this.gcd(img.width, img.height);
-        const ratio = img. width / gcd + ":" + img.height / gcd;
-
-        this.set('imageSize', {width: img.width, height: img.height, ratio });
-
-      };
-      img.src = url;
-    }
-  }
-
-  gcd (a, b) {
-    return (b === 0) ? a : this.gcd (b, a%b);
   }
 }

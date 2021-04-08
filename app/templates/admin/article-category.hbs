@@ -7,7 +7,7 @@
   <Modal.header class="flex-column pt-0">
     <h4 class="modal-title w-100">{{t "admin.article-category.title"}}</h4>
   </Modal.header>
-  <Modal.body class="px-0">
+  <Modal.body class="px-0 pb-0">
     <div class="admin-modal">
       <div class="row pb-2">
         <div class="col">
@@ -23,7 +23,7 @@
         <div class="col-12 col-lg-6">
           <h5>Collaborateurs</h5>
           <div class="list-group text-left">
-            <SortableObjects @sortableObjectList={{this.sortableObjectList}} @sortEndAction={{this.sortEndAction}} @sortingScope="categories">
+            <SortableObjects @sortableObjectList={{this.sortableObjectList}} @sortEndAction={{this.dragEndAction}} @sortingScope="categories">
               {{#each this.sortableObjectList as |category|}}
                 <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="categories">
                   {{#if category.image}}
@@ -51,7 +51,7 @@
         <div class="col-12 col-lg-6">
           <h5>Partenaires</h5>
           <div class="list-group text-left">
-            <SortableObjects @sortableObjectList={{this.sortableObjectList2}} @sortEndAction={{this.sortEndAction2}} @onChange={{this.reorderItems}} @sortingScope="categories">
+            <SortableObjects @sortableObjectList={{this.sortableObjectList2}} @sortEndAction={{this.dragEndAction}} @sortingScope="categories">
               {{#each this.sortableObjectList2 as |category|}}
                 <DraggableObject @content={{category}}  @overrideClass="list-group-item list-group-item-action" @isSortable={{true}} @sortingScope="categories">
                   {{#if category.image}}
@@ -78,10 +78,12 @@
 
       </div>
     </div>
-    <div class="row pt-3">
-      <div class="col">
-
+    {{#if this.canSave}}
+      <div class="row pt-3">
+        <div class="col">
+          <BsButton class="float-right" @type="primary" {{on "click" this.save}}>{{t "admin.form.submit"}}</BsButton>
+        </div>
       </div>
-    </div>
+    {{/if}}
   </Modal.body>
 </BsModal>
