@@ -48,6 +48,7 @@ Router.map(function() {
     this.route('author', function() {
       this.route('add');
       this.route('edit', { path: ':author'});
+      this.route('list');
     });
     this.route('balado', function() {
       this.route('add');

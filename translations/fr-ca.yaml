@@ -92,8 +92,12 @@ admin:
     yes: "Oui"
     no: "Non"
     is-partner: "Partenaire?"
+    is-collaborator: "Collaborateur?"
     submit: "Enregistrer"
     edit: "Modifier"
+    first-name: "Prénom"
+    last-name: "Nom de famille"
+    social-links: "Liens sociaux"
   image:
     title: "Images"
     addImage: "Ajouter une image"
@@ -123,6 +127,9 @@ admin:
     categories-button: "Catégories"
     title: "Partenaires - Balados"
     add-partner: "Ajouter un partenaire"
+  author:
+    add: "Ajouter un auteur"
+    title: "Auteur"
 
 login:
   title: "Accès au panneau d'administration"

@@ -58,4 +58,14 @@
   .tui-popup-body {
     color: black;
   }
+
+  .dropdown-menu .dropdown-item {
+    background-color: #121212 !important;
+  }
+
+  .dropdown-toggle {
+    background-color: #2D2D2D !important;
+    border: 1px solid #121212 !important;
+    color: #495057;
+  }
 }

@@ -6,7 +6,7 @@ export default class SocialLinkModel extends Model {
 
   @belongsTo('author') author;
 
-  get typeClasses() {
+  get typeClass() {
     if (this.type === 'facebook') {
       return "fab fa-facebook facebook-color";
     }

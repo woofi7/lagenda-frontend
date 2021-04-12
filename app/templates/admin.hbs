@@ -28,11 +28,14 @@
           {{/each}}
         </div>
         <h5 class="pt-2">{{t "admin.form.authors"}}</h5>
+        <div class="pb-2">
+          <LinkTo @route="admin.author.add" class="btn btn-dark">{{t "admin.author.add"}}</LinkTo>
+        </div>
         <div class="d-flex align-content-stretch flex-wrap justify-content-center">
           {{#each this.authors as |author|}}
             <Admin::AuthorAvatar @author={{author}} />
           {{/each}}
-          <LinkTo @route="admin.author">
+          <LinkTo @route="admin.author.list">
             <div class="avatar p-1 d-flex align-items-center justify-content-center">
               <i class="fas fa-ellipsis-h h1 text-white"></i>
             </div>

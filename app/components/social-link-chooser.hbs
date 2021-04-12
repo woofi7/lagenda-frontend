@@ -1,0 +1,22 @@
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <BsDropdown as |dd|>
+      <dd.button class="m-0"><i class={{this.args.social.typeClass}}></i> <span class="caret"></span></dd.button>
+      <dd.menu class="icon-dropdown-menu" as |ddm|>
+        {{#each this.typeClasses as |typeClass|}}
+          <ddm.item>
+            <button type="button" class="dropdown-item" {{on "click" (fn this.changeType typeClass.type type dd.closeDropdown)}}>
+              <i class={{typeClass.class}}></i>
+            </button>
+          </ddm.item>
+        {{/each}}
+      </dd.menu>
+    </BsDropdown>
+  </div>
+  <input type="text" class="form-control" value={{@social.link}} oninput={{action (mut @social.link) value="target.value"}} aria-label="Link to social platform">
+  <div class="input-group-append">
+    <div class="input-group-text clickable" {{on "click" (fn @delete @social)}}>
+      <i class="fas fa-trash"></i>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,129 @@
-{{outlet}}
+<BsModal @onHide={{this.closeModal}}
+         @open={{true}}
+         @fade={{false}}
+         @position="center"
+         @size="lg"
+         as |Modal|>
+  <Modal.header class="flex-column pt-0">
+    <h4 class="modal-title w-100">{{t "admin.author.title"}}</h4>
+  </Modal.header>
+  <Modal.body class="px-0">
+    <div class="admin-modal">
+      <BsForm class="text-left" @model={{this.author}} @onSubmit={{this.submit}} as |form|>
+        <div class="row">
+          <div class="col-6">
+            <form.element @controlType="text" @label={{t "admin.form.first-name"}} @property="firstName" />
+          </div>
+          <div class="col-6">
+            <form.element @controlType="text" @label={{t "admin.form.last-name"}} @property="lastName" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.is-collaborator"}}</label>
+              <XToggle
+                  @onLabel={{t "admin.form.yes"}}
+                  @offLabel={{t "admin.form.no"}}
+                  @theme="flip"
+                  @value={{this.author.collaborator}}
+                  @onToggle={{this.toggleCollaborator}}
+              />
+            </form.group>
+          </div>
+          <div class="col-3">
+            <form.group>
+              <label class="control-label">{{t "admin.form.is-partner"}}</label>
+              <XToggle
+                  @onLabel={{t "admin.form.yes"}}
+                  @offLabel={{t "admin.form.no"}}
+                  @theme="flip"
+                  @value={{this.author.partner}}
+                  @onToggle={{this.togglePartner}}
+              />
+            </form.group>
+          </div>
+          <div class="col">
+            <form.element @controlType="text" @label={{t "admin.form.title"}} @property="title" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form.group>
+              <label>{{t "admin.form.social-links"}}</label>
+              <ul class="list-group">
+                {{#each this.author.socialLinks as |social|}}
+                  <SocialLinkChooser @social={{social}} @delete={{this.deleteSocialLink}} />
+                {{/each}}
+              </ul>
+              <BsButton
+                  class="mx-0 mt-2 float-right"
+                  @type="secondary"
+                  @defaultText="Ajouter un lien"
+                  @onClick={{this.addSocialLink}}
+              />
+            </form.group>
+          </div>
+          <div class="col">
+            <form.group>
+              <label>{{t "admin.form.image.title"}}</label>
+              <PowerSelect
+                  @triggerClass="w-100"
+                  @searchEnabled={{true}}
+                  @search={{perform this.image.searchImageTask}}
+                  @selected={{this.author.image}}
+                  @options={{this.image.imageOptions}}
+                  @onChange={{fn (mut this.author.image)}} as |image select|>
+                <span class="text-truncate">{{text-highlight image.name query=select.lastSearchedText}}</span>
+                <img class="img-fluid search-img float-right pl-1 mt-1" src={{image.url}} alt={{image.alt}} />
+              </PowerSelect>
+              <div class="row pt-2">
+                <div class="col-6 pr-0">
+                  {{#if this.author.image.url}}
+                    <CopyText @text={{this.author.image.url}} />
+                  {{/if}}
+                  {{#if this.author.image.alt}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.desc"}}</h6>
+                      {{this.author.image.alt}}
+                    </div>
+                  {{/if}}
+                  {{#if this.author.image.credits}}
+                    <div class="py-1">
+                      <h6>{{t "admin.form.image.credits"}}</h6>
+                      {{this.author.image.credits}}
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="col">
+                  <img src={{this.author.image.url}} class="img-fluid" alt={{this.author.image.alt}} />
+                  <div class="py-1">
+                    {{this.loadImageSize}}
+                    {{#if this.image.imageSize}}
+                      <h6>{{t "admin.form.image.sizeTitle"}}</h6>
+                      <span>
+                        {{t "admin.form.image.size"
+                            width=this.image.imageSize.width
+                            height=this.image.imageSize.height
+                            ratio=this.image.imageSize.ratio}}
+                      </span>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+
+            </form.group>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form.element @controlType="textarea" @label={{t "admin.form.desc"}} @property="desc" as |el|>
+              <el.control rows="8" />
+            </form.element>
+          </div>
+        </div>
+        <BsButton @defaultText={{t "admin.form.submit"}} @type="primary" type="submit" class="float-right mr-0 mt-3" />
+      </BsForm>
+    </div>
+  </Modal.body>
+</BsModal>
