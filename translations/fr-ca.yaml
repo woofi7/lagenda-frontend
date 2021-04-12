@@ -66,6 +66,7 @@ copyright: "© 2021 L'Agenda – Tous droits réservés."
 admin:
   title: "Panneau d'administration"
   categories: "Catégories"
+  no-image-found: "Looks like there's no image here."
   form:
     id: "Id"
     visibility: "Visibilité"
@@ -98,10 +99,16 @@ admin:
     first-name: "Prénom"
     last-name: "Nom de famille"
     social-links: "Liens sociaux"
+    dropdown:
+      zone: "Drop to upload"
+      invalid: "Invalid"
+      uploading: "Uploading {length} files. ({progress}%)"
+      zone-text: "Ajouter une image dans cette zone ou"
   image:
     title: "Images"
     addImage: "Ajouter une image"
     findImage: "Trouver une image"
+    image-title: "Image {number}"
   article:
     title: "Article"
     addArticle: "Ajouter un article"

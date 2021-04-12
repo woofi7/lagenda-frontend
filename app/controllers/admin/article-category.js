@@ -46,7 +46,7 @@ export default class AdminArticleCategoryController extends Controller {
         if (i > 3)
           order += 70;
 
-        c.set('order', i * 10);
+        c.set('order', order);
         c.set('isPartner', false);
         await c.save();
       }
@@ -57,7 +57,7 @@ export default class AdminArticleCategoryController extends Controller {
         if (i > 3)
           order += 70;
 
-        c.set('order', i * 10);
+        c.set('order', order);
         c.set('isPartner', true);
         await c.save();
       }

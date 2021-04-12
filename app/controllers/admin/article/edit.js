@@ -3,12 +3,8 @@ import {alias} from "@ember/object/computed";
 import {tracked} from "@glimmer/tracking";
 import {action, computed} from "@ember/object";
 import {inject as service} from "@ember/service";
-import {isBlank, isPresent} from '@ember/utils';
-import {keepLatestTask} from "ember-concurrency-decorators";
-import {timeout} from "ember-concurrency";
-import { isArray } from '@ember/array';
-
-const DEBOUNCE_MS = 250;
+import {isPresent} from '@ember/utils';
+import {isArray} from '@ember/array';
 
 export default class AdminArticleEditController extends Controller {
   @service router;
@@ -29,6 +25,7 @@ export default class AdminArticleEditController extends Controller {
   @computed('article.image.url')
   get loadImageSize() {
     this.image.imageUrl = this.article.get('image.url');
+    return null;
   }
 
   @computed('article.id')
@@ -40,9 +37,11 @@ export default class AdminArticleEditController extends Controller {
 
       return host + this.router.urlFor('la-tribune.category-v2.article', category, this.article.id);
     }
+
+    return null;
   }
 
-  @computed('article.articleCategory', 'article.articleAuthorCategory')
+  @computed('article.{articleCategory,articleAuthorCategory}')
   get articleSelectedCategory() {
     return isPresent(this.article.get('articleCategory.id')) ? this.article.get('articleCategory') : this.article.get('articleAuthorCategory');
   }
@@ -59,7 +58,7 @@ export default class AdminArticleEditController extends Controller {
     ]
   }
 
-  @computed('categories.length', 'categories.articleAuthorCategories', 'article.articleCategory', 'article.articleAuthorCategory')
+  @computed('categories.{length,articleAuthorCategories}', 'article.{articleCategory,articleAuthorCategory}')
   get selectableCategories() {
     let categories = this.categories.filter((c) =>
       c !== this.article.articleCategory

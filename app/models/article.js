@@ -1,6 +1,5 @@
 import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 import {computed} from "@ember/object";
-import {alias} from '@ember/object/computed';
 
 export default class ArticleModel extends Model {
   @attr('string') title;

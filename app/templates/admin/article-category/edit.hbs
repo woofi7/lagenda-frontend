@@ -78,8 +78,8 @@
           </div>
           {{else}}
             <div class="text-center col">
-              <h5>Looks like there's no image here.</h5>
-              <img class="img-fluid" width="100px" src="https://files.lagenda.ca/images/PngItem_415432.png" alt="Troll face">
+              <h5>{{t "admin.no-image-found"}}</h5>
+              <img class="img-fluid" width="100px" src="https://files.lagenda.ca/images/PngItem_415432.png" alt={{t "admin.no-image-found"}}>
             </div>
           {{/if}}
         </div>
@@ -116,9 +116,9 @@
             {{/if}}
             <span class="float-right">
               {{#if category.unlisted}}
-                <span class="badge badge-pill badge-warning">Caché</span>
+                <span class="badge badge-pill badge-warning">{{t "admin.form.hidden"}}</span>
               {{/if}}
-              <span class="handle">&varr;</span>
+              <span class="handle"><i class="fas fa-sort"></i></span>
             </span>
           </DraggableObject>
         {{/each}}

@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import {computed} from "@ember/object";
 
 export default class FeaturedCardComponent extends Component {
   get type() {

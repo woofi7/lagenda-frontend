@@ -32,10 +32,11 @@ export default class AdminArticleCategoryEditController extends Controller {
 
   @computed('category.id')
   get categoryUrl() {
-    if (this.category.get('id')) {
-      const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
-      return host + this.router.urlFor('la-tribune.category-v2', this.category.id);
-    }
+    if (!this.category.get('id'))
+      return null;
+
+    const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
+    return host + this.router.urlFor('la-tribune.category-v2', this.category.id);
   }
 
   @action

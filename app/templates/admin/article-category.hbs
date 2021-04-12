@@ -11,7 +11,7 @@
     <div class="admin-modal">
       <div class="row pb-2">
         <div class="col">
-          <LinkTo @route="admin.article-category.add" class="btn btn-primary float-left">Ajouter une catégorie</LinkTo>
+          <LinkTo @route="admin.article-category.add" class="btn btn-primary float-left">{{t "admin.balado-category.add"}}</LinkTo>
         </div>
       </div>
       <div class="row">
@@ -21,7 +21,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-lg-6">
-          <h5>Collaborateurs</h5>
+          <h5>{{t "side-menu.collaborators.title"}}</h5>
           <div class="list-group text-left">
             <SortableObjects @sortableObjectList={{this.sortableObjectList}} @sortEndAction={{this.dragEndAction}} @sortingScope="categories">
               {{#each this.sortableObjectList as |category|}}
@@ -37,11 +37,11 @@
                   {{/if}}
                   <span class="float-right">
                     {{#if category.unlisted}}
-                      <span class="badge badge-pill badge-warning">Caché</span>
+                      <span class="badge badge-pill badge-warning">{{t "admin.form.hidden"}}</span>
                     {{/if}}
                     <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i
                         class="fas fa-edit"></i></LinkTo>
-                     <span class="handle">&varr;</span>
+                     <span class="handle"><i class="fas fa-sort"></i></span>
                   </span>
                 </DraggableObject>
               {{/each}}
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <h5>Partenaires</h5>
+          <h5>{{t "side-menu.partners.title"}}</h5>
           <div class="list-group text-left">
             <SortableObjects @sortableObjectList={{this.sortableObjectList2}} @sortEndAction={{this.dragEndAction}} @sortingScope="categories">
               {{#each this.sortableObjectList2 as |category|}}
@@ -65,10 +65,10 @@
                   {{/if}}
                   <span class="float-right">
                     {{#if category.unlisted}}
-                      <span class="badge badge-pill badge-warning">Caché</span>
+                      <span class="badge badge-pill badge-warning">{{t "admin.form.hidden"}}</span>
                     {{/if}}
                     <LinkTo @route="admin.article-category.edit" @model={{category.id}} class="btn btn-sm btn-icon"><i class="fas fa-edit"></i></LinkTo>
-                    <span class="handle">&varr;</span>
+                    <span class="handle"><i class="fas fa-sort"></i></span>
                   </span>
                 </DraggableObject>
               {{/each}}

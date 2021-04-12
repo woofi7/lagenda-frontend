@@ -12,7 +12,7 @@ export default class IndexController extends Controller {
     super.init();
 
     if (!this.fastboot.isFastBoot) {
-      const easter_egg = new Konami(() => {
+      new Konami(() => {
         document.getElementsByTagName('body')[0].classList.add('pink');
       });
     }

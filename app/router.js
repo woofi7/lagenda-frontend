@@ -58,15 +58,15 @@ Router.map(function() {
       this.route('add');
       this.route('edit', { path: ':image'});
     });
-    this.route('article-category', { path: 'article-category' }, function() {
+    this.route('article-category', function() {
       this.route('add');
       this.route('edit', { path: ':category' });
     });
-    this.route('balado-category', { path: 'balado-category' }, function() {
+    this.route('balado-category', function() {
       this.route('add');
       this.route('edit', { path: ':category' });
     });
-    this.route('balado-partner', { path: 'partner-category' }, function() {
+    this.route('balado-partner', function() {
       this.route('add');
       this.route('edit', { path: ':category' });
     });

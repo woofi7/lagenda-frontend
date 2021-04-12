@@ -18,18 +18,20 @@ export default class AdminBaladoEditController extends Controller {
   @computed('balado.image.url')
   get loadImageSize() {
     this.image.imageUrl = this.balado.get('image.url');
+    return null;
   }
 
   @computed('balado.id')
   get baladoUrl() {
-    if (this.balado.baladoCategory.get('id')) {
-      const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
+    if (!this.balado.baladoCategory.get('id'))
+      return null;
 
-      return host + this.router.urlFor('balados.balado-partner.category.balado',
-        this.balado.get('baladoCategory.partner.id'),
-        this.balado.get('baladoCategory.id'),
-        this.balado.id);
-    }
+    const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
+
+    return host + this.router.urlFor('balados.balado-partner.category.balado',
+      this.balado.get('baladoCategory.partner.id'),
+      this.balado.get('baladoCategory.id'),
+      this.balado.id);
   }
 
   @computed('baladoPartners.length', 'balado.baladoCategory')

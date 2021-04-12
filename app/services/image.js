@@ -22,7 +22,7 @@ export default class ImageService extends Service {
   @computed('width', 'height', 'ratio')
   get imageSize() {
     if (!this.width && !this.height && !this.ratio)
-      return;
+      return null;
 
     return {
       width: this.width,

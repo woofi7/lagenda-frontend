@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { A } from '@ember/array';
 import {computed} from "@ember/object";
 
 export default class ActicleCardComponent extends Component {

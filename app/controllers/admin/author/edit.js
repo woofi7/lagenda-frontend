@@ -17,6 +17,7 @@ export default class AdminAuthorEditController extends Controller {
   @computed('author.image.url')
   get loadImageSize() {
     this.image.imageUrl = this.author.get('image.url');
+    return null;
   }
 
   @action

@@ -4,7 +4,7 @@
          @position="center"
          as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">Image</h4>
+    <h4 class="modal-title w-100">{{t "admin.image.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0">
     {{#if this.alertMessage}}
@@ -20,30 +20,29 @@
                         as |dropzone queue|>
             {{#if dropzone.active}}
               {{#if dropzone.valid}}
-                <span>Drop to upload</span>
+                <span>{{t "admin.form.dropdown.zone"}}</span>
               {{else}}
-                <span>Invalid</span>
+                <span>{{t "admin.form.dropdown.invalid"}}</span>
               {{/if}}
             {{else if queue.files.length}}
-              <span>Uploading {{queue.files.length}} files. ({{queue.progress}}%)</span>
+              <span>{{t "admin.form.dropdown.uploading" length=queue.files.length progress=queue.progress}}</span>
             {{else}}
-              <h4 class="m-3">Ajouter une image</h4>
+              <h4 class="m-3">{{t "admin.image.addImage"}}</h4>
               {{#if dropzone.supported}}
-                <p>
-                  Ajouter une image dans cette zone ou
-                </p>
+                <p>{{t "admin.form.dropdown.zone-text"}}</p>
               {{/if}}
               <FileUpload @name="photos"
                           @accept="image/*"
-                          @onfileadd={{action this.uploadImage}} as |queue|>
-                <a class="btn btn-dark" id="upload-image">Ajouter une image</a>
+                          @onfileadd={{this.uploadImage}}>
+                {{! template-lint-disable link-href-attributes }}
+                <a class="btn btn-dark" id="upload-image">{{t "admin.image.addImage"}}</a>
               </FileUpload>
             {{/if}}
           </FileDropzone>
         </div>
       </div>
       {{#each this.uploadedImages as |image index|}}
-        <h6 class="text-left pt-3">{{#if image.isNew}}<i class="fas fa-exclamation-triangle pr-2 color-orange"></i>{{/if}}Image {{add index 1}}</h6>
+        <h6 class="text-left pt-3">{{#if image.isNew}}<i class="fas fa-exclamation-triangle pr-2 color-orange"></i>{{/if}}{{t "admin.image.image-title" number=(add index 1)}}</h6>
         <BsForm class="text-left row" @model={{image}} @onSubmit={{this.submit}} as |form|>
           <div class="col pr-0">
             <form.group>
@@ -56,7 +55,7 @@
           </div>
           <div class="col-6 d-flex flex-column">
             <img src={{image.url}} alt={{image.alt}}>
-            <BsButton class="align-self-end mt-auto mb-3" @type="dark" @buttonType="submit">Sauvegarder</BsButton>
+            <BsButton class="align-self-end mt-auto mb-3" @type="dark" @buttonType="submit">{{t "admin.form.submit"}}</BsButton>
           </div>
         </BsForm>
       {{/each}}

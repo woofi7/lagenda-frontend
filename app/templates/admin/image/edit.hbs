@@ -4,7 +4,7 @@
     @position="center"
     as |Modal|>
   <Modal.header class="flex-column pt-0">
-    <h4 class="modal-title w-100">Image</h4>
+    <h4 class="modal-title w-100">{{t "admin.image.title"}}</h4>
   </Modal.header>
   <Modal.body class="px-0">
     <div class="admin-modal">
@@ -12,13 +12,13 @@
         <div class="row">
           <div class="col">
             <form.group>
-              <label class="control-label">Id</label>
+              <label class="control-label">{{t "admin.form.id"}}</label>
               <CopyText @text={{this.imageModel.id}} />
             </form.group>
           </div>
           <div class="col">
             <form.group>
-              <label class="control-label">Url</label>
+              <label class="control-label">{{t "admin.form.linkTo"}}</label>
               <CopyText @text={{this.imageModel.url}} />
             </form.group>
           </div>

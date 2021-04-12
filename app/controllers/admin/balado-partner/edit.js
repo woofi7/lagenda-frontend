@@ -13,10 +13,11 @@ export default class AdminBaladoPartnerEditController extends Controller {
 
   @computed('partner.id')
   get partnerUrl() {
-    if (this.partner.get('id')) {
-      const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
-      return host + this.router.urlFor('balados.balado-partner', this.partner.id);
-    }
+    if (!this.partner.get('id'))
+      return null;
+
+    const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
+    return host + this.router.urlFor('balados.balado-partner', this.partner.id);
   }
 
   sortKey = ['order:asc'];
@@ -30,6 +31,7 @@ export default class AdminBaladoPartnerEditController extends Controller {
   @computed('partner.image.url')
   get loadImageSize() {
     this.image.imageUrl = this.partner.get('image.url');
+    return null;
   }
 
   @action

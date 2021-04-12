@@ -17,6 +17,7 @@ export default class AdminImageEditController extends Controller {
   @computed('imageModel.url')
   get loadImageSize() {
     this.image.imageUrl = this.imageModel.get('url');
+    return null;
   }
 
   @action

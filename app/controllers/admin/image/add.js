@@ -37,9 +37,7 @@ export default class AdminImageAddController extends Controller {
   @action
   async uploadImage(file) {
     try {
-      const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
-      console.log(this.namespace.API_HOST);
-      let response = await file.upload('/api/v1/upload', {
+      await file.upload('/api/v1/upload', {
         headers: { Authorization: "Bearer " + this.accessToken }
       }).then(response => {
         let image = this.store.createRecord('image');
@@ -48,6 +46,9 @@ export default class AdminImageAddController extends Controller {
         this.uploadedImages.addObject(image);
       });
     } catch (e) {
+      this.notifications.error(`<p>Une erreur est survenue lors de la sauvegarde :<br> <code class="text-white">${e.toString()}</code></p>`, {
+        htmlContent: true
+      });
     }
   }
 }

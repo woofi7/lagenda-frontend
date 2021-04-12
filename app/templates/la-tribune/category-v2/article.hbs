@@ -23,10 +23,10 @@
             <img class="img-fluid article-img" src="/assets/images/placeholder.jpg" alt={{t "placeholder.alt"}} />
           {{/if}}
 
-          {{markdown-to-html
-              markdown=this.article.content
-              simpleLineBreaks=true
-              requireSpaceBeforeHeadingText=true}}
+          <MarkdownToHtml
+              @markdown={{this.article.content}}
+              @simpleLineBreaks={{true}}
+              @requireSpaceBeforeHeadingText={{true}} />
         </div>
 
         <div class="row">

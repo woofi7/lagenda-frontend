@@ -11,10 +11,10 @@ export default class AdminBaladoCategoryEditController extends Controller {
   @alias('model.category') category;
   @alias('model.partners') partners;
 
-  @computed('category.id', 'category.partner.id')
+  @computed('category.{id,partner.id}')
   get categoryUrl() {
     if (!this.category.id)
-      return;
+      return null;
 
     const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
     return host + this.router.urlFor('balados.balado-partner.category',
@@ -25,6 +25,7 @@ export default class AdminBaladoCategoryEditController extends Controller {
   @computed('category.image.url')
   get loadImageSize() {
     this.image.imageUrl = this.category.get('image.url');
+    return null;
   }
 
   @action

@@ -13,7 +13,7 @@ export default class LoginController extends Controller {
   disconnected = false;
 
   @action
-  async authenticate(e) {
+  async authenticate() {
     try {
       await this.session.authenticate('authenticator:torii', 'google');
     } catch(error) {
