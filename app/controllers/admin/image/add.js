@@ -39,7 +39,7 @@ export default class AdminImageAddController extends Controller {
     try {
       const host = this.fastboot.isFastBoot ? this.fastboot.request.host : window.location.host;
       console.log(this.namespace.API_HOST);
-      let response = await file.upload('http://localhost:5000/api/v1/upload', {
+      let response = await file.upload('/api/v1/upload', {
         headers: { Authorization: "Bearer " + this.accessToken }
       }).then(response => {
         let image = this.store.createRecord('image');

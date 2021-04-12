@@ -13,7 +13,7 @@ export default class ActicleCardComponent extends Component {
     return  "la-tribune.category-v2.article";
   }
 
-  @computed('args.article.articleAuthorCategory')
+  @computed('args.article.articleAuthorCategory.id')
   get routeModels() {
     if (this.args.article.get('articleAuthorCategory.id'))
       return [this.args.article.get('articleAuthorCategory.articleCategory.id'), this.args.article.get('articleAuthorCategory.id'), this.args.article.id];

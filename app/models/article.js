@@ -1,5 +1,6 @@
 import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 import {computed} from "@ember/object";
+import {alias} from '@ember/object/computed';
 
 export default class ArticleModel extends Model {
   @attr('string') title;
@@ -14,6 +15,11 @@ export default class ArticleModel extends Model {
   @belongsTo('article-author-category', { async: true }) articleAuthorCategory;
 
   @hasMany('author', { async: true }) authors;
+
+  @computed('articleCategory', 'articleAuthorCategory')
+  get category() {
+    return this.articleCategory ? this.articleCategory : this.articleAuthorCategory;
+  }
 
   @computed('title', 'desc', 'content', 'image', 'authors', 'articleCategory', 'articleAuthorCategory', 'unlisted')
   get state() {

@@ -25,7 +25,7 @@
         </div>
         <div class="col">
           <LinkTo @route={{this.routePath}}
-                  @models={{this.routeModels}}
+                  @models={{array @article.category.id @article.id}}
                   class="btn btn-primary btn-sm float-right">
             {{t "la-tribune.read-article"}}
           </LinkTo>
