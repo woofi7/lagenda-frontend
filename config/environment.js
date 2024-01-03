@@ -36,7 +36,7 @@ module.exports = function(environment) {
       sessionServiceName: 'session',
       providers: {
         'google-oauth2': {
-          ***REMOVED***
+          apiKey: '***REMOVED***',
           redirectUri: 'http://localhost:4200/torii/redirect.html',
           tokenExchangeUri: 'https://localhost:5001/api/v1/oauth2',
           scope: 'profile'
